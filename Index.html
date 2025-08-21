@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberXtreme Programs</title>
+    <link rel="icon" type="image/png" href="/Imagenes/favicon copia2.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <a href="/index.html">
+                CyberXtreme Programs
+            </a>
+        </div>
+        
+        <nav class="categories-nav">
+            <a href="#" class="dropdown-toggle">Categorías</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#">Diseño Web <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/categoria-DiseñoWeb/Facil.html">Fácil</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Medio.html">Medio</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
+                    </ul>
+                </li>
+                <li><a href="/Software/software.html">Software</a></li>
+                <li><a href="/Plantillas/plantillas.html">Plantillas</a></li>
+                <li><a href="/Subscripciones/CyberPro+.html">Suscripciones</a></li>
+            </ul>
+        </nav>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar productos...">
+        </div>
+        
+        <div class="user-nav" id="auth-buttons">
+            <a href="/INICIOS-REGISTROS/Iniciar-sesion.html" class="nav-button">Iniciar Sesión</a>
+            <a href="/INICIOS-REGISTROS/Crear-cuenta.html" class="nav-button">Crear Cuenta</a>
+            <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+        </div>
+
+        <div id="user-profile" style="display: none; position: relative;">
+            <div class="user-nav">
+                <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+                <button id="user-name-button" class="nav-button">
+                    <span id="full-name-display"></span> <i class="fas fa-caret-down"></i>
+                </button>
+            </div>
+            <div id="user-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ccc; border-radius: 5px; min-width: 150px; z-index: 1000;">
+                <a href="/mis-compras/mis-compras.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-shopping-bag"></i> Mis compras
+                </a>
+                <a href="/historial/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-history"></i> Historial
+                </a>
+                <button id="logout-button" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer;">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="logo-section">
+        <h1>CXP</h1>
+    </div>
+
+    <div class="carousel-container">
+        <div class="carousel-slide active">
+            <img src="https://via.placeholder.com/1200x600.png?text=Oferta+de+lanzamiento" alt="Oferta de Lanzamiento">
+            <div class="slide-content">
+                <h2>¡Lanzamiento!</h2>
+                <p>Nuestra nueva solución para cibers, ¡con un 20% de descuento!</p>
+                <button>Ver oferta</button>
+            </div>
+        </div>
+        
+        <div class="carousel-slide">
+            <img src="https://via.placeholder.com/1200x600.png?text=Gana+mas+clientes" alt="Gana más clientes">
+            <div class="slide-content">
+                <h2>Gana más clientes</h2>
+                <p>Moderniza tu negocio con un diseño profesional y atractivo.</p>
+                <button>Conoce más</button>
+            </div>
+        </div>
+        
+        <div class="carousel-slide">
+            <img src="https://via.placeholder.com/1200x600.png?text=Facil+de+usar" alt="Fácil de usar">
+            <div class="slide-content">
+                <h2>Fácil de usar</h2>
+                <p>Nuestras soluciones son intuitivas y no requieren experiencia en programación.</p>
+                <button>Conoce más</button>
+            </div>
+        </div>
+        
+        <button class="prev-button">&lt;</button>
+        <button class="next-button">&gt;</button>
+    </div>
+    
+    <section class="products-section">
+        <h2>Soluciones Web CyberXtreme Programs</h2>
+        <div class="product-grid">
+            <div class="product-card" data-id="product-1">
+                <img src="/Imagenes/pagina_web_ejemplo1.jpg" alt="Pagina Web Ejemplo 1" class="product-image">
+                <h3 class="product-name">Diseño Web Avanzado</h3>
+                <p class="product-price">$5,500 MXN</p>
+                <button class="add-to-cart-btn" data-id="product-1" data-name="Diseño Web Avanzado" data-price="5500" data-image="/Imagenes/pagina_web_ejemplo1.jpg">Añadir al carrito</button>
+            </div>
+
+            <div class="product-card" data-id="product-2">
+                <img src="/Imagenes/pagina_web_ejemplo2.png" alt="Pagina Web Ejemplo 2" class="product-image">
+                <h3 class="product-name">Tienda en Línea Completa</h3>
+                <p class="product-price">$9,000 MXN</p>
+                <button class="add-to-cart-btn" data-id="product-2" data-name="Tienda en Línea Completa" data-price="9000" data-image="/Imagenes/pagina_web_ejemplo2.png">Añadir al carrito</button>
+            </div>
+
+            <div class="product-card" data-id="product-3">
+                <img src="/Imagenes/pagina_web_ejemplo3.jpg" alt="Pagina Web Ejemplo 3" class="product-image">
+                <h3 class="product-name">Landing Page Personalizada</h3>
+                <p class="product-price">$3,200 MXN</p>
+                <button class="add-to-cart-btn" data-id="product-3" data-name="Landing Page Personalizada" data-price="3200" data-image="/Imagenes/pagina_web_ejemplo3.jpg">Añadir al carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <h2>¿Por qué elegirnos?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <i class="fas fa-magic fa-3x" style="color:#00FFFF;"></i>
+                <h3>Diseños Adaptados</h3>
+                <p>Soluciones web pensadas para las necesidades de los cibercafés.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-laptop-code fa-3x" style="color:#00FFFF;"></i>
+                <h3>Fácil de Instalar</h3>
+                <p>Nuestras soluciones son sencillas de usar, sin necesidad de experiencia técnica.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-headset fa-3x" style="color:#00FFFF;"></i>
+                <h3>Soporte Confiable</h3>
+                <p>Estamos para ayudarte en cada paso del proceso.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>CyberXtreme Programs</h3>
+                <p>Soluciones web a medida para tu negocio. Convierte tu pasión por la tecnología en una herramienta de crecimiento.</p>
+            </div>
+<div class="footer-links">
+    <h3>Enlaces Rápidos</h3>
+    <ul>
+        <li><a href="/index.html">Inicio</a></li>
+        <li><a href="/Software/software.html">Software</a></li>
+        <li><a href="/Plantillas/plantillas.html">Plantillas</a></li>
+        <li><a href="/Subscripciones/CyberPro+.html">Suscripciones</a></li>
+        <li><a href="/activar-licencia/activar-licencia.html">Activar Licencia</a></li> <li><a href="#">Contacto</a></li>
+    </ul>
+</div>
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CyberXtreme Programs. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script src="auth.js" type="module"></script>
+    <script src="/carrito-compras/carrito.js"></script>
+    <script src="/historial.js"></script>
+</body>
+</html>
