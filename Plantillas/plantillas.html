@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plantillas | CyberXtreme Programs</title>
-        <link rel="icon" type="image/png" href="/Imagenes/favicon copia2.png" />
+    <link rel="icon" type="image/png" href="/Imagenes/favicon copia2.png" />
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
     <div class="header">
         <div class="logo">
-            <a href="/Index.html">CyberXtreme Programs</a>
+            <a href="/index.html">
+                CyberXtreme Programs
+            </a>
         </div>
         
         <nav class="categories-nav">
@@ -53,7 +54,7 @@
                 <a href="/mis-compras/mis-compras.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
                     <i class="fas fa-shopping-bag"></i> Mis compras
                 </a>
-                <a href="/historial/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                <a href="/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
                     <i class="fas fa-history"></i> Historial
                 </a>
                 <button id="logout-button" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer;">
@@ -62,38 +63,33 @@
             </div>
         </div>
     </div>
-    </div>
-
-    <div class="category-hero">
-        <div class="hero-text">
-            <h2>Diseños pre-creados para una presencia en línea instantánea.</h2>
-        </div>
-        <img src="https://via.placeholder.com/1200x400.png?text=Plantillas" alt="Plantillas">
-    </div>
-
-    <section class="products-section">
-        <h2>Plantillas Web</h2>
-        <div class="product-grid">
-            <a href="plantilla-negocio.html" class="product-link">
+    
+    <main class="container">
+        <section class="products-section">
+            <h2>Nuestras Plantillas</h2>
+            <div class="product-grid" id="product-list">
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/400x300.png?text=Plantilla+Negocio" alt="Plantilla para Negocios">
-                    <h3>Plantilla "CyberNegocios"</h3>
-                    <p>Diseño moderno y elegante para empresas de tecnología y cibercafés.</p>
-                    <span class="price">$1,000 MXN</span>
-                    <button class="buy-button">Comprar ahora</button>
+                    <img src="https://via.placeholder.com/400x300.png?text=Plantilla+Negocio" alt="Plantilla CyberNegocios">
+                    <div class="product-info">
+                        <h3>Plantilla "CyberNegocios"</h3>
+                        <p>Diseño moderno y profesional ideal para startups y pequeñas empresas. Fácil de personalizar.</p>
+                        <p class="price">$1000.00 MXN</p>
+                        <a href="#" class="buy-button" data-product-id="cyber-negocios">Comprar ahora</a>
+                    </div>
                 </div>
-            </a>
-            <a href="plantilla-servicios.html" class="product-link">
+
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/400x300.png?text=Plantilla+Servicios" alt="Plantilla para Servicios">
-                    <h3>Plantilla "Servicios Express"</h3>
-                    <p>Ideal para mostrar servicios de impresión, reparación y más, de manera clara y rápida.</p>
-                    <span class="price">$900 MXN</span>
-                    <button class="buy-button">Comprar ahora</button>
+                    <img src="https://via.placeholder.com/400x300.png?text=Plantilla+Servicios" alt="Plantilla Servicios Express">
+                    <div class="product-info">
+                        <h3>Plantilla "Servicios Express"</h3>
+                        <p>Perfecta para ofrecer servicios profesionales. Diseño limpio y enfocado en la experiencia del usuario.</p>
+                        <p class="price">$900.00 MXN</p>
+                        <a href="#" class="buy-button" data-product-id="servicios-express">Comprar ahora</a>
+                    </div>
                 </div>
-            </a>
-        </div>
-    </section>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="footer-container">
@@ -104,18 +100,27 @@
             <div class="footer-links">
                 <h3>Enlaces Rápidos</h3>
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="software.html">Software</a></li>
-                    <li><a href="plantillas.html">Plantillas</a></li>
-                    <li><a href="suscripciones.html">Suscripciones</a></li>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Suscripciones</a></li>
                     <li><a href="#">Contacto</a></li>
                 </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 CyberXtreme Programs. Todos los derechos reservados.</p>
         </div>
     </footer>
-     <script src="/auth.js" type="module"></script>
+
+    <script src="/auth.js" type="module"></script>
+    <script src="plantillas.js"></script>
 </body>
 </html>

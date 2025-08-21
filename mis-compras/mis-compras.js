@@ -7,6 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const actionButtonsContainer = document.getElementById('action-buttons');
     const clearPurchasesButton = document.getElementById('clear-purchases-button');
 
+    // Aquí puedes mantener tus claves de licencia si las necesitas para futuros productos.
+    const licenseKeys = {
+        'Cyber Admin Pro': '35PHAGSB-7I8H'
+    };
+
     function renderPurchases() {
         const purchaseHistory = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
         
@@ -19,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const digitalPurchases = purchaseHistory.filter(item => !item.isLicensed);
         const licensedPurchases = purchaseHistory.filter(item => item.isLicensed);
 
+        // Renderizado de descargas digitales
         if (digitalPurchases.length > 0) {
             noDownloadsMessage.style.display = 'none';
             digitalDownloadsList.innerHTML = '<h3>Descargas Digitales</h3>';
@@ -32,13 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p>Fecha de compra: ${new Date(item.purchaseDate).toLocaleDateString()}</p>
                         <p>Total: $${item.price.toFixed(2)} MXN</p>
                     </div>
+                    <div class="purchase-actions">
+                        <a href="${item.downloadUrl}" target="_blank" class="download-btn">Descargar Archivo</a>
+                    </div>
                 `;
                 digitalDownloadsList.appendChild(purchaseItem);
             });
         } else {
             noDownloadsMessage.style.display = 'block';
+            digitalDownloadsList.innerHTML = `<h3>Descargas Digitales</h3><p id="no-digital-downloads-message">No has realizado descargas digitales todavía.</p>`;
         }
 
+        // Renderizado de licencias de software (SOLO SE CAMBIÓ LA LÍNEA DEL BOTÓN DE DESCARGA)
         if (licensedPurchases.length > 0) {
             noLicensesMessage.style.display = 'none';
             licensesList.innerHTML = '<h3>Mis Licencias de Software</h3>';
@@ -46,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const now = new Date();
                 const expiryDate = new Date(item.expiryDate);
                 const isExpired = now > expiryDate;
-                const isActivated = item.isActivated || false; // ¡NUEVO! Verifica si el producto fue activado
+                const isActivated = item.isActivated || false;
 
                 const statusClass = isExpired ? 'status-expired' : (isActivated ? 'status-active' : 'status-not-activated');
                 const statusText = isExpired ? 'Vencida' : (isActivated ? 'Activada' : 'No Activada');
@@ -64,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="license-actions">
                         ${isExpired ? 
                             `<button class="renew-btn" data-id="${item.id}">Renovar Licencia</button>` :
-                            `<button class="download-btn" data-id="${item.id}" ${!isActivated ? 'disabled' : ''}>Descargar Producto</button>`
+                            `<a href="${item.downloadUrl}" target="_blank" class="download-btn" ${!isActivated ? 'disabled' : ''}>Descargar Producto</a>`
                         }
                     </div>
                 `;
@@ -72,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         } else {
             noLicensesMessage.style.display = 'block';
+            licensesList.innerHTML = `<h3>Mis Licencias de Software</h3><p id="no-licenses-message">No tienes licencias activas.</p>`;
         }
     }
 
