@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartItemsContainer = document.getElementById('cart-items');
     const cartTotalElement = document.getElementById('cart-total');
     const checkoutButton = document.getElementById('checkout-button');
-    const paypalForm = document.getElementById('paypal-form');
 
     function saveCart(cart) {
         localStorage.setItem('cart', JSON.stringify(cart));
@@ -21,29 +20,27 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cart.length === 0) {
             cartItemsContainer.innerHTML = '<p>Tu carrito está vacío.</p>';
             cartTotalElement.textContent = '$0.00 MXN';
-            if (checkoutButton) {
-                checkoutButton.style.display = 'none';
-            }
+            if (checkoutButton) checkoutButton.style.display = 'none';
             return;
         }
 
-        if (checkoutButton) {
-            checkoutButton.style.display = 'block';
-        }
+        if (checkoutButton) checkoutButton.style.display = 'block';
 
         cart.forEach(item => {
             const itemElement = document.createElement('div');
             itemElement.classList.add('cart-item');
             itemElement.innerHTML = `
-                <img src="${item.image}" alt="${item.name}">
-                <div class="item-details">
-                    <h3>${item.name}</h3>
-                    <p>Precio: $${item.price.toFixed(2)} MXN</p>
-                    <div class="quantity-controls">
-                        <button class="quantity-minus" data-id="${item.id}">-</button>
-                        <span>${item.quantity}</span>
-                        <button class="quantity-plus" data-id="${item.id}">+</button>
+                <div class="item-details-container">
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="item-details">
+                        <h3>${item.name}</h3>
+                        <p>Precio: $${item.price.toFixed(2)} MXN</p>
                     </div>
+                </div>
+                <div class="quantity-controls">
+                    <button class="quantity-minus" data-id="${item.id}">-</button>
+                    <span>${item.quantity}</span>
+                    <button class="quantity-plus" data-id="${item.id}">+</button>
                 </div>
                 <button class="item-remove" data-id="${item.id}">Eliminar</button>
             `;
@@ -53,15 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         cartTotalElement.textContent = `$${total.toFixed(2)} MXN`;
         
-        document.querySelectorAll('.item-remove').forEach(button => {
-            button.addEventListener('click', removeItem);
-        });
-        document.querySelectorAll('.quantity-plus').forEach(button => {
-            button.addEventListener('click', increaseQuantity);
-        });
-        document.querySelectorAll('.quantity-minus').forEach(button => {
-            button.addEventListener('click', decreaseQuantity);
-        });
+        document.querySelectorAll('.item-remove').forEach(button => button.addEventListener('click', removeItem));
+        document.querySelectorAll('.quantity-plus').forEach(button => button.addEventListener('click', increaseQuantity));
+        document.querySelectorAll('.quantity-minus').forEach(button => button.addEventListener('click', decreaseQuantity));
     }
 
     function confirmPurchase() {
@@ -74,27 +65,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const purchaseHistory = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
 
         cart.forEach(item => {
-            const isLicensedProduct = item.id.startsWith('software');
+            // Asegurarse de que el downloadLink apunte a tu dominio
+            let downloadLink = item.downloadLink || null;
+            if (downloadLink && !downloadLink.startsWith('http')) {
+                downloadLink = `https://cyberxtremeprograms.store/${downloadLink.replace(/^\//, '')}`;
+            }
+
             const purchaseItem = {
                 id: item.id,
                 name: item.name,
-                price: item.price,
+                price: item.price * item.quantity,
                 image: item.image,
                 quantity: item.quantity,
-                purchaseDate: new Date(),
-                isLicensed: isLicensedProduct
+                downloads: 0,
+                purchaseDate: new Date().toISOString(),
+                downloadLink: downloadLink
             };
-
-            if (isLicensedProduct) {
-                const licenseKey = Math.random().toString(36).substring(2, 10).toUpperCase() + '-' + Math.random().toString(36).substring(2, 6).toUpperCase();
-                purchaseItem.licenseKey = licenseKey;
-                
-                const expiryDate = new Date();
-                expiryDate.setDate(expiryDate.getDate() + 30);
-                purchaseItem.expiryDate = expiryDate;
-                purchaseItem.isActivated = false; // ¡NUEVO! La licencia no está activada por defecto
-            }
-
             purchaseHistory.push(purchaseItem);
         });
 
@@ -102,9 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.removeItem('cart');
         renderCart();
         alert('¡Compra realizada con éxito!');
-        setTimeout(() => {
-            window.location.href = '/mis-compras/mis-compras.html';
-        }, 1500);
+        setTimeout(() => window.location.href = '/mis-compras/mis-compras.html', 1500);
     }
     
     function removeItem(event) {
@@ -119,9 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const id = event.target.dataset.id;
         let cart = getCart();
         let product = cart.find(item => item.id === id);
-        if (product) {
-            product.quantity += 1;
-        }
+        if (product) product.quantity += 1;
         saveCart(cart);
         renderCart();
     }
@@ -130,11 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const id = event.target.dataset.id;
         let cart = getCart();
         let product = cart.find(item => item.id === id);
-        if (product && product.quantity > 1) {
-            product.quantity -= 1;
-        } else if (product && product.quantity === 1) {
-            cart = cart.filter(item => item.id !== id);
-        }
+        if (product && product.quantity > 1) product.quantity -= 1;
+        else if (product && product.quantity === 1) cart = cart.filter(item => item.id !== id);
         saveCart(cart);
         renderCart();
     }
@@ -151,18 +130,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         saveCart(cart);
         alert('Producto añadido al carrito!');
-        if (window.location.pathname.endsWith('carrito.html')) {
-            renderCart();
-        }
+        if (window.location.pathname.endsWith('carrito.html')) renderCart();
     };
     
     if (window.location.pathname.endsWith('carrito.html')) {
         renderCart();
-        
-        if (checkoutButton) {
-            checkoutButton.addEventListener('click', () => {
-                confirmPurchase();
-            });
-        }
+        if (checkoutButton) checkoutButton.addEventListener('click', confirmPurchase);
     }
 });

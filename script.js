@@ -145,3 +145,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault(); // evita recarga
+
+            const product = {
+                id: button.dataset.id,
+                name: button.dataset.name,
+                price: parseFloat(button.dataset.price),
+                image: button.dataset.image,
+                downloadLink: button.dataset.download,
+                quantity: 1
+            };
+
+            // Agrega al carrito usando la función global
+            window.addToCart(product);
+
+            // Notificación
+            let notification = document.createElement('div');
+            notification.classList.add('notification');
+            notification.textContent = '¡Producto añadido al carrito!';
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 2000);
+        });
+    });
+});
+
