@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         cartTotalElement.textContent = `$${total.toFixed(2)} MXN`;
-        
+
         document.querySelectorAll('.item-remove').forEach(button => button.addEventListener('click', removeItem));
         document.querySelectorAll('.quantity-plus').forEach(button => button.addEventListener('click', increaseQuantity));
         document.querySelectorAll('.quantity-minus').forEach(button => button.addEventListener('click', decreaseQuantity));
@@ -65,12 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const purchaseHistory = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
 
         cart.forEach(item => {
-            // Asegurarse de que el downloadLink apunte a tu dominio
-            let downloadLink = item.downloadLink || null;
-            if (downloadLink && !downloadLink.startsWith('http')) {
-                downloadLink = `https://cyberxtremeprograms.store/${downloadLink.replace(/^\//, '')}`;
-            }
-
             const purchaseItem = {
                 id: item.id,
                 name: item.name,
@@ -79,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 quantity: item.quantity,
                 downloads: 0,
                 purchaseDate: new Date().toISOString(),
-                downloadLink: downloadLink
+                downloadLink: item.downloadLink // aquí va el enlace directo de MediaFire
             };
             purchaseHistory.push(purchaseItem);
         });
@@ -88,9 +82,11 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.removeItem('cart');
         renderCart();
         alert('¡Compra realizada con éxito!');
+
+        // Redirige a Mis Compras para descargar
         setTimeout(() => window.location.href = '/mis-compras/mis-compras.html', 1500);
     }
-    
+
     function removeItem(event) {
         const id = event.target.dataset.id;
         let cart = getCart();
@@ -132,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Producto añadido al carrito!');
         if (window.location.pathname.endsWith('carrito.html')) renderCart();
     };
-    
+
     if (window.location.pathname.endsWith('carrito.html')) {
         renderCart();
         if (checkoutButton) checkoutButton.addEventListener('click', confirmPurchase);
