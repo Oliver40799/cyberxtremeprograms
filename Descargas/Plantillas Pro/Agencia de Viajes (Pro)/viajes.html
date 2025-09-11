@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajes & Destinos Pro</title>
+    <link rel="stylesheet" href="viajes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-plane-departure"></i> TravelPro
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link" data-page="home">Inicio</a></li>
+                    <li><a href="#destinos" class="nav-link">Destinos</a></li>
+                    <li><a href="#" class="nav-link" data-page="cotizacion">Cotizar Viaje</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section id="home-page" class="page-section active">
+            <div class="hero-section">
+                <h1>Tu Aventura Comienza Aquí</h1>
+                <p>Encuentra el paquete de viaje perfecto o cotiza tu itinerario soñado.</p>
+            </div>
+
+            <div class="search-form-container">
+                <h2 class="section-title">Encuentra tu Próximo Viaje</h2>
+                <form id="search-form" class="search-form">
+                    <div class="input-group">
+                        <label for="destination">Destino:</label>
+                        <input type="text" id="destination" placeholder="Ej: París, Tailandia...">
+                    </div>
+                    <div class="input-group">
+                        <label for="date">Fecha:</label>
+                        <input type="date" id="date">
+                    </div>
+                    <div class="input-group">
+                        <label for="pax">Pasajeros:</label>
+                        <input type="number" id="pax" value="2" min="1">
+                    </div>
+                    <button type="submit" class="cta-btn"><i class="fa-solid fa-magnifying-glass"></i> Buscar Paquetes</button>
+                </form>
+            </div>
+
+            <div id="destinos" class="destinations-section">
+                <h2 class="section-title">Destinos Más Populares</h2>
+                <div id="destinos-grid" class="destinations-grid">
+                    </div>
+            </div>
+        </section>
+
+        <section id="results-page" class="page-section hidden">
+            <h2 class="section-title">Resultados de Búsqueda</h2>
+            <div id="results-list" class="results-list">
+                </div>
+        </section>
+
+        <section id="cotizacion-page" class="page-section hidden">
+            <h2 class="section-title">Cotiza tu Viaje Personalizado</h2>
+            <p class="section-subtitle">Cuéntanos sobre el viaje de tus sueños y te ayudaremos a hacerlo realidad.</p>
+            <form id="quote-form" class="quote-form">
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="quote-name">Nombre Completo:</label>
+                        <input type="text" id="quote-name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="quote-email">Correo Electrónico:</label>
+                        <input type="email" id="quote-email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="quote-destination">Destino Deseado:</label>
+                        <input type="text" id="quote-destination" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="quote-date">Fechas del Viaje:</label>
+                        <input type="text" id="quote-date" placeholder="Ej: 15-22 de Diciembre" required>
+                    </div>
+                </div>
+                <div class="input-group full-width">
+                    <label for="quote-details">Detalles del Viaje:</label>
+                    <textarea id="quote-details" rows="5" placeholder="Número de personas, preferencias de hotel, actividades, presupuesto, etc."></textarea>
+                </div>
+                <button type="submit" class="cta-btn full-width"><i class="fa-solid fa-paper-plane"></i> Enviar Cotización</button>
+            </form>
+        </section>
+        
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 TravelPro. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="viajes.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Minimalista</title>
+    <link rel="stylesheet" href="tienda.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1 class="logo">Minimalista</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon" id="cart-icon">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <img src="https://via.placeholder.com/1200x400/999999/FFFFFF?text=Nueva+Colección" alt="Slide 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://via.placeholder.com/1200x400/888888/FFFFFF?text=Ofertas+Exclusivas" alt="Slide 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://via.placeholder.com/1200x400/777777/FFFFFF?text=Estilo+Urbano" alt="Slide 3">
+            </div>
+            <button class="carousel-button prev">&#10094;</button>
+            <button class="carousel-button next">&#10095;</button>
+        </div>
+
+        <section class="products-grid" id="products-grid">
+            </section>
+    </main>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Tu Carrito</h2>
+            <div id="cart-items">
+                </div>
+            <div class="cart-summary">
+                <p>Total: $<span id="cart-total">0.00</span></p>
+                <button id="checkout-button">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="tienda.js"></script>
+</body>
+</html>

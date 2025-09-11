@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecnoShop Pro</title>
+    <link rel="stylesheet" href="electronica.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container container">
+            <a href="#" class="logo">TecnoShop</a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link" data-page="home">Inicio</a></li>
+                    <li><a href="#" class="nav-link" data-page="compare"><i class="fa-solid fa-code-compare"></i> Comparar</a></li>
+                    <li><a href="#" class="nav-link" data-page="cart"><i class="fa-solid fa-cart-shopping"></i> Carrito (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section id="hero-section">
+            <div class="hero-content">
+                <h1>Tecnología de Vanguardia a tu Alcance</h1>
+                <p>Explora nuestra selección de los gadgets más innovadores del mercado. ¡Envío rápido y seguro!</p>
+                <a href="#productos" class="cta-btn">Explorar Ahora</a>
+            </div>
+        </section>
+
+        <section id="home-page" class="page-section active">
+            <h2 class="section-title">Productos Destacados</h2>
+            <div id="productos-grid" class="products-grid">
+                </div>
+        </section>
+
+        <section id="product-detail-page" class="page-section hidden">
+            <div class="product-detail-container">
+                <div class="product-image">
+                    <img id="product-main-image" src="" alt="Imagen del producto">
+                </div>
+                <div class="product-info">
+                    <h2 id="product-title"></h2>
+                    <p id="product-price" class="price"></p>
+                    <p id="product-description"></p>
+                    <button id="add-to-cart-btn" class="cta-btn"><i class="fa-solid fa-cart-plus"></i> Añadir al Carrito</button>
+
+                    <div class="product-details-box">
+                        <h3>Ficha Técnica</h3>
+                        <ul id="product-specs" class="specs-list">
+                            </ul>
+                    </div>
+
+                    <div class="product-details-box">
+                        <h3>Opiniones de Clientes</h3>
+                        <div id="reviews-container" class="reviews-container">
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cart-page" class="page-section hidden">
+            <h2 class="section-title">Tu Carrito de Compras</h2>
+            <div id="cart-items-container" class="cart-items-container">
+                </div>
+            <div class="cart-summary">
+                <p class="total">Total: <span id="cart-total">0.00</span> USD</p>
+                <button id="checkout-btn" class="cta-btn">Finalizar Compra</button>
+            </div>
+        </section>
+
+        <section id="compare-page" class="page-section hidden">
+            <h2 class="section-title">Comparador de Productos</h2>
+            <p class="section-subtitle">Selecciona hasta 3 productos para comparar sus especificaciones.</p>
+            <div class="compare-selector-grid">
+                </div>
+            <div id="comparison-table" class="comparison-table hidden">
+                </div>
+        </section>
+        
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 TecnoShop Pro. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="electronica.js"></script>
+</body>
+</html>

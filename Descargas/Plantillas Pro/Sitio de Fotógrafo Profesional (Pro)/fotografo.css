@@ -1,0 +1,251 @@
+/* Estilos Generales */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+.section-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* Encabezado */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: #000;
+}
+
+/* Sección Héroe */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1200x600/555/eee?text=Fotografía+Profesional') no-repeat center center/cover;
+    color: #fff;
+    padding: 8rem 1rem;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+.cta-button {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.cta-button:hover {
+    background-color: #333;
+}
+
+/* Galerías */
+.portfolio-grid, .client-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+.portfolio-item, .gallery-image-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+.portfolio-item img, .gallery-image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+.portfolio-item:hover img, .gallery-image-item:hover img {
+    transform: scale(1.1);
+}
+
+.private-gallery-section .password-form-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.password-form-container input {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.password-form-container button {
+    padding: 0.75rem 1.5rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.client-gallery-container.hidden {
+    display: none;
+}
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+}
+.gallery-image-item:hover .image-overlay {
+    transform: translateY(0);
+}
+.order-print-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Blog */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.blog-post {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.blog-post img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.blog-post h3 {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+}
+.blog-post p {
+    padding: 0 1rem;
+    color: #666;
+}
+
+/* Contacto y Formularios */
+.contact-section {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+input, textarea, select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.submit-btn {
+    display: block;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.submit-btn:hover {
+    background-color: #333;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+}
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close-btn:hover {
+    color: #000;
+}

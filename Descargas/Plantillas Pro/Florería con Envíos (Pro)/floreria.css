@@ -1,0 +1,329 @@
+/* Paleta de Colores y Tipografía */
+:root {
+    --primary-color: #5a4a42; /* Marrón Chocolate - Elegancia */
+    --secondary-color: #e6d6d1; /* Rosa Suave - Delicadeza */
+    --accent-color: #c0a068;   /* Dorado - Toque Premium */
+    --text-color: #333;
+    --light-text-color: #7f8c8d;
+    --bg-color: #f8f8f8;
+    --card-bg: #fff;
+    --border-color: #ddd;
+}
+
+body {
+    font-family: 'Lora', serif; /* Fuente elegante y clásica */
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Encabezado */
+.main-header {
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.logo i {
+    color: var(--accent-color);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: color 0.3s;
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
+/* Secciones y Botones */
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 3rem 0 1rem;
+    color: var(--primary-color);
+}
+
+.page-section {
+    padding: 2rem 0;
+}
+
+.page-section.hidden {
+    display: none;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+}
+.cta-btn:hover {
+    background-color: #4a3c36;
+    transform: translateY(-2px);
+}
+.full-width {
+    width: 100%;
+}
+
+/* Catálogo de Arreglos */
+.flower-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.flower-card {
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+.flower-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.flower-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.flower-info {
+    padding: 1.5rem 1rem;
+}
+
+.flower-info h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.flower-info .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin: 0.5rem 0 1rem;
+}
+
+/* Detalles del Producto */
+.product-detail-container {
+    display: flex;
+    gap: 3rem;
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.product-image img {
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.product-info h2 {
+    font-size: 2.5rem;
+    margin-top: 0;
+    color: var(--primary-color);
+}
+.product-info .price {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+}
+
+.dedication-box {
+    margin: 2rem 0;
+}
+.dedication-box h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+.dedication-box textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: sans-serif;
+    resize: vertical;
+}
+
+/* Carrito y Entrega */
+.cart-items-container {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cart-item-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.cart-item-info img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.cart-item-details h4 {
+    margin: 0;
+    color: var(--primary-color);
+}
+.cart-item .remove-btn {
+    background-color: transparent;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.delivery-details-form {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+}
+.delivery-details-form h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+.input-group input {
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: sans-serif;
+}
+.input-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.cart-summary {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    text-align: right;
+}
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+.summary-line.total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    border-top: 1px dashed var(--primary-color);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+.summary-line span {
+    color: var(--primary-color);
+}
+.summary-line.total span {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+#checkout-btn {
+    margin-top: 1.5rem;
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2.5rem 0;
+    text-align: center;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .header-container, .form-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .product-detail-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .product-image img {
+        width: 100%;
+    }
+}

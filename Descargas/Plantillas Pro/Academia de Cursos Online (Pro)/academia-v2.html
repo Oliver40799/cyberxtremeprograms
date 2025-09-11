@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia Online (Pro) - V2</title>
+    <link rel="stylesheet" href="academia-v2.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1 class="logo">Academia Pro</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#cursos">Cursos</a></li>
+                    <li><a href="#instructores">Instructores</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#" id="login-nav-link">Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2>Aprende a tu ritmo, en cualquier lugar.</h2>
+                <p>Cursos de alta calidad para impulsar tu carrera y tus pasiones.</p>
+                <a href="#cursos" class="cta-button">Explora Cursos</a>
+            </div>
+        </section>
+
+        <section id="cursos" class="page-section container">
+            <h2 class="section-title">Nuestros Cursos</h2>
+            <div class="courses-grid">
+                <div class="course-card" data-course-id="1">
+                    <img src="https://via.placeholder.com/400x250/dcdcdc/000?text=Diseño+Gráfico" alt="Diseño Gráfico">
+                    <div class="course-info">
+                        <h3>Curso de Diseño Gráfico</h3>
+                        <p class="course-instructor">por Ana Torres</p>
+                        <p class="course-price">$89</p>
+                        <button class="view-course-btn">Ver Curso</button>
+                    </div>
+                </div>
+                <div class="course-card" data-course-id="2">
+                    <img src="https://via.placeholder.com/400x250/c0c0c0/000?text=Programación+Python" alt="Programación Python">
+                    <div class="course-info">
+                        <h3>Programación con Python</h3>
+                        <p class="course-instructor">por Juan Pérez</p>
+                        <p class="course-price">$129</p>
+                        <button class="view-course-btn">Ver Curso</button>
+                    </div>
+                </div>
+                <div class="course-card" data-course-id="3">
+                    <img src="https://via.placeholder.com/400x250/a0a0a0/000?text=Fotografía" alt="Fotografía Profesional">
+                    <div class="course-info">
+                        <h3>Fotografía Profesional</h3>
+                        <p class="course-instructor">por Carlos Romero</p>
+                        <p class="course-price">$75</p>
+                        <button class="view-course-btn">Ver Curso</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="instructores" class="page-section container">
+            <h2 class="section-title">Conoce a los Expertos</h2>
+            <div class="instructors-grid">
+                <div class="instructor-card">
+                    <img src="https://via.placeholder.com/150x150/f0f0f0/000?text=Juan+P" alt="Juan Pérez">
+                    <h3>Juan Pérez</h3>
+                    <p>Desarrollador Senior</p>
+                </div>
+                <div class="instructor-card">
+                    <img src="https://via.placeholder.com/150x150/dcdcdc/000?text=Ana+T" alt="Ana Torres">
+                    <h3>Ana Torres</h3>
+                    <p>Diseñadora UX/UI</p>
+                </div>
+                <div class="instructor-card">
+                    <img src="https://via.placeholder.com/150x150/c0c0c0/000?text=Carlos+R" alt="Carlos Romero">
+                    <h3>Carlos Romero</h3>
+                    <p>Fotógrafo Profesional</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="page-section testimonials-section">
+            <h2 class="section-title">Lo que dicen nuestros estudiantes</h2>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"El mejor curso que he tomado. El instructor explica de manera muy clara y el contenido es excelente."</p>
+                        <p class="testimonial-author">- Luis Gómez</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Pude mejorar mis habilidades de fotografía y ya tengo mi primer cliente. ¡Gracias, Academia Pro!"</p>
+                        <p class="testimonial-author">- Sofía Vargas</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"La interfaz es muy intuitiva. Me inscribí en el curso de Python y ya me siento mucho más seguro programando."</p>
+                        <p class="testimonial-author">- Javier Morales</p>
+                    </div>
+                </div>
+                <button class="carousel-button prev">&lt;</button>
+                <button class="carousel-button next">&gt;</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="course-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modal-content-area">
+                </div>
+        </div>
+    </div>
+
+    <script src="academia-v2.js"></script>
+</body>
+</html>

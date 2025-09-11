@@ -1,0 +1,251 @@
+/* Estilos Generales */
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+.section-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+/* Encabezado */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: #a04000;
+}
+
+/* Sección Héroe */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1200x600/555/eee?text=Restaurante') no-repeat center center/cover;
+    color: #fff;
+    padding: 8rem 1rem;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+.cta-button {
+    display: inline-block;
+    background-color: #a04000;
+    color: #fff;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.cta-button:hover {
+    background-color: #803300;
+}
+
+/* Sección de Menú */
+.menu-filters {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.menu-filter-btn {
+    background-color: #ddd;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border-radius: 20px;
+    margin: 0 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.menu-filter-btn:hover, .menu-filter-btn.active {
+    background-color: #a04000;
+    color: #fff;
+}
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+.menu-item {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.menu-item-info {
+    padding: 1.5rem;
+}
+.menu-item-info h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+.menu-item-info .price {
+    font-weight: bold;
+    color: #a04000;
+}
+.menu-item.hidden {
+    display: none;
+}
+
+/* Sección de Galería */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Sección de Reservas y Formulario */
+.reservations-section {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+#reservation-form .form-group {
+    margin-bottom: 1.5rem;
+}
+#reservation-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+#reservation-form input,
+#reservation-form select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.submit-btn {
+    display: block;
+    width: 100%;
+    background-color: #a04000;
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.submit-btn:hover {
+    background-color: #803300;
+}
+
+/* Sección de Ubicación */
+.location-section {
+    text-align: center;
+}
+.map-placeholder {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    border-radius: 8px;
+    margin-top: 2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Modal de Galería */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+}
+.close-modal-btn {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.close-modal-btn:hover {
+    color: #bbb;
+}

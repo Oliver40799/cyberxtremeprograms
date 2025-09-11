@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banda | The Riff Riders</title>
+    <link rel="stylesheet" href="banda.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container container">
+            <a href="#" class="logo" data-page="home">
+                <i class="fa-solid fa-guitar"></i> The Riff Riders
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link" data-page="home">Música</a></li>
+                    <li><a href="#" class="nav-link" data-page="store">Tienda</a></li>
+                    <li><a href="#" class="nav-link" data-page="tour">Tour</a></li>
+                    <li><a href="#" class="nav-link" data-page="cart">
+                        <i class="fa-solid fa-bag-shopping"></i> Carrito (<span id="cart-count">0</span>)
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section id="home-page" class="page-section active">
+            <div class="hero-section">
+                <h1>The Riff Riders</h1>
+                <p>Rock and roll sin límites desde el corazón de la ciudad.</p>
+                <a href="#music-player" class="cta-btn">Escuchar Ahora</a>
+            </div>
+
+            <div id="music-player" class="music-player-container">
+                <div class="player-controls">
+                    <img id="current-track-cover" src="https://via.placeholder.com/150/1c1c1c/fff?text=Album" alt="Portada del álbum">
+                    <div class="player-info">
+                        <h3 id="current-track-title"></h3>
+                        <p id="current-track-artist"></p>
+                    </div>
+                    <div class="controls-buttons">
+                        <button id="prev-btn"><i class="fa-solid fa-backward-step"></i></button>
+                        <button id="play-pause-btn"><i class="fa-solid fa-play"></i></button>
+                        <button id="next-btn"><i class="fa-solid fa-forward-step"></i></button>
+                    </div>
+                </div>
+                <ul id="playlist" class="playlist">
+                    </ul>
+            </div>
+        </section>
+
+        <section id="store-page" class="page-section hidden">
+            <h2 class="section-title">Tienda Oficial</h2>
+            <div id="merch-grid" class="merch-grid">
+                </div>
+        </section>
+
+        <section id="cart-page" class="page-section hidden">
+            <h2 class="section-title">Tu Carrito</h2>
+            <div id="cart-items-container" class="cart-items-container">
+                </div>
+            <div class="cart-summary">
+                <p class="total">Total: <span id="cart-total">0.00</span> USD</p>
+                <button id="checkout-btn" class="cta-btn"><i class="fa-solid fa-dollar-sign"></i> Pagar</button>
+            </div>
+        </section>
+
+        <section id="tour-page" class="page-section hidden">
+            <h2 class="section-title">Próximos Conciertos</h2>
+            <div id="tour-calendar" class="tour-calendar">
+                </div>
+        </section>
+    
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-spotify"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2025 The Riff Riders. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="banda.js"></script>
+</body>
+</html>

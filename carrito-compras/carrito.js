@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     const cartItemsContainer = document.getElementById('cart-items');
     const cartTotalElement = document.getElementById('cart-total');
     const checkoutButton = document.getElementById('checkout-button');
@@ -55,6 +54,22 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.quantity-minus').forEach(button => button.addEventListener('click', decreaseQuantity));
     }
 
+    function findAndUpdateInHistory(item, history) {
+        const existingItem = history.find(histItem => histItem.id === item.id);
+        if (existingItem) {
+            existingItem.quantity += item.quantity;
+            existingItem.downloads += 0;
+            // ⭐ CORRECCIÓN: no modifies el precio unitario
+        } else {
+            history.push({
+                ...item,
+                downloads: 0,
+                purchaseDate: new Date().toISOString(),
+                isDigital: item.isDigital || false
+            });
+        }
+    }
+
     function confirmPurchase() {
         const cart = getCart();
         if (cart.length === 0) {
@@ -62,20 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const purchaseHistory = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
+        let purchaseHistory = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
 
         cart.forEach(item => {
-            const purchaseItem = {
-                id: item.id,
-                name: item.name,
-                price: item.price * item.quantity,
-                image: item.image,
-                quantity: item.quantity,
-                downloads: 0,
-                purchaseDate: new Date().toISOString(),
-                downloadLink: item.downloadLink // aquí va el enlace directo de MediaFire
-            };
-            purchaseHistory.push(purchaseItem);
+            findAndUpdateInHistory(item, purchaseHistory);
         });
 
         localStorage.setItem('purchaseHistory', JSON.stringify(purchaseHistory));
@@ -83,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCart();
         alert('¡Compra realizada con éxito!');
 
-        // Redirige a Mis Compras para descargar
         setTimeout(() => window.location.href = '/mis-compras/mis-compras.html', 1500);
     }
 
@@ -113,21 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
         saveCart(cart);
         renderCart();
     }
-
-    window.addToCart = function(product) {
-        let cart = getCart();
-        let existingProduct = cart.find(item => item.id === product.id);
-
-        if (existingProduct) {
-            existingProduct.quantity += 1;
-        } else {
-            product.quantity = 1;
-            cart.push(product);
-        }
-        saveCart(cart);
-        alert('Producto añadido al carrito!');
-        if (window.location.pathname.endsWith('carrito.html')) renderCart();
-    };
 
     if (window.location.pathname.endsWith('carrito.html')) {
         renderCart();
