@@ -1479,3 +1479,82 @@ body {
     margin-top: 20px;
 }
 
+/* Estilos para los contenedores de anuncios verticales y estáticos a los costados */
+.left-ad-container,
+.right-ad-container {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 600px;
+    background-color: #212121;
+    border: 1px solid #00FFFF;
+    border-radius: 10px;
+    z-index: 100;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.left-ad-container {
+    left: 20px;
+}
+
+.right-ad-container {
+    right: 20px;
+}
+
+.ad-title {
+    font-size: 1em;
+    font-weight: bold;
+    color: #00FFFF;
+    margin-bottom: 10px;
+}
+
+.ad-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Ajustes para el contenido principal con los anuncios laterales */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 150px;
+}
+
+/* Estilos para que el footer tenga el mismo ancho que el contenido principal */
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px 0 10px;
+    font-size: 13px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: left;
+    max-width: 1200px; /* Esto hace que el footer se adapte al ancho del contenido */
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 15px;
+}
+
+/* Media query para ocultar los anuncios en pantallas pequeñas */
+@media (max-width: 1200px) {
+    .left-ad-container,
+    .right-ad-container {
+        display: none;
+    }
+    .main-content {
+        padding: 0 20px;
+    }
+}
