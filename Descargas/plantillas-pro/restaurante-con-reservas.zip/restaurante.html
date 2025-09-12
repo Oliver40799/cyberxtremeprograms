@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante (Pro)</title>
+    <link rel="stylesheet" href="restaurante.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1 class="logo">Mi Restaurante</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#menu">Menú</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#reservas">Reservas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2>Crea Sabores Inolvidables</h2>
+                <p>Descubre nuestra experiencia culinaria y reserva tu mesa hoy mismo.</p>
+                <a href="#reservas" class="cta-button">Reservar Ahora</a>
+            </div>
+        </section>
+
+        <section id="menu" class="menu-section">
+            <h2 class="section-title">Nuestro Menú</h2>
+            <div class="menu-filters">
+                <button class="menu-filter-btn active" data-category="all">Todos</button>
+                <button class="menu-filter-btn" data-category="entradas">Entradas</button>
+                <button class="menu-filter-btn" data-category="platos">Platos Principales</button>
+                <button class="menu-filter-btn" data-category="postres">Postres</button>
+            </div>
+            <div class="menu-grid">
+                </div>
+        </section>
+
+        <section id="galeria" class="gallery-section">
+            <h2 class="section-title">Galería de Eventos</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-image="https://via.placeholder.com/600x400/ccc/000?text=Evento+1">
+                    <img src="https://via.placeholder.com/400x300/ccc/000?text=Evento+1" alt="Evento 1">
+                </div>
+                <div class="gallery-item" data-image="https://via.placeholder.com/600x400/bbb/000?text=Evento+2">
+                    <img src="https://via.placeholder.com/400x300/bbb/000?text=Evento+2" alt="Evento 2">
+                </div>
+                <div class="gallery-item" data-image="https://via.placeholder.com/600x400/aaa/000?text=Evento+3">
+                    <img src="https://via.placeholder.com/400x300/aaa/000?text=Evento+3" alt="Evento 3">
+                </div>
+            </div>
+        </section>
+
+        <section id="reservas" class="reservations-section">
+            <h2 class="section-title">Reserva una Mesa</h2>
+            <p class="section-subtitle">Completa el formulario y nos pondremos en contacto contigo.</p>
+            <form id="reservation-form">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Fecha</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Hora</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Número de Personas</label>
+                    <input type="number" id="guests" name="guests" min="1" required>
+                </div>
+                <button type="submit" class="submit-btn">Confirmar Reserva</button>
+            </form>
+        </section>
+
+        <section class="location-section">
+            <h2 class="section-title">Encuéntranos</h2>
+            <p class="section-subtitle">Visítanos en nuestra ubicación.</p>
+            <div id="map-container">
+                <img src="https://via.placeholder.com/800x400/dcdcdc/000000?text=Mapa+del+Restaurante" alt="Mapa de Ubicación" class="map-placeholder">
+            </div>
+        </section>
+    </main>
+    
+    <div id="gallery-modal" class="modal">
+        <span class="close-modal-btn">&times;</span>
+        <img class="modal-content" id="modal-image">
+    </div>
+
+    <script src="restaurante.js"></script>
+</body>
+</html>

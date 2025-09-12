@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesoría Financiera Pro</title>
+    <link rel="stylesheet" href="finanzas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-chart-line"></i> Asesoría Financiera
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#calculadoras" class="nav-link">Calculadoras</a></li>
+                    <li><a href="#blog" class="nav-link">Artículos</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                    <li><a href="#" class="nav-link login-btn"><i class="fa-solid fa-user"></i> Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section id="hero-section">
+            <div class="hero-content">
+                <h1>Tu Futuro Financiero en Manos Expertas</h1>
+                <p>Ofrecemos soluciones personalizadas para que alcances tus metas de ahorro, inversión y retiro.</p>
+                <a href="#contacto" class="cta-btn">Agenda una Consulta Gratuita</a>
+            </div>
+        </section>
+
+        <section id="calculadoras" class="page-section">
+            <h2 class="section-title">Calculadoras Financieras</h2>
+            <div class="calculator-tabs">
+                <button class="tab-btn active" data-tab="loan-calc">Préstamos</button>
+                <button class="tab-btn" data-tab="investment-calc">Inversiones</button>
+            </div>
+            
+            <div id="loan-calc" class="calculator-container active">
+                <h3>Calculadora de Préstamos</h3>
+                <div class="input-group">
+                    <label for="loan-amount">Monto del Préstamo ($):</label>
+                    <input type="number" id="loan-amount" value="10000" min="1000">
+                </div>
+                <div class="input-group">
+                    <label for="loan-interest">Tasa de Interés Anual (%):</label>
+                    <input type="number" id="loan-interest" value="5" step="0.1" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="loan-term">Plazo (años):</label>
+                    <input type="number" id="loan-term" value="5" min="1">
+                </div>
+                <button id="calculate-loan-btn" class="calc-btn">Calcular</button>
+                <div id="loan-result" class="result-box"></div>
+            </div>
+
+            <div id="investment-calc" class="calculator-container hidden">
+                <h3>Calculadora de Inversiones</h3>
+                <div class="input-group">
+                    <label for="initial-investment">Inversión Inicial ($):</label>
+                    <input type="number" id="initial-investment" value="5000" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="monthly-contribution">Contribución Mensual ($):</label>
+                    <input type="number" id="monthly-contribution" value="100" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="investment-return">Tasa de Retorno Anual (%):</label>
+                    <input type="number" id="investment-return" value="8" step="0.1" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="investment-term">Plazo (años):</label>
+                    <input type="number" id="investment-term" value="10" min="1">
+                </div>
+                <button id="calculate-investment-btn" class="calc-btn">Calcular</button>
+                <div id="investment-result" class="result-box"></div>
+            </div>
+        </section>
+
+        <section id="blog" class="page-section">
+            <h2 class="section-title">Artículos sobre Finanzas Personales</h2>
+            <div id="articles-grid" class="articles-grid">
+                </div>
+        </section>
+
+        <section id="contacto" class="page-section">
+            <h2 class="section-title">Agenda tu Asesoría</h2>
+            <p class="section-subtitle">Completa el formulario y nos pondremos en contacto contigo para una consulta gratuita.</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Nombre Completo" required>
+                <input type="email" placeholder="Correo Electrónico" required>
+                <textarea placeholder="Cuéntanos tus metas financieras..." required></textarea>
+                <button type="submit" class="cta-btn">Enviar</button>
+            </form>
+        </section>
+
+        <div id="login-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3>Acceso de Clientes</h3>
+                <p>Ingresa para acceder a tus reportes y recursos exclusivos.</p>
+                <form id="login-form">
+                    <div class="input-group">
+                        <label for="user-email">Correo:</label>
+                        <input type="email" id="user-email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="user-password">Contraseña:</label>
+                        <input type="password" id="user-password" required>
+                    </div>
+                    <button type="submit" class="cta-btn">Iniciar Sesión</button>
+                </form>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p>&copy; 2025 Asesoría Financiera. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="finanzas.js"></script>
+</body>
+</html>

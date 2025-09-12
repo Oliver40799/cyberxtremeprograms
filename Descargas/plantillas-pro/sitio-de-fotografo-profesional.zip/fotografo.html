@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotógrafo Profesional (Pro)</title>
+    <link rel="stylesheet" href="fotografo.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1 class="logo">Foto Studio</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#portafolio">Portafolio</a></li>
+                    <li><a href="#galeria-privada">Galería Privada</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2>Capturando Momentos, Creando Recuerdos</h2>
+                <p>Fotografía profesional para retratos, bodas y eventos.</p>
+                <a href="#contacto" class="cta-button">Agenda una Sesión</a>
+            </div>
+        </section>
+
+        <section id="portafolio" class="portfolio-section">
+            <h2 class="section-title">Portafolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/400x500/dcdcdc/000000?text=Retrato" alt="Retrato">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/400x500/c0c0c0/000000?text=Boda" alt="Boda">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/400x500/a0a0a0/000000?text=Evento" alt="Evento">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/400x500/909090/000000?text=Paisaje" alt="Paisaje">
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria-privada" class="private-gallery-section">
+            <h2 class="section-title">Galería de Clientes</h2>
+            <p class="section-subtitle">Accede a tus fotos personales con una contraseña.</p>
+            <div class="password-form-container">
+                <form id="password-form">
+                    <input type="password" id="gallery-password" placeholder="Ingresa la contraseña" required>
+                    <button type="submit">Acceder</button>
+                </form>
+            </div>
+            
+            <div class="client-gallery-container hidden">
+                <p class="section-subtitle">Bienvenido, aquí están tus fotos.</p>
+                <div class="client-gallery-grid">
+                    <div class="gallery-image-item" data-image="https://via.placeholder.com/800x600/b0b0b0/000000?text=Foto+1">
+                        <img src="https://via.placeholder.com/400x300/b0b0b0/000000?text=Foto+1" alt="Foto 1">
+                        <div class="image-overlay">
+                            <button class="order-print-btn">Pedir Impresión</button>
+                        </div>
+                    </div>
+                    <div class="gallery-image-item" data-image="https://via.placeholder.com/800x600/909090/000000?text=Foto+2">
+                        <img src="https://via.placeholder.com/400x300/909090/000000?text=Foto+2" alt="Foto 2">
+                        <div class="image-overlay">
+                            <button class="order-print-btn">Pedir Impresión</button>
+                        </div>
+                    </div>
+                    <div class="gallery-image-item" data-image="https://via.placeholder.com/800x600/707070/000000?text=Foto+3">
+                        <img src="https://via.placeholder.com/400x300/707070/000000?text=Foto+3">
+                        <div class="image-overlay">
+                            <button class="order-print-btn">Pedir Impresión</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="blog-section">
+            <h2 class="section-title">Blog</h2>
+            <p class="section-subtitle">Tips y guías de fotografía.</p>
+            <div class="blog-grid">
+                <div class="blog-post">
+                    <img src="https://via.placeholder.com/400x250/ccc/000?text=Tips+de+Fotografía" alt="Tips de Fotografía">
+                    <h3>Cómo Lograr el Retrato Perfecto</h3>
+                    <p>Aprende las claves para iluminar y componer un retrato inolvidable.</p>
+                </div>
+                <div class="blog-post">
+                    <img src="https://via.placeholder.com/400x250/bbb/000?text=Equipo+Profesional" alt="Equipo Profesional">
+                    <h3>Equipo Esencial para Fotógrafos</h3>
+                    <p>Una guía completa sobre cámaras, lentes y accesorios indispensables.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact-section">
+            <h2 class="section-title">Contáctame</h2>
+            <p class="section-subtitle">Trabajemos juntos para capturar tus momentos especiales.</p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Pedir Impresión</h3>
+            <p>Selecciona el tamaño y la cantidad para tu impresión.</p>
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="size-select">Tamaño</label>
+                    <select id="size-select" name="size" required>
+                        <option value="13x18cm">13x18cm</option>
+                        <option value="20x25cm">20x25cm</option>
+                        <option value="30x40cm">30x40cm</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Cantidad</label>
+                    <input type="number" id="quantity" name="quantity" value="1" min="1" required>
+                </div>
+                <input type="hidden" id="photo-url" name="photo-url">
+                <button type="submit" class="submit-btn">Confirmar Pedido</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="fotografo.js"></script>
+</body>
+</html>

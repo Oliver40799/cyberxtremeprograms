@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Médica (Pro)</title>
+    <link rel="stylesheet" href="clinica.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1 class="logo">Clínica Salud</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#doctores">Doctores</a></li>
+                    <li><a href="#citas">Citas</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2>Cuidado de la Salud al Alcance de tu Mano</h2>
+                <p>Agenda tu cita en línea con nuestros especialistas.</p>
+                <a href="#citas" class="cta-button">Agenda una Cita</a>
+            </div>
+        </section>
+
+        <section id="doctores" class="doctors-section">
+            <h2 class="section-title">Nuestros Doctores</h2>
+            <p class="section-subtitle">Conoce a nuestro equipo de especialistas.</p>
+            <div class="doctors-grid">
+                <div class="doctor-card">
+                    <img src="https://via.placeholder.com/300x300/e6e6e6?text=Dr.+Perez" alt="Dr. Perez">
+                    <h3>Dr. Juan Pérez</h3>
+                    <p class="specialty">Cardiólogo</p>
+                    <p class="bio">Especialista en enfermedades cardiovasculares con más de 10 años de experiencia.</p>
+                </div>
+                <div class="doctor-card">
+                    <img src="https://via.placeholder.com/300x300/e6e6e6?text=Dra.+Garcia" alt="Dra. Garcia">
+                    <h3>Dra. Ana García</h3>
+                    <p class="specialty">Pediatra</p>
+                    <p class="bio">Dedicada al cuidado de la salud infantil desde el nacimiento hasta la adolescencia.</p>
+                </div>
+                <div class="doctor-card">
+                    <img src="https://via.placeholder.com/300x300/e6e6e6?text=Dr.+Lopez" alt="Dr. Lopez">
+                    <h3>Dr. Luis López</h3>
+                    <p class="specialty">Dermatólogo</p>
+                    <p class="bio">Experto en el diagnóstico y tratamiento de enfermedades de la piel.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="citas" class="appointment-section">
+            <h2 class="section-title">Agenda tu Cita</h2>
+            <p class="section-subtitle">Selecciona el doctor y el horario que más te convenga.</p>
+            <form id="appointment-form">
+                <div class="form-group">
+                    <label for="patient-name">Nombre Completo</label>
+                    <input type="text" id="patient-name" name="patient-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="doctor-select">Doctor</label>
+                    <select id="doctor-select" name="doctor-select" required>
+                        <option value="">Selecciona un doctor</option>
+                        <option value="dr-perez">Dr. Juan Pérez</option>
+                        <option value="dra-garcia">Dra. Ana García</option>
+                        <option value="dr-lopez">Dr. Luis López</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-date">Fecha</label>
+                    <input type="date" id="appointment-date" name="appointment-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-time">Hora</label>
+                    <input type="time" id="appointment-time" name="appointment-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="patient-history">Motivo de la Cita (Historia Clínica)</label>
+                    <textarea id="patient-history" name="patient-history" rows="5" placeholder="Describe brevemente el motivo de tu consulta..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Confirmar Cita</button>
+            </form>
+        </section>
+
+        <section id="blog" class="blog-section">
+            <h2 class="section-title">Blog de Salud</h2>
+            <p class="section-subtitle">Consejos e información de nuestros expertos.</p>
+            <div class="blog-grid">
+                <div class="blog-post">
+                    <img src="https://via.placeholder.com/400x250/d0d0d0/000?text=Post+1" alt="Post 1">
+                    <h3>7 Consejos para una Vida Saludable</h3>
+                    <p>Mantener un estilo de vida saludable es clave para prevenir enfermedades y mejorar tu bienestar general.</p>
+                    <a href="#" class="read-more">Leer más &rarr;</a>
+                </div>
+                <div class="blog-post">
+                    <img src="https://via.placeholder.com/400x250/c0c0c0/000?text=Post+2" alt="Post 2">
+                    <h3>Importancia de las Citas de Control</h3>
+                    <p>Las visitas regulares a tu médico son fundamentales para el diagnóstico temprano de cualquier condición.</p>
+                    <a href="#" class="read-more">Leer más &rarr;</a>
+                </div>
+                <div class="blog-post">
+                    <img src="https://via.placeholder.com/400x250/b0b0b0/000?text=Post+3" alt="Post 3">
+                    <h3>Cómo Proteger tu Piel del Sol</h3>
+                    <p>Aprende las mejores prácticas para cuidar tu piel y evitar los efectos dañinos de la exposición solar.</p>
+                    <a href="#" class="read-more">Leer más &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="clinica.js"></script>
+</body>
+</html>

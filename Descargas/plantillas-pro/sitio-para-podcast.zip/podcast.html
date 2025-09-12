@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast Pro</title>
+    <link rel="stylesheet" href="podcast.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-microphone"></i> Mi Podcast
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#episodios">Episodios</a></li>
+                    <li><a href="#patrocinadores">Patrocinadores</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>Tu dosis semanal de inspiración</h1>
+                    <p>Entrevistas profundas, historias que conectan y debates que te hacen pensar. Suscríbete y no te pierdas ningún episodio.</p>
+                    <button class="cta-btn subscribe-btn"><i class="fa-solid fa-bell"></i> Suscribirme</button>
+                </div>
+                <div class="hero-image">
+                    <img src="https://via.placeholder.com/600x400/2c3e50/ecf0f1?text=Ilustración+de+Podcast" alt="Ilustración de podcast">
+                </div>
+            </div>
+        </section>
+
+        <section id="episodios" class="episodes-section container">
+            <h2 class="section-title">Últimos Episodios</h2>
+            
+            <div class="audio-player-container">
+                <div class="audio-player">
+                    <h3 id="player-title"></h3>
+                    <p id="player-description"></p>
+                    <audio id="audio-player-element" controls></audio>
+                </div>
+            </div>
+
+            <div class="episodes-list">
+                </div>
+        </section>
+
+        <section id="patrocinadores" class="sponsors-section">
+            <div class="container">
+                <h2 class="section-title">Nuestros Patrocinadores</h2>
+                <div class="sponsors-gallery">
+                    <img src="https://via.placeholder.com/200x100/3498db/fff?text=Patrocinador+1" alt="Patrocinador 1">
+                    <img src="https://via.placeholder.com/200x100/9b59b6/fff?text=Patrocinador+2" alt="Patrocinador 2">
+                    <img src="https://via.placeholder.com/200x100/1abc9c/fff?text=Patrocinador+3" alt="Patrocinador 3">
+                    <img src="https://via.placeholder.com/200x100/f1c40f/fff?text=Patrocinador+4" alt="Patrocinador 4">
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Únete a la Conversación</h2>
+                <p class="section-subtitle">Suscríbete a nuestro boletín y deja un comentario.</p>
+                <form class="contact-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit" class="cta-btn"><i class="fa-solid fa-envelope"></i> Suscribirse</button>
+                </form>
+            </div>
+        </section>
+
+        <div id="subscribe-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3>¡Gracias por suscribirte!</h3>
+                <p>Te hemos añadido a nuestra lista para notificarte de nuevos episodios.</p>
+            </div>
+        </div>
+
+        <div id="comments-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3 id="comments-modal-title">Comentarios</h3>
+                <div id="comments-list">
+                    </div>
+                <form id="comment-form" class="comment-form">
+                    <textarea placeholder="Deja tu comentario..." required></textarea>
+                    <button type="submit">Enviar Comentario</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-social">
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-spotify"></i></a>
+            </div>
+            <p>&copy; 2025 Mi Podcast. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="podcast.js"></script>
+</body>
+</html>
