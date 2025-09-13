@@ -11,6 +11,20 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('purchaseHistory', JSON.stringify(history));
     }
 
+    function showToast(message) {
+        const toast = document.createElement('div');
+        toast.classList.add('toast-message');
+        toast.textContent = message;
+        document.body.appendChild(toast);
+        setTimeout(() => {
+            toast.classList.add('show');
+        }, 100);
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 500);
+        }, 2500);
+    }
+
     function renderPurchaseHistory() {
         const purchaseHistory = getPurchaseHistory();
         if (!downloadsContainer) return;
@@ -28,16 +42,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         digitalPurchases.forEach((item, index) => {
-            // Genera la URL para la página de descarga con el ID del producto
-            const downloadPageUrl = `/Descargas/descargas.html?id=${item.id}`;
-            
+            if (item.downloads === undefined) item.downloads = 0;
+            const remainingDownloads = item.quantity - item.downloads;
+
             const purchaseItem = document.createElement('div');
             purchaseItem.classList.add('purchase-item');
 
             let downloadButtonHTML = '';
-            if (item.downloads < item.quantity) {
-                // El enlace ahora apunta a la página de descarga
-                downloadButtonHTML = `<a class="download-button" href="${downloadPageUrl}" data-index="${index}">Descargar (${item.quantity - item.downloads})</a>`;
+            if (remainingDownloads > 0) {
+                downloadButtonHTML = `<a class="download-button" href="#" data-index="${index}">Descargar (${remainingDownloads})</a>`;
             } else {
                 downloadButtonHTML = '<span class="download-button disabled">Descargas agotadas</span>';
             }
@@ -49,27 +62,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>Precio Total: $${(item.price).toFixed(2)} MXN</p>
                     <p>Cantidad: ${item.quantity}</p>
                     <p>Fecha de compra: ${new Date(item.purchaseDate).toLocaleDateString()}</p>
-                    <p>Descargas restantes: ${item.quantity - item.downloads}</p>
+                    <p>Descargas restantes: ${remainingDownloads}</p>
                 </div>
                 ${downloadButtonHTML}
             `;
-
             downloadsContainer.appendChild(purchaseItem);
         });
 
-        // Este evento se encarga de aumentar el contador de descargas ANTES de la redirección
         downloadsContainer.querySelectorAll('.download-button').forEach(button => {
             button.addEventListener('click', (e) => {
+                e.preventDefault();
+
                 const index = parseInt(e.target.dataset.index);
                 const purchaseHistory = getPurchaseHistory();
                 const itemToUpdate = purchaseHistory[index];
-                
+
                 if (itemToUpdate && itemToUpdate.downloads < itemToUpdate.quantity) {
-                    itemToUpdate.downloads += 1;
-                    savePurchaseHistory(purchaseHistory);
-                    
-                    // Ya no se necesita renderHistory() porque la página se recargará
-                    // al ir a descarga.html
+                    // Redirige a la página de descarga
+                    window.location.href = `/Descargas/descargas.html?id=${itemToUpdate.id}&quantity=${itemToUpdate.quantity}`;
+                } else {
+                    e.target.outerHTML = '<span class="download-button disabled">Descargas agotadas</span>';
+                    showToast('Tus descargas ya se agotaron.');
                 }
             });
         });

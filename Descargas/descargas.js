@@ -1,8 +1,30 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => { 
     const productNameElement = document.getElementById('product-name');
     const downloadButton = document.getElementById('download-button');
 
-    // Mapeo de IDs de productos a la URL de descarga completa y CORRECTA
+    // Crear toast
+    const toast = document.createElement('div');
+    toast.id = 'toast';
+    toast.style = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #333;
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 8px;
+        opacity: 0;
+        transition: opacity 0.5s;
+        z-index: 1000;
+    `;
+    document.body.appendChild(toast);
+
+    function showToast(message) {
+        toast.textContent = message;
+        toast.style.opacity = '1';
+        setTimeout(() => { toast.style.opacity = '0'; }, 3000);
+    }
+
     const downloadLinks = {
         'agencia-de-marketing-digital': '/Descargas/plantillas-pro/agencia-de-marketing-digital.zip',
         'academia-de-cursos-online': '/Descargas/plantillas-pro/academia-de-cursos-online.zip',
@@ -26,30 +48,87 @@ document.addEventListener('DOMContentLoaded', () => {
         'venta-de-productos-digitales': '/Descargas/plantillas-pro/venta-de-productos-digitales.zip'
     };
 
-    // Obtenemos el ID del producto de la URL
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
 
-    if (productId) {
-        const productName = productId.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-        const downloadUrl = downloadLinks[productId];
+    if (!productId) {
+        if (productNameElement) productNameElement.textContent = 'Error: Producto no especificado.';
+        if (downloadButton) downloadButton.style.display = 'none';
+        return;
+    }
 
-        if (productNameElement) {
-            productNameElement.textContent = productName;
-        }
+    const productName = productId.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    if (productNameElement) productNameElement.textContent = productName;
 
-        if (downloadButton && downloadUrl) {
-            downloadButton.href = downloadUrl;
-            downloadButton.style.display = 'inline-block';
-        } else if (downloadButton) {
+    const downloadUrl = downloadLinks[productId];
+    if (!downloadUrl) {
+        if (downloadButton) {
             downloadButton.textContent = 'Descarga no disponible';
             downloadButton.classList.add('disabled');
-            downloadButton.href = '#';
+            downloadButton.removeAttribute('href');
+            downloadButton.removeAttribute('download');
         }
-    } else if (productNameElement) {
-        productNameElement.textContent = 'Error: Producto no especificado.';
-        if (downloadButton) {
-            downloadButton.style.display = 'none';
+        return;
+    }
+
+    // Obtener descargas reales del historial
+    let history = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
+    let item = history.find(p => p.id === productId);
+    const currentDownloads = item ? (item.downloads || 0) : 0;
+    const quantityCount = item ? item.quantity : 0;
+
+    if (downloadButton) {
+        if (currentDownloads >= quantityCount) {
+            downloadButton.textContent = 'Descargas agotadas';
+            downloadButton.classList.add('disabled');
+            downloadButton.removeAttribute('href');
+            downloadButton.removeAttribute('download');
+
+            downloadButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                showToast("Tus descargas ya se agotaron.");
+            });
+
+            if (productNameElement) {
+                productNameElement.textContent = `Descargas agotadas para ${productName}`;
+            }
+        } else {
+            downloadButton.download = downloadUrl.split('/').pop();
+            downloadButton.href = downloadUrl;
+            downloadButton.style.display = 'inline-block';
+
+            downloadButton.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                let history = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
+                let item = history.find(p => p.id === productId);
+
+                if (item && item.downloads < item.quantity) {
+                    // Abrir la descarga en otra pestaña para que se procese
+                    window.open(downloadUrl, '_blank');
+
+                    // Actualizar contador
+                    item.downloads = (item.downloads || 0) + 1;
+                    localStorage.setItem('purchaseHistory', JSON.stringify(history));
+
+                    // Bloquear botón si se agotó
+                    if (item.downloads >= item.quantity) {
+                        downloadButton.textContent = 'Descargas agotadas';
+                        downloadButton.classList.add('disabled');
+                        downloadButton.removeAttribute('href');
+                        downloadButton.removeAttribute('download');
+
+                        downloadButton.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            showToast("Tus descargas ya se agotaron.");
+                        });
+
+                        if (productNameElement) {
+                            productNameElement.textContent = `Descargas agotadas para ${productName}`;
+                        }
+                    }
+                }
+            });
         }
     }
 });

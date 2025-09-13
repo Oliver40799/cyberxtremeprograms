@@ -35,7 +35,7 @@ registerForm.addEventListener("submit", function(e) {
     .then(() => {
       alert("Registro exitoso! Ya puedes iniciar sesión.");
       registerForm.reset();
-     window.location.href = "index.html";  // o la página principal que tengas
+     window.location.href = "/index.html";  // o la página principal que tengas
 
     })
     .catch(error => {
