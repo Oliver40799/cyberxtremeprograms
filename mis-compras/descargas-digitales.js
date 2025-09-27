@@ -11,6 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('purchaseHistory', JSON.stringify(history));
     }
 
+    // 🚀 Generador de códigos aleatorios tipo CXPMX12345
+    function generateRandomCode() {
+        const randomNum = Math.floor(10000 + Math.random() * 90000); // número de 5 dígitos
+        return "CXPMX" + randomNum;
+    }
+
     function showToast(message) {
         const toast = document.createElement('div');
         toast.classList.add('toast-message');
@@ -43,6 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         digitalPurchases.forEach((item, index) => {
             if (item.downloads === undefined) item.downloads = 0;
+
+            // 👉 Si no tiene código asignado, generamos uno aleatorio
+            if (!item.code) {
+                item.code = generateRandomCode();
+                savePurchaseHistory(purchaseHistory);
+            }
+
             const remainingDownloads = item.quantity - item.downloads;
 
             const purchaseItem = document.createElement('div');
@@ -59,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="${item.image}" alt="${item.name}">
                 <div class="item-details">
                     <h3>${item.name}</h3>
+                    <p><strong>Código de compra:</strong> ${item.code}</p>
                     <p>Precio Total: $${(item.price).toFixed(2)} MXN</p>
                     <p>Cantidad: ${item.quantity}</p>
                     <p>Fecha de compra: ${new Date(item.purchaseDate).toLocaleDateString()}</p>
@@ -99,3 +113,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderPurchaseHistory();
 });
+
