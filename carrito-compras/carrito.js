@@ -54,43 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.quantity-minus').forEach(button => button.addEventListener('click', decreaseQuantity));
     }
 
-    function findAndUpdateInHistory(item, history) {
-        const existingItem = history.find(histItem => histItem.id === item.id);
-        if (existingItem) {
-            existingItem.quantity += item.quantity;
-            existingItem.downloads += 0;
-            // ⭐ CORRECCIÓN: no modifies el precio unitario
-        } else {
-            history.push({
-                ...item,
-                downloads: 0,
-                purchaseDate: new Date().toISOString(),
-                isDigital: item.isDigital || false
-            });
-        }
-    }
-
-    function confirmPurchase() {
-        const cart = getCart();
-        if (cart.length === 0) {
-            alert('Tu carrito está vacío. Añade productos para poder comprar.');
-            return;
-        }
-
-        let purchaseHistory = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
-
-        cart.forEach(item => {
-            findAndUpdateInHistory(item, purchaseHistory);
-        });
-
-        localStorage.setItem('purchaseHistory', JSON.stringify(purchaseHistory));
-        localStorage.removeItem('cart');
-        renderCart();
-        alert('¡Compra realizada con éxito!');
-
-        setTimeout(() => window.location.href = '/mis-compras/mis-compras.html', 1500);
-    }
-
     function removeItem(event) {
         const id = event.target.dataset.id;
         let cart = getCart();
@@ -120,6 +83,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (window.location.pathname.endsWith('carrito.html')) {
         renderCart();
-        if (checkoutButton) checkoutButton.addEventListener('click', confirmPurchase);
+        if (checkoutButton) {
+            checkoutButton.addEventListener('click', () => {
+                // 👉 Redirige a la página de pagos
+                window.location.href = '/carrito-compras/checkout.html';
+            });
+        }
     }
 });

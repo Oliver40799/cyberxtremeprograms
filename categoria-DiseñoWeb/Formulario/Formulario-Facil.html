@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotización - Página Web Fácil | CyberXtreme Programs</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <header>
+    <h1>Cotización - Página Web Fácil</h1>
+    <p>Completa este formulario y nuestro equipo te enviará una cotización personalizada.</p>
+  </header>
+
+  <section class="form-container">
+    <form action="https://formspree.io/f/xdklqloe" method="POST">
+      
+      <label>
+        Nombre completo:
+        <input type="text" name="nombre" required>
+      </label>
+
+      <label>
+        Tu correo:
+        <input type="email" name="email" required>
+      </label>
+
+      <label>
+        Teléfono:
+        <input type="tel" name="telefono">
+      </label>
+
+      <label>
+        Describe tu proyecto:
+        <textarea name="message" rows="5" placeholder="Ejemplo: Quiero una página sencilla de presentación con 3 secciones y formulario de contacto." required></textarea>
+      </label>
+
+      <button type="submit">Enviar cotización</button>
+    </form>
+  </section>
+
+</body>
+</html>

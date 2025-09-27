@@ -1489,7 +1489,7 @@ body {
     height: 600px;
     background-color: #212121;
     border: 1px solid #00FFFF;
-    border-radius: 10px;
+    border-radius: 15px;
     z-index: 100;
     padding: 10px;
     display: flex;
@@ -1519,7 +1519,7 @@ body {
 .ad-image {
     width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 /* Ajustes para el contenido principal con los anuncios laterales */
@@ -1578,3 +1578,338 @@ body {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
+
+/* Agrega esto a tu archivo style.css */
+.product-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.product-link:hover .product-card {
+    /* Aquí puedes añadir un efecto para que el usuario sepa que es clicable */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgb(0, 0, 0);
+}
+
+/* ========================================================================== */
+/* CSS para la página de producto con carrusel manual */
+/* ========================================================================== */
+
+/* Contenedor principal de producto */
+.product-page {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 0;
+}
+
+/* Contenedor del carrusel de imágenes */
+.product-image-container {
+    flex: 1 1 500px;
+    text-align: center;
+    position: relative;
+}
+
+.carousel {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.carousel img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.carousel img:hover {
+    transform: scale(1.05);
+}
+
+/* Botones del carrusel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 255, 255, 0.8);
+    border: none;
+    color: #121212;
+    font-size: 1.5rem;
+    padding: 10px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 136, 136, 0.8);
+}
+
+.carousel-btn.prev {
+    left: -20px;
+}
+
+.carousel-btn.next {
+    right: -20px;
+}
+
+/* Ajuste responsivo del carrusel */
+@media (max-width: 768px) {
+    .carousel-btn.prev {
+        left: 5px;
+    }
+    .carousel-btn.next {
+        right: 5px;
+    }
+}
+
+/* Detalles del producto */
+.product-details {
+    flex: 1 1 350px;
+}
+
+.product-price-large {
+    font-size: 2.5em;
+    color: #00FFFF;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Botón de agregar al carrito */
+.product-actions {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.add-to-cart-btn {
+    padding: 12px 15px; /* altura normal, anchura más compacta */
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #00FFFF;
+    color: #121212;
+    min-width: 120px; /* control de anchura */
+}
+
+.add-to-cart-btn:hover {
+    background-color: #008888;
+}
+
+/* Características */
+.product-features {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.product-features h3 {
+    color: #00FFFF;
+    text-align: left;
+    margin-top: 0;
+}
+
+.product-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.product-features li {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%2300FFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.89"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>') no-repeat left center;
+    background-size: 20px;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+/* Sección de descripción */
+.description-section {
+    padding: 40px 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.description-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #00FFFF;
+}
+
+.description-section p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* ==============================
+   Estilos del Asistente Virtual Mejorado
+   ============================== */
+.chat-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 35px rgba(0, 255, 200, 0.5);
+    background: linear-gradient(145deg, #111, #1a1a1a);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', sans-serif;
+    border: 2px solid #0ff;
+}
+
+/* Encabezado */
+.chat-header {
+    background: linear-gradient(90deg, #0f0c29, #302b63, #24243e);
+    color: #fff;
+    padding: 18px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px #0ff;
+    border-bottom: 2px solid #0ff;
+}
+
+/* Caja del chat */
+.chat-box {
+    background: #1a1a1a;
+    padding: 20px;
+    height: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    scrollbar-width: thin;
+    scrollbar-color: #0ff #222;
+}
+
+/* Mensajes */
+.message {
+    padding: 12px 18px;
+    border-radius: 14px;
+    max-width: 75%;
+    line-height: 1.5;
+    font-size: 15px;
+    word-wrap: break-word;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Mensajes bot */
+.bot-message {
+    background: #222;
+    color: #0ff;
+    align-self: flex-start;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+/* Mensajes usuario */
+.user-message {
+    background: #0ff;
+    color: #111;
+    align-self: flex-end;
+    font-weight: bold;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+
+/* Opciones botones */
+.options-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 15px;
+    background: #141414;
+    border-top: 2px solid #0ff;
+}
+
+.option-button {
+    flex: 1;
+    min-width: 120px;
+    padding: 10px 18px;
+    background: linear-gradient(145deg, #0ff, #09c);
+    color: #111;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+}
+
+.option-button:hover {
+    background: linear-gradient(145deg, #09c, #0ff);
+    transform: scale(1.08);
+}
+
+/* Input de chat */
+.chat-input-container {
+    display: flex;
+    padding: 12px;
+    background: #111;
+    border-top: 2px solid #0ff;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: 1px solid #0ff;
+    outline: none;
+    font-size: 15px;
+    background: #222;
+    color: #0ff;
+    box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.chat-input:focus {
+    background: #111;
+    box-shadow: 0 0 12px #0ff;
+}
+
+/* Scrollbar estilo gamer */
+.chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background: #0ff;
+    border-radius: 4px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+    background: #222;
+}
+
+/* Animación de entrada de mensajes */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mensaje "escribiendo..." */
+.bot-typing {
+    display: inline-block;
+    border-right: 2px solid #0ff;
+    padding-right: 5px;
+    animation: typing 1s steps(4, end) infinite;
+}
+
+@keyframes typing {
+    0% { border-color: transparent; }
+    50% { border-color: #0ff; }
+    100% { border-color: transparent; }
+}
+
