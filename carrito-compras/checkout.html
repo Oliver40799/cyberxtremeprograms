@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra | CyberXtreme Programs</title>
+    <link rel="icon" type="image/png" href="/Imagenes/favicon copia2.png" />
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos base para el fondo y las tarjetas */
+        .ads-section, .payment-center, .order-summary {
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            min-height: 400px;
+        }
+
+        /* Layout de 3 Columnas */
+        .checkout-layout {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 40px 0;
+        }
+
+        /* Anchos y colores de las secciones */
+        .ads-section {
+            flex: 1.5;
+            min-width: 250px;
+            background-color: #2a2a2a;
+            color: #fff;
+        }
+
+        .payment-center {
+            flex: 2;
+            min-width: 350px;
+            background-color: #999999; /* Fondo blanco suave */
+            color: #000; /* Texto oscuro */
+            border: 2px solid #00FFFF; /* Bordes cian */
+        }
+
+        .order-summary {
+            flex: 1.5;
+            min-width: 250px;
+            background-color: #2a2a2a;
+            color: #fff;
+        }
+
+        /* Título Centrado y Estilizado */
+        .centered-title {
+            text-align: center;
+            color: #00FFFF;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+        }
+
+        /* Encabezados de sección */
+        .checkout-layout h3 {
+            border-bottom: 2px solid #00FFFF;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #00FFFF;
+        }
+
+        #paypal-button-container {
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px dashed #444;
+        }
+
+        .order-item:last-child {
+            border-bottom: none;
+        }
+
+        .order-total {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .rights-info p {
+            font-size: 0.9em;
+            color: #ccc;
+            margin-top: 15px;
+            border-top: 1px solid #444;
+            padding-top: 15px;
+        }
+
+        .ads-content {
+            text-align: center;
+        }
+
+        /* Ocultar el <h1> original, usar solo el nuevo */
+        h1:not(.centered-title) { display: none; }
+
+        /* Estilos de Notificación Modal */
+        #notification-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #1a1a1a;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+            border: 2px solid #00FFFF;
+            max-width: 400px;
+            color: #fff;
+        }
+
+        .modal-content.success {
+            border-color: #38FF38;
+            box-shadow: 0 0 20px rgba(56, 255, 56, 0.7);
+        }
+
+        .modal-content.error {
+            border-color: #FF3838;
+            box-shadow: 0 0 20px rgba(255, 56, 56, 0.7);
+        }
+
+        .modal-content.cancel {
+            border-color: #FFD700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+            color: inherit;
+        }
+
+        .modal-content p {
+            font-size: 1.1em;
+            margin: 20px 0;
+        }
+
+        .modal-content button {
+            background-color: #00FFFF;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .modal-content button:hover {
+            background-color: #00D7D7;
+        }
+
+        /* ===== Media Queries para PC y Celular ===== */
+        @media (max-width: 1023px) {
+            .checkout-layout {
+                flex-direction: column;
+                gap: 25px;
+                padding: 25px 10px;
+            }
+
+            .ads-section, .payment-center, .order-summary {
+                min-width: 100%;
+                padding: 20px;
+            }
+
+            .centered-title {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .checkout-layout {
+                padding: 15px 5px;
+            }
+
+            .centered-title {
+                font-size: 1.8em;
+            }
+
+            #paypal-button-container {
+                transform: scale(0.9);
+                transform-origin: 0 0;
+            }
+
+            .order-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .order-total {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Tu HTML existente sigue igual -->
+    <div class="header">
+        <div class="logo">
+            <a href="/index.html">CyberXtreme Programs</a>
+        </div>
+        <nav class="categories-nav">
+            <a href="#" class="dropdown-toggle">Categorías</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#">Diseño Web <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/categoria-DiseñoWeb/Facil.html">Fácil</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Medio.html">Medio</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
+                    </ul>
+                </li>
+                <li><a href="/proximamente/proximamente.html">Software Proximamente</a></li>
+                <li>
+                    <a href="#">Plantillas <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/Plantillas/plantillas.html">Plantillas Pro</a></li>
+                        <li><a href="/Plantillas/plantillas-basicas.html">Plantillas Básicas</a></li>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar productos...">
+        </div>
+        <div class="user-nav" id="auth-buttons">
+            <a href="/INICIOS-REGISTROS/Iniciar-sesion.html" class="nav-button">Iniciar Sesión</a>
+            <a href="/INICIOS-REGISTROS/Crear-cuenta.html" class="nav-button">Crear Cuenta</a>
+            <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+        </div>
+        <div id="user-profile" style="display: none; position: relative;">
+            <div class="user-nav">
+                <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+                <button id="user-name-button" class="nav-button">
+                    <span id="full-name-display"></span> <i class="fas fa-caret-down"></i>
+                </button>
+            </div>
+            <div id="user-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ccc; border-radius: 5px; min-width: 150px; z-index: 1000;">
+                <a href="/mis-compras/mis-compras.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-shopping-bag"></i> Mis compras
+                </a>
+                <a href="/historial/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-history"></i> Historial
+                </a>
+                <button id="logout-button" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer;">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <h1 class="centered-title">Completar Compra</h1>
+        <div class="checkout-layout">
+            <div class="ads-section">
+                <h3>Anuncios Destacados</h3>
+                <div class="ads-content">
+                    <p>¡Espacio para tus banners publicitarios o promociones!</p>
+                    <img src="/Imagenes/ad-ejemplo.jpg" alt="Anuncio de plantilla Pro" style="width:100%; max-width: 200px; margin-top: 15px;">
+                </div>
+            </div>
+            <div class="payment-center">
+                <h3>Centro de Pago</h3>
+                <p>Tu compra es gestionada de forma segura por PayPal.</p>
+                <div id="paypal-button-container"></div>
+            </div>
+            <div class="order-summary">
+                <h3>Info de Compra y Derechos</h3>
+                <div class="order-items-list" id="order-items-list">
+                    <p style="color: #ccc;">Cargando resumen del carrito...</p>
+                </div>
+                <div class="order-total">Total: <span id="checkout-total">$0.00 MXN</span></div>
+                <div class="rights-info">
+                    <p>Al finalizar la compra, aceptas nuestros términos y condiciones de licencia. Todos los productos son de descarga digital e inmediata.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2025 CyberXtreme Programs. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="notification-modal">
+        <div class="modal-content">
+            <h2 id="modal-title"></h2>
+            <p id="modal-message"></p>
+            <button id="modal-close-button">Aceptar</button>
+        </div>
+    </div>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=AT9UHY0WPE7JN_VmhHNm-nqVYw3tc26hb8s_yBFiIp6lILycJf7n4pGO7KcOjXY-85PmCLekwzW97oVg&currency=MXN"></script>
+    <script src="/auth.js" type="module"></script>
+    <script src="/carrito-compras/checkout.js"></script>
+</body>
+</html>

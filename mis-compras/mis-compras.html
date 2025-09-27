@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Compras | CyberXtreme Programs</title>
+    <link rel="icon" type="image/png" href="/Imagenes/favicon copia2.png" />
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .purchases-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            color: #fff;
+        }
+        
+        .purchase-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+
+        .purchase-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+        
+        .item-details {
+            flex-grow: 1;
+        }
+        
+        .item-details h3 {
+            margin: 0;
+            color: #00FFFF;
+        }
+
+        .item-details p {
+            margin: 5px 0 0;
+            font-size: 0.9em;
+        }
+
+        .download-button {
+            background-color: #00FFFF;
+            color: #000;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .download-button.disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+
+        #licenses-list, #digital-downloads-list {
+            margin-top: 20px;
+            border-top: 2px solid #00FFFF;
+            padding-top: 20px;
+        }
+
+        .action-buttons {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        #clear-purchases-button {
+            background-color: #f44336;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #clear-purchases-button:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="logo">
+        <a href="/index.html">CyberXtreme Programs</a>
+    </div>
+<nav class="categories-nav">
+    <a href="#" class="dropdown-toggle">Categorías</a>
+    <ul class="dropdown-menu">
+        <li>
+            <a href="#">Diseño Web <i class="fas fa-caret-right"></i></a>
+            <ul class="dropdown-submenu">
+                <li><a href="/categoria-DiseñoWeb/Facil.html">Fácil</a></li>
+                <li><a href="/categoria-DiseñoWeb/Medio.html">Medio</a></li>
+                <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
+            </ul>
+        </li>
+        <li><a href="/proximamente/proximamente.html">Software Proximamente</a></li>
+        <li>
+            <a href="/Plantillas/plantillas.html">Plantillas <i class="fas fa-caret-right"></i></a>
+            <ul class="dropdown-submenu">
+                <li><a href="/Plantillas/plantillas.html">Plantillas Pro</a></li>
+                <li><a href="/Plantillas/plantillas-basicas.html">Plantillas Básicas</a></li>
+</nav>
+    <div class="search-bar">
+        <input type="text" placeholder="Buscar productos...">
+    </div>
+    <div class="user-nav" id="auth-buttons">
+        <a href="/INICIOS-REGISTROS/Iniciar-sesion.html" class="nav-button">Iniciar Sesión</a>
+        <a href="/INICIOS-REGISTROS/Crear-cuenta.html" class="nav-button">Crear Cuenta</a>
+        <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+    </div>
+    <div id="user-profile" style="display: none; position: relative;">
+        <div class="user-nav">
+            <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+            <button id="user-name-button" class="nav-button">
+                <span id="full-name-display"></span> <i class="fas fa-caret-down"></i>
+            </button>
+        </div>
+        <div id="user-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ccc; border-radius: 5px; min-width: 150px; z-index: 1000;">
+            <a href="/mis-compras/mis-compras.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                <i class="fas fa-shopping-bag"></i> Mis compras
+            </a>
+            <a href="/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                <i class="fas fa-history"></i> Historial
+            </a>
+            <button id="logout-button" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer;">
+                <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+            </button>
+        </div>
+    </div>
+</div>
+<main class="purchases-container">
+    <h2>Mis Compras</h2>
+
+    <div id="digital-downloads-list">
+        <h3>Descargas Digitales</h3>
+        <p id="no-digital-downloads-message">No has realizado descargas digitales todavía.</p>
+        <div id="downloads-items-container"></div>
+    </div>
+
+    <div id="licenses-list">
+        <h3>Mis Licencias de Software</h3>
+        <p id="no-licenses-message">Proximamente licencias de Software.</p>
+    </div>
+
+    <div class="action-buttons">
+        <button id="clear-purchases-button">Borrar historial de compras</button>
+    </div>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2025 CyberXtreme Programs. Todos los derechos reservados.</p>
+</footer>
+
+<script src="/mis-compras/descargas-digitales.js"></script>
+<script src="/auth.js" type="module"></script>
+
+</body>
+</html>
