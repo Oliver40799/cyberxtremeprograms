@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantillas | CyberXtreme Programs</title>
+    <link rel="icon" type="image/png" href="/Imagenes/favicon copia2.png" />
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="/index.html">
+                CyberXtreme Programs
+            </a>
+        </div>
+        
+        <nav class="categories-nav">
+            <a href="#" class="dropdown-toggle">Categorías</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#">Diseño Web <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/categoria-DiseñoWeb/Facil.html">Fácil</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Medio.html">Medio</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Plantillas <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/Plantillas/plantillas.html">Plantillas Pro</a></li>
+                        <li><a href="/Plantillas Basicas/PlantillasBasicas.html">Plantillas Básicas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar productos...">
+        </div>
+        
+        <div class="user-nav" id="auth-buttons">
+            <a href="/INICIOS-REGISTROS/Iniciar-sesion.html" class="nav-button">Iniciar Sesión</a>
+            <a href="/INICIOS-REGISTROS/Crear-cuenta.html" class="nav-button">Crear Cuenta</a>
+            <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+        </div>
+
+        <div id="user-profile" style="display: none; position: relative;">
+            <div class="user-nav">
+                <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+                <button id="user-name-button" class="nav-button">
+                    <span id="full-name-display"></span> <i class="fas fa-caret-down"></i>
+                </button>
+            </div>
+            <div id="user-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ccc; border-radius: 5px; min-width: 150px; z-index: 1000;">
+                <a href="/mis-compras/mis-compras.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-shopping-bag"></i> Mis compras
+                </a>
+                
+                <a href="/monedero/wallet.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-wallet"></i> Monedero
+                </a>
+                
+                <a href="/historial/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-history"></i> Historial
+                </a>
+                <button id="logout-button" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer;">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                </button>
+            </div>
+        </div>
+    </div>
+    <main class="container">
+    <section class="products-section">
+        <h2>Nuestras Plantillas</h2>
+        <div class="product-grid" id="product-list">
+
+<div class="product-card">
+    <a href="/Plantillas/productos-pro/agencia-marketing-digital.html" class="product-link">
+        <img src="/Imagenes/Agencia/Agencia1.png" alt="Plantilla Agencia de Marketing Digital" class="product-image">
+        <h3 class="product-name">Agencia de Marketing Digital</h3>
+    </a>
+    <p class="product-price">$900 MXN</p>
+    <button class="add-to-cart-btn" data-id="agencia-de-marketing-digital" data-name="Agencia de Marketing Digital" data-price="900" data-image="/Imagenes/Agencia/Agencia1.png" data-download="/descargas/agencia-de-marketing-digital.zip">Añadir al carrito</button>
+</div>
+
+<div class="product-card">
+    <a href="/Plantillas/productos-pro/detalle-academia-de-cursos-online.html" class="product-link">
+        <img src="/Imagenes/Academia/Academia1.png" alt="Plantilla Academia de Cursos Online" class="product-image">
+        <h3 class="product-name">Academia de Cursos Online</h3>
+    </a>
+    <p class="product-price">$1,100 MXN</p>
+    <button class="add-to-cart-btn" data-id="academia-de-cursos-online" data-name="Academia de Cursos Online" data-price="1100" data-image="/Imagenes/Academia/Academia1.png" data-download="/descargas/academia-de-cursos-online.zip">Añadir al carrito</button>
+</div>
+
+<div class="product-card">
+    <a href="/Plantillas/productos-pro/detalle-agencia-de-viajes.html" class="product-link">
+        <img src="/Imagenes/Viajes/Viajes1.png" alt="Plantilla Agencia de Viajes" class="product-image">
+        <h3 class="product-name">Agencia de Viajes</h3>
+    </a>
+    <p class="product-price">$1,050 MXN</p>
+    <button class="add-to-cart-btn" data-id="agencia-de-viajes" data-name="Agencia de Viajes" data-price="1050" data-image="/Imagenes/Viajes/Viajes1.png" data-download="/descargas/agencia-de-viajes.zip">Añadir al carrito</button>
+</div>
+
+<div class="product-card">
+    <a href="/Plantillas/productos-pro/detalle-clinica-medica-con-citas.html" class="product-link">
+        <img src="/Imagenes/Medica/Medica1.png" alt="Plantilla Clínica Médica con Citas" class="product-image">
+        <h3 class="product-name">Clínica Médica con Citas</h3>
+    </a>
+    <p class="product-price">$800 MXN</p>
+    <button class="add-to-cart-btn" data-id="clinica-medica-con-citas" data-name="Clínica Médica con Citas" data-price="800" data-image="/Imagenes/Medica/Medica1.png" data-download="/descargas/clinica-medica-con-citas.zip">Añadir al carrito</button>
+</div>
+
+<div class="product-card">
+    <a href="/Plantillas/productos-pro/detalle-diseno-de-interiores.html" class="product-link">
+        <img src="/Imagenes/Interiores/Interiores1.png" alt="Plantilla Diseño de Interiores" class="product-image">
+        <h3 class="product-name">Diseño de Interiores</h3>
+    </a>
+    <p class="product-price">$1,300 MXN</p>
+    <button class="add-to-cart-btn" data-id="diseno-de-interiores" data-name="Diseño de Interiores" data-price="1300" data-image="/Imagenes/Interiores/Interiores1.png" data-download="/descargas/diseno-de-interiores.zip">Añadir al carrito</button>
+</div>
+
+<div class="product-card">
+    <a href="/Plantillas/productos-pro/detalle-editorial-o-libreria-online.html" class="product-link">
+        <img src="/Imagenes/Editorial/Editorial1.png" alt="Plantilla Editorial o Librería Online" class="product-image">
+        <h3 class="product-name">Editorial o Librería Online</h3>
+    </a>
+    <p class="product-price">$800 MXN</p>
+    <button class="add-to-cart-btn" data-id="editorial-o-libreria-online" data-name="Editorial o Librería Online" data-price="800" data-image="/Imagenes/Editorial/Editorial1.png" data-download="/descargas/editorial-o-libreria-online.zip">Añadir al carrito</button>
+</div>
+
+<div class="product-card">
+    <a href="/Plantillas/productos-pro/detalle-floreria-con-envios.html" class="product-link">
+        <img src="/Imagenes/Floreria/Floreria1.png" alt="Plantilla Florería con Envíos" class="product-image">
+        <h3 class="product-name">Florería con Envíos</h3>
+    </a>
+    <p class="product-price">$999 MXN</p>
+    <button class="add-to-cart-btn" data-id="floreria-con-envios" data-name="Florería con Envíos" data-price="999" data-image="/Imagenes/Floreria/Floreria1.png" data-download="/descargas/floreria-con-envios.zip">Añadir al carrito</button>
+</div>
+
+<div class="product-card">
+    <a href="/Plantillas/productos-pro/detalle-plantilla-de-asesoria-financiera.html" class="product-link">
+        <img src="/Imagenes/Asesoria/Asesoria1.png" alt="Plantilla de Asesoría Financiera" class="product-image">
+        <h3 class="product-name">Plantilla de Asesoría Financiera</h3>
+    </a>
+    <p class="product-price">$1,000 MXN</p>
+    <button class="add-to-cart-btn" data-id="plantilla-de-asesoria-financiera" data-name="Plantilla de Asesoría Financiera" data-price="1000" data-image="/Imagenes/Asesoria/Asesoria1.png" data-download="/descargas/plantilla-de-asesoria-financiera.zip">Añadir al carrito</button>
+</div>
+
+<div class="product-card">
+    <a href="/Plantillas/productos-pro/detalle-restaurante-con-reservas.html" class="product-link">
+        <img src="/Imagenes/Restaurante/Restaurante1.png" alt="Plantilla Restaurante con Reservas" class="product-image">
+        <h3 class="product-name">Restaurante con Reservas</h3>
+    </a>
+    <p class="product-price">$999 MXN</p>
+    <button class="add-to-cart-btn" data-id="restaurante-con-reservas" data-name="Restaurante con Reservas" data-price="999" data-image="/Imagenes/Restaurante/Restaurante1.png" data-download="/descargas/restaurante-con-reservas.zip">Añadir al carrito</button>
+</div>
+
+<div class="product-card">
+    <a href="/Plantillas/productos-pro/detalle-salon-de-belleza-con-agenda.html" class="product-link">
+        <img src="/Imagenes/Salon/Salon1.png" alt="Plantilla Salón de Belleza con Agenda" class="product-image">
+        <h3 class="product-name">Salón de Belleza con Agenda</h3>
+    </a>
+    <p class="product-price">$1,300 MXN</p>
+    <button class="add-to-cart-btn" data-id="salon-de-belleza-con-agenda" data-name="Salón de Belleza con Agenda" data-price="1300" data-image="/Imagenes/Salon/Salon1.png" data-download="/descargas/salon-de-belleza-con-agenda.zip">Añadir al carrito</button>
+</div>
+
+<div class="product-card">
+    <a href="/Plantillas/productos-pro/detalle-servicios-de-limpieza-a-domicilio.html" class="product-link">
+        <img src="/Imagenes/Limpieza/Limpieza1.png" alt="Plantilla Servicios de Limpieza a Domicilio" class="product-image">
+        <h3 class="product-name">Servicios de Limpieza a Domicilio</h3>
+    </a>
+    <p class="product-price">$850 MXN</p>
+    <button class="add-to-cart-btn" data-id="servicios-de-limpieza-a-domicilio" data-name="Servicios de Limpieza a Domicilio" data-price="850" data-image="/Imagenes/servicios-limpieza.jpg" data-download="/descargas/servicios-de-limpieza-a-domicilio.zip">Añadir al carrito</button>
+</div>
+
+<div class="product-card">
+    <a href="/Plantillas/productos-pro/detalle-sitio-de-fotografo-profesional.html" class="product-link">
+        <img src="/Imagenes/Fotografo/Fotografo1.png" alt="Plantilla Sitio de Fotógrafo Profesional" class="product-image">
+        <h3 class="product-name">Sitio de Fotógrafo Profesional</h3>
+    </a>
+    <p class="product-price">$899 MXN</p>
+    <button class="add-to-cart-btn" data-id="sitio-de-fotografo-profesional" data-name="Sitio de Fotógrafo Profesional" data-price="899" data-image="/Imagenes/Fotografo/Fotografo1.png" data-download="/descargas/sitio-de-fotografo-profesional.zip">Añadir al carrito</button>
+</div>
+
+<div class="product-card">
+    <a href="/Plantillas/productos-pro/detalle-sitio-para-musica-y-bandas.html" class="product-link">
+        <img src="/Imagenes/Musica/Musica1.png" alt="Plantilla Sitio para Música y Bandas" class="product-image">
+        <h3 class="product-name">Sitio para Música y Bandas</h3>
+    </a>
+    <p class="product-price">$1,400 MXN</p>
+    <button class="add-to-cart-btn" data-id="sitio-para-musica-y-bandas" data-name="Sitio para Música y Bandas" data-price="1400" data-image="/Imagenes/Musica/Musica1.png" data-download="/descargas/sitio-para-musica-y-bandas.zip">Añadir al carrito</button>
+</div>
+
+<div class="product-card">
+    <a href="/Plantillas/productos-pro/detalle-sitio-para-podcast.html" class="product-link">
+        <img src="/Imagenes/Podcast/Podcast1.png" alt="Plantilla Sitio para Podcast" class="product-image">
+        <h3 class="product-name">Sitio para Podcast</h3>
+    </a>
+    <p class="product-price">$1,100 MXN</p>
+    <button class="add-to-cart-btn" data-id="sitio-para-podcast" data-name="Sitio para Podcast" data-price="1100" data-image="/Imagenes/Podcast/Podcast1.png" data-download="/descargas/sitio-para-podcast.zip">Añadir al carrito</button>
+</div>
+
+<div class="product-card">
+    <a href="/Plantillas/productos-pro/detalle-tienda-de-alimentos-organicos.html" class="product-link">
+        <img src="/Imagenes/Alimentos/Alimentos1.png" alt="Plantilla Tienda de Alimentos Orgánicos" class="product-image">
+        <h3 class="product-name">Tienda de Alimentos Orgánicos</h3>
+    </a>
+    <p class="product-price">$799 MXN</p>
+    <button class="add-to-cart-btn" data-id="tienda-de-alimentos-organicos" data-name="Tienda de Alimentos Orgánicos" data-price="799" data-image="/Imagenes/Alimentos/Alimentos1.png" data-download="/descargas/tienda-de-alimentos-organicos.zip">Añadir al carrito</button>
+</div>
+
+<div class="product-card">
+    <a href="/Plantillas/productos-pro/detalle-tienda-de-electronica.html" class="product-link">
+        <img src="/Imagenes/Electronica/Electronica1.png" alt="Plantilla Tienda de Electrónica" class="product-image">
+        <h3 class="product-name">Tienda de Electrónica</h3>
+    </a>
+    <p class="product-price">$1,100 MXN</p>
+    <button class="add-to-cart-btn" data-id="tienda-de-electronica" data-name="Tienda de Electrónica" data-price="1100" data-image="/Imagenes/Electronica/Electronica1.png" data-download="/descargas/tienda-de-electronica.zip">Añadir al carrito</button>
+</div>
+
+<div class="product-card">
+    <a href="/Plantillas/productos-pro/detalle-tienda-de-muebles.html" class="product-link">
+        <img src="/Imagenes/Muebles/Muebles1.png" alt="Plantilla Tienda de Muebles" class="product-image">
+        <h3 class="product-name">Tienda de Muebles</h3>
+    </a>
+    <p class="product-price">$599 MXN</p>
+    <button class="add-to-cart-btn" data-id="tienda-de-muebles" data-name="Tienda de Muebles" data-price="599" data-image="/Imagenes/Muebles/Muebles1.png" data-download="/descargas/tienda-de-muebles.zip">Añadir al carrito</button>
+</div>
+
+<div class="product-card">
+    <a href="/Plantillas/productos-pro/detalle-tienda-de-ropa-minimalista.html" class="product-link">
+        <img src="/Imagenes/Ropa/Muebles1.png" alt="Plantilla Tienda de Ropa Minimalista" class="product-image">
+        <h3 class="product-name">Tienda de Ropa Minimalista</h3>
+    </a>
+    <p class="product-price">$1,100 MXN</p>
+    <button class="add-to-cart-btn" data-id="tienda-de-ropa-minimalista" data-name="Tienda de Ropa Minimalista" data-price="1100" data-image="/Imagenes/Ropa/Muebles1.png" data-download="/descargas/tienda-de-ropa-minimalista.zip">Añadir al carrito</button>
+</div>
+
+<div class="product-card">
+    <a href="/Plantillas/productos-pro/detalle-venta-de-productos-digitales.html" class="product-link">
+        <img src="/Imagenes/Digitales/Digitales1.png" alt="Plantilla Venta de Productos Digitales" class="product-image">
+        <h3 class="product-name">Venta de Productos Digitales</h3>
+    </a>
+    <p class="product-price">$1,400 MXN</p>
+    <button class="add-to-cart-btn" data-id="venta-de-productos-digitales" data-name="Venta de Productos Digitales" data-price="1400" data-image="/Imagenes/Digitales/Digitales1.png" data-download="/descargas/venta-de-productos-digitales.zip">Añadir al carrito</button>
+</div>
+
+        </div>
+    </section>
+</main>
+
+        <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>CyberXtreme Programs</h3>
+                <p>Soluciones web a medida para tu negocio. Convierte tu pasión por la tecnología en una herramienta de crecimiento.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/contacto/contacto.html">Contacto</a></li>
+                    <li><a href="/Soporte 24/Soporte-24.html">Soporte 24/7</a></li>
+                    <li><a href="/Soporte 24/bot-ventas.html">Asistente De Ventas 24/7</a></li>
+                    <li><a href="/Terminos/terminos.html">Términos y condiciones</a></li>
+                    <li><a href="/mi historia/mi-historia.html">Nuestra Historia</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61580615673129"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/cyberxtremeprograms/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://discord.gg/32bbVNRb7y"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CyberXtreme Programs.  Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="/auth.js" type="module"></script>
+    <script src="/carrito-compras/carrito.js"></script>
+    <script src="/Plantillas/plantillas.js"></script>
+</body>
+</html>
