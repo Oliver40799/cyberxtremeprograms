@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         'refunds': {
-            message: 'Lamentamos que hayas tenido un inconveniente. Para procesar un reembolso o devolución, por favor asegúrate de cumplir con las siguientes condiciones:\n\n• La solicitud debe realizarse dentro de los primeros 7 días desde la compra.\n• El producto no debe haber sido activado o descargado más de una vez.\n• Deberás enviar el número de pedido y el motivo del reembolso a nuestro correo: cyberxtremeprograms@gamil.com\n\n¿Querés que te redirija al formulario de reembolso?',
+            message: 'Lamentamos que hayas tenido un inconveniente. Para procesar un reembolso o devolución, por favor asegúrate de cumplir con las siguientes condiciones:\n\n• La solicitud debe realizarse dentro de los primeros 7 días desde la compra.\n• El producto no debe haber sido activado o descargado más de una vez.\n• Deberás enviar el número de pedido y el motivo del reembolso a nuestro correo: cyberxtremeprograms@gmail.com\n\n¿Querés que te redirija al formulario de reembolso?',
             options: [
                 { text: 'Sí, quiero solicitar un reembolso', next: 'redirect-refund' },
                 { text: 'No, volver al inicio', next: 'start' }
@@ -143,3 +143,4 @@ document.addEventListener('DOMContentLoaded', () => {
     addMessage(botResponses.start.message, 'bot');
     showOptions(botResponses.start.options);
 });
+
