@@ -1,14 +1,167 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberXtreme Programs</title>
-    <link rel="icon" type="image/png" href="/Imagenes/favicon copia2.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberXtreme Programs | Términos y Condiciones</title>
+  <link rel="icon" type="image/png" href="/Imagenes/favicon copia2.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    body {
+      background: radial-gradient(ellipse at bottom, #0d0d0d 0%, #000 100%);
+      color: #e0e0e0;
+      font-family: "Poppins", sans-serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* 🌌 Fondo animado */
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: radial-gradient(circle at 50% 50%, rgba(0,255,255,0.1), transparent 70%);
+      animation: moveGlow 8s ease-in-out infinite alternate;
+      filter: blur(60px);
+    }
+
+    @keyframes moveGlow {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(-20px) scale(1.1); }
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 120px auto;
+      padding: 40px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(0,255,255,0.15);
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(0,255,255,0.1);
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    .section-title {
+      color: #00eaff;
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.2s;
+    }
+
+    .intro-text {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #b0faff;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.4s;
+    }
+
+    .last-updated {
+      text-align: center;
+      color: #aaa;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.6s;
+    }
+
+    .terms-text h2 {
+      color: #00d0ff;
+      margin-top: 40px;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .terms-text p, .terms-text ul {
+      line-height: 1.8;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .terms-text ul {
+      margin-left: 25px;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    footer {
+      margin-top: 100px;
+      background: rgba(0,0,0,0.7);
+      border-top: 1px solid rgba(0,255,255,0.1);
+      color: #ccc;
+      text-align: center;
+      padding: 30px;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 1.2s;
+    }
+
+    footer h3 {
+      color: #00eaff;
+    }
+
+    a {
+      color: #00eaff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .refund-section {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.refund-box {
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.refund-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+}
+
+.refund-box h3 {
+  color: #00eaff;
+  margin-bottom: 10px;
+}
+
+.refund-box ul {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+  </style>
 </head>
 <body>
+
+<div id="particles"></div>
 
     <div class="header">
         <div class="logo">
@@ -75,14 +228,12 @@
         </div>
     </div>
 
-    </div>
-    </div>
-    <main class="terms-page-content">
-        <div class="container terms-container">
-            <h1 class="section-title">Términos y Condiciones</h1>
-            <p class="last-updated">Última Actualización: 10 de octubre de 2025</p>
+<main>
+  <h1 class="section-title">Términos y Condiciones</h1>
+  <p class="intro-text">Construimos un entorno digital seguro, confiable y transparente para todos nuestros usuarios.</p>
+  <p class="last-updated">Última actualización: 15 de octubre de 2025</p>
 
-<div class="terms-text">
+  <div class="terms-text">
     <p>Bienvenido a CyberXtreme Programs. Al acceder y utilizar nuestro sitio web, usted acepta cumplir y quedar sujeto a los siguientes Términos y Condiciones de uso. Estos términos constituyen un acuerdo legalmente vinculante entre usted y CyberXtreme Programs respecto al acceso, navegación y utilización de nuestra plataforma. Le recomendamos leer cuidadosamente todo este documento, ya que establece derechos, responsabilidades y limitaciones importantes. Si no está de acuerdo con alguna disposición, le solicitamos no continuar utilizando nuestro sitio web.</p>
 
     <h2>1. Propiedad Intelectual</h2>
@@ -115,46 +266,59 @@
     <p>CyberXtreme Programs no almacena información sensible de pago en sus servidores, como números de tarjetas de crédito o claves bancarias. El procesamiento de pagos es realizado a través de terceros proveedores de servicios seguros, bajo sus propios términos y políticas de privacidad.</p>
     <p>El usuario es responsable de verificar que los datos de facturación proporcionados sean correctos. Los errores en la información suministrada pueden retrasar o imposibilitar la entrega de los productos digitales adquiridos.</p>
 
-    <h2>7. Política de Reembolsos</h2>
-    <p>En <strong>CyberXtreme Programs</strong> valoramos la satisfacción y confianza de nuestros clientes. Entendemos que pueden surgir situaciones especiales donde sea necesario solicitar un reembolso, por lo que hemos desarrollado una política transparente, justa y equilibrada para todas las partes involucradas.</p>
+        <h2>7. Política de Reembolsos</h2>
+    <div class="refund-section">
+      <p>En <strong>CyberXtreme Programs</strong> valoramos la confianza de nuestros clientes y nos esforzamos por brindar una experiencia transparente y justa. Sabemos que pueden surgir situaciones especiales, por eso ofrecemos una política de reembolsos clara y responsable.</p>
 
-    <h3>1. Condiciones Generales de Reembolso</h3>
-    <p>Los reembolsos aplican exclusivamente para productos digitales adquiridos a través de nuestra plataforma oficial **cyberxtremeprograms.store**. Debido a la naturaleza intangible de los productos (archivos descargables, licencias, plantillas, programas y recursos digitales), una vez completada la compra y habilitada la descarga, el producto se considera entregado.</p>
-    <p>Sin embargo, **se podrá solicitar un reembolso** bajo las siguientes condiciones:</p>
-    <ul>
-        <li>El cliente adquirió un producto por error o seleccionó el artículo equivocado **antes de la descarga**.</li>
-        <li>El archivo entregado presenta errores técnicos graves o se encuentra dañado, impidiendo su uso correcto.</li>
-        <li>El cliente **no ha descargado ni activado** el producto y realiza la solicitud dentro de los primeros **7 días posteriores a la compra**.</li>
-    </ul>
+      <div class="refund-box">
+        <h3>🧾 Condiciones Generales</h3>
+        <p>Los reembolsos aplican únicamente para productos digitales adquiridos a través de nuestra plataforma oficial <strong>cyberxtremeprograms.store</strong>. Dado que nuestros productos son de naturaleza digital, una vez descargados o activados, se consideran entregados.</p>
+        <p>No obstante, podrás solicitar un reembolso si:</p>
+        <ul>
+          <li>El producto fue adquirido por error antes de la descarga.</li>
+          <li>El archivo entregado presenta errores técnicos graves.</li>
+          <li>No se descargó ni activó el producto, y la solicitud se hace dentro de los 7 días posteriores a la compra.</li>
+        </ul>
+      </div>
 
-    <h3>2. Situaciones que No Califican para Reembolso</h3>
-    <p>No se emitirán reembolsos en los siguientes casos:</p>
-    <ul>
-        <li>El cliente **ya descargó, instaló o utilizó** el producto.</li>
-        <li>El usuario presenta incompatibilidades técnicas con su dispositivo o software **que no fueron especificadas** en la descripción del producto.</li>
-        <li>El reembolso se solicita **después del plazo de 7 días** establecido.</li>
-        <li>El archivo funciona correctamente, pero el cliente cambió de opinión o ya no desea el producto.</li>
-        <li>El producto fue adquirido fuera de las plataformas oficiales de CyberXtreme Programs.</li>
-    </ul>
+      <div class="refund-box">
+        <h3>🚫 No Aplica Reembolso Cuando</h3>
+        <ul>
+          <li>El cliente ya descargó, instaló o utilizó el producto.</li>
+          <li>Existen incompatibilidades técnicas no indicadas en la descripción.</li>
+          <li>El plazo de 7 días ya expiró.</li>
+          <li>El usuario simplemente cambió de opinión.</li>
+          <li>El producto fue adquirido fuera de los canales oficiales.</li>
+        </ul>
+      </div>
 
-    <h3>3. Procedimiento para Solicitar un Reembolso</h3>
-    <p>Si cumple con los requisitos anteriores, el cliente podrá iniciar su solicitud de reembolso contactando a nuestro equipo de soporte mediante:</p>
-    <ul>
-        <li>Correo electrónico oficial: **cyberxtremeprograms@gmail.com**</li>
-        <li>Formulario de contacto disponible en el sitio web</li>
-    </ul>
-    <p>Deberá proporcionar el **número de pedido**, correo electrónico de la cuenta utilizada y una breve descripción del motivo. Nuestro equipo analizará cada caso y responderá en un plazo máximo de **5 días hábiles** con una resolución.</p>
-    <p>En caso de proceder el reembolso, el importe será devuelto por el mismo método de pago utilizado durante la compra.</p>
+      <div class="refund-box">
+        <h3>📨 Solicitud de Reembolso</h3>
+        <p>Si necesitás solicitar un reembolso, deberás completar el <strong>Formulario de Reembolsos</strong> disponible en nuestra página oficial de <strong>CyberXtreme Programs</strong>. Este proceso garantiza una atención rápida y ordenada para cada caso.</p>
+        
+        <p>Para enviar correctamente la solicitud, se te pedirá la siguiente información:</p>
+        <ul>
+          <li><strong>Nombre completo</strong></li>
+          <li><strong>Correo electrónico</strong> utilizado en la compra</li>
+          <li><strong>Código de compra</strong> (por ejemplo: <code>#CXP-001234</code>)</li>
+          <li><strong>Fecha de compra</strong></li>
+          <li><strong>Nombre del producto</strong></li>
+          <li><strong>Motivo detallado de la solicitud</strong></li>
+        </ul>
 
-    <h3>4. Reemplazo de Productos</h3>
-    <p>Antes de autorizar un reembolso total, **CyberXtreme Programs** podrá ofrecer una solución alternativa, como la entrega de una versión corregida, un reemplazo o un crédito en el monedero digital para futuras compras.</p>
+        <p>Una vez enviado el formulario, nuestro equipo revisará la información y dará respuesta en un plazo máximo de <strong>2 días hábiles</strong> (o incluso antes, dependiendo del caso). En situaciones que requieran verificación adicional, la respuesta se emitirá en un plazo máximo de <strong>4 días hábiles</strong>.</p>
+        
+        <p>Nos comprometemos a mantener una comunicación clara y directa durante todo el proceso, priorizando siempre la confianza y satisfacción de nuestros clientes.</p>
+      </div>
 
-    <h3>5. Compromiso y Transparencia</h3>
-    <p>Nos comprometemos a mantener un trato justo y profesional con todos nuestros clientes. Cada solicitud será revisada con seriedad y bajo los principios de ética, transparencia y satisfacción mutua. Apreciamos que los usuarios comprendan que nuestros productos son digitales y de acceso inmediato, por lo cual es fundamental leer cuidadosamente la descripción antes de realizar una compra.</p>
 
-    <p>Al realizar una transacción en nuestra plataforma, el usuario acepta y entiende los términos de esta política de reembolsos.</p>
+      <div class="refund-box">
+        <h3>🔄 Reemplazo y Transparencia</h3>
+        <p>Antes de emitir un reembolso, <strong>CyberXtreme Programs</strong> puede ofrecerte una solución alternativa: una versión corregida, un reemplazo o un crédito en tu monedero digital. Nuestro compromiso es la satisfacción del cliente bajo los principios de ética y transparencia.</p>
+        <p><strong>CyberXtreme Programs</strong> — porque tu confianza es nuestro mayor valor.</p>
+      </div>
+    </div>
 
-    <p><strong>CyberXtreme Programs</strong> — porque tu confianza es nuestro mayor valor.</p>
 
     <h2>8. Soporte Técnico</h2>
     <p>CyberXtreme Programs ofrece soporte técnico a todos los clientes que hayan adquirido productos con licencia válida. El soporte puede ser solicitado a través de los canales oficiales establecidos en el sitio web. El tiempo de respuesta dependerá de la carga de trabajo y la complejidad de la solicitud.</p>
@@ -195,41 +359,15 @@
     <p>Si tiene preguntas, dudas o comentarios sobre estos Términos y Condiciones, puede comunicarse con nosotros a través de nuestro formulario de contacto en el sitio web o mediante nuestro correo electrónico oficial. Nos comprometemos a responder en el menor tiempo posible dentro de los horarios establecidos.</p>
     <p>CyberXtreme Programs agradece la confianza depositada por nuestros clientes y usuarios, y reafirma su compromiso de ofrecer productos digitales de calidad y servicios transparentes.</p>
 </div>
+</main>
 
-        </div>
-    </main>
-        <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-info">
-                <h3>CyberXtreme Programs</h3>
-                <p>Soluciones web a medida para tu negocio. Convierte tu pasión por la tecnología en una herramienta de crecimiento.</p>
-            </div>
-            <div class="footer-links">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="/index.html">Inicio</a></li>
-                    <li><a href="/contacto/contacto.html">Contacto</a></li>
-                    <li><a href="/Soporte 24/Soporte-24.html">Soporte 24/7</a></li>
-                    <li><a href="/Soporte 24/bot-ventas.html">Asistente De Ventas 24/7</a></li>
-                    <li><a href="/Terminos/terminos.html">Términos y condiciones</a></li>
-                    <li><a href="/mi historia/mi-historia.html">Nuestra Historia</a></li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <h3>Síguenos</h3>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/profile.php?id=61580615673129"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/cyberxtremeprograms/"><i class="fab fa-instagram"></i></a>
-                    <a href="https://discord.gg/32bbVNRb7y"><i class="fab fa-discord"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 CyberXtreme Programs.  Todos los derechos reservados.</p>
-        </div>
-    </footer>
-    
-    <script src="script.js"></script>
-    <script src="auth.js" type="module"></script>
+<footer>
+  <h3>CyberXtreme Programs</h3>
+  <p>Soluciones web a medida para tu negocio. Convierte tu pasión por la tecnología en una herramienta de crecimiento.</p>
+  <p>&copy; 2025 CyberXtreme Programs. Todos los derechos reservados.</p>
+</footer>
+
+<script src="/script.js"></script>
+<script src="/auth.js" type="module"></script>
 </body>
 </html>
