@@ -30,7 +30,7 @@ btnReset.addEventListener('click', () => {
     .then(() => {
       mostrarMensaje("✅ Contraseña actualizada correctamente. Redirigiendo...", "exito");
       setTimeout(() => {
-        window.location.href = "/login.html";
+        window.location.href = "/INICIOS-REGISTROS/login.html";
       }, 2000);
     })
     .catch((error) => {
@@ -47,3 +47,4 @@ function mostrarMensaje(texto, tipo) {
   mensaje.classList.add('visible');
   mensaje.style.color = tipo === "exito" ? "#00eaff" : "#ff5555";
 }
+
