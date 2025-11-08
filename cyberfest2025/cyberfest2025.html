@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CyberFest 2025 — CyberXtreme Programs</title>
+
+  <!-- Header global (ya lo tenés) -->
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/png" href="/Imagenes/favicon copia2.png" />
+
+  <!-- Estilos específicos del evento -->
+  <link rel="stylesheet" href="/cyberfest2025/cyberfest2025.css">
+
+  <!-- Animaciones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+  <!-- ======= HEADER EXISTENTE (tu header) ======= -->
+    <div class="header">
+        <div class="logo">
+            <a href="/index.html">
+                CyberXtreme Programs
+            </a>
+        </div>
+        
+        <nav class="categories-nav">
+            <a href="#" class="dropdown-toggle">Categorías</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#">Diseño Web <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/categoria-DiseñoWeb/Facil.html">Fácil</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Medio.html">Medio</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
+                    </ul>
+                </li>
+                   <li><a href="/Software/software.html">Software</a></li>
+                <li>
+                    <a href="#">Plantillas <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/Plantillas/plantillas.html">Plantillas Pro</a></li>
+                        <li><a href="/Plantillas Basicas/PlantillasBasicas.html">Plantillas Básicas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar productos...">
+        </div>
+        
+        <div class="user-nav" id="auth-buttons">
+            <a href="/INICIOS-REGISTROS/Iniciar-sesion.html" class="nav-button">Iniciar Sesión</a>
+            <a href="/INICIOS-REGISTROS/Crear-cuenta.html" class="nav-button">Crear Cuenta</a>
+            <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+        </div>
+
+        <div id="user-profile" style="display: none; position: relative;">
+            <div class="user-nav">
+                <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+                <button id="user-name-button" class="nav-button">
+                    <span id="full-name-display"></span> <i class="fas fa-caret-down"></i>
+                </button>
+            </div>
+            <div id="user-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ccc; border-radius: 5px; min-width: 150px; z-index: 1000;">
+                <a href="/mis-compras/mis-compras.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-shopping-bag"></i> Mis compras
+                </a>
+
+                <a href="/monedero/wallet.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-wallet"></i> Monedero
+                </a>
+                
+                <a href="/historial/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-history"></i> Historial
+                </a>
+                <button id="logout-button" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer;">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                </button>
+            </div>
+        </div>
+    </div>
+
+  <!-- ======= BANNER PRINCIPAL ======= -->
+  <section class="cf-hero">
+    <div class="cf-hero-inner">
+      <!-- Espacio para logo del evento -->
+      <div class="cf-logo-placeholder">
+        <img id="eventLogo" src="/cyberfest2025/Sin título-1.png" alt="CyberFest 2025 logo">
+      </div>
+
+      <div class="cf-hero-text">
+        <h1>CyberFest 2025</h1>
+        <p class="subtitle">Fiesta gamer online — torneo por equipos · premios en monedero digital · stream oficial</p>
+        <div class="cf-actions">
+          <button id="btnInscribirse" class="btn primary">Ir a inscripciones</button>
+          <button id="btnDiscord" class="btn ghost">Más info en Discord</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= INFO + PREMIOS + STREAM ======= -->
+  <main class="cf-main">
+    <section class="cf-row info-card animate__animated animate__fadeInUp">
+      <h2>Detalles rápidos</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>📅 Fecha</h3>
+          <p>30/12/2025 — Evento en línea (horario por confirmar)</p>
+        </div>
+        <div class="card">
+          <h3>🕹 Modalidad</h3>
+          <p>Warzone — equipos de 2 (duos). Se juegan 5 partidas; mejor puntuación gana.</p>
+        </div>
+        <div class="card">
+          <h3>🔊 Stream</h3>
+          <p>Transmitimos en Kick y TikTok Live — enlaces en el canal de Discord y aquí cuando esté.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cf-row prizes-card animate__animated animate__fadeInUp">
+      <h2>Premios (Monedero Digital)</h2>
+
+      <div class="prize-grid">
+        <!-- Tabla visual de premios -->
+        <div class="prize">
+          <div class="place">1°</div>
+          <div class="amount">$3,000 MXN</div>
+        </div>
+        <div class="prize">
+          <div class="place">2°</div>
+          <div class="amount">$2,000 MXN</div>
+        </div>
+        <div class="prize">
+          <div class="place">3°</div>
+          <div class="amount">$1,000 MXN</div>
+        </div>
+        <div class="prize">
+          <div class="place">4°</div>
+          <div class="amount">$500 MXN</div>
+        </div>
+        <div class="prize">
+          <div class="place">5°</div>
+          <div class="amount">$200 MXN</div>
+        </div>
+      </div>
+
+      <p class="prize-note">
+        Además: Si un participante supera los <strong>15 puntos</strong> en la puntuación total (suma de kills/objetivos), gana un extra de <strong>$500 MXN</strong>.
+      </p>
+    </section>
+
+    <section class="cf-row rules-preview animate__animated animate__fadeInUp">
+      <h2>Formato & puntuación (resumen)</h2>
+      <ul>
+        <li>Equipos: duos (2 jugadores).</li>
+        <li>Partidas: 5 partidas por equipo.</li>
+        <li>Puntuación: 1 kill = 2 puntos (ejemplo). Se suman puntos de las 5 partidas.</li>
+        <li>Premios por posición entregados al monedero de la tienda.</li>
+      </ul>
+      <p class="small">Las reglas completas, términos y condiciones y el reglamento de desempate están en el canal de Discord y en la página de Inscripciones, al dia del evento debe de estar dentro de nuestro servidor de discord para decir las reglas y mas cosas importantes.</p>
+    </section>
+
+    <section class="cf-row sponsor-stream animate__animated animate__fadeInUp">
+      <div class="grid-2">
+        <div class="stream-box">
+          <h3>Streaming oficial</h3>
+          <p>Se transmitirá en: <strong>Kick</strong> y <strong>TikTok Live</strong>. Enlaces en el Discord.</p>
+          <div class="stream-links">
+            <a id="kickLink" href="https://kick.com/glitchez" target="_blank" class="link">Ver en Kick</a>
+            <a id="tiktokLink" href="https://www.tiktok.com/@panitaglitch" target="_blank" class="link">Ver en TikTok</a>
+          </div>
+        </div>
+        <div class="sponsor-box">
+          <h3>Patrocinadores</h3>
+          <p>No hay patrocinadores oficiales (aún). Si querés patrocinar, contactanos en Discord.</p>
+          <button id="sponsorBtn" class="btn outline">Quiero patrocinar</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="cf-row footer-cta animate__animated animate__fadeInUp">
+      <h3>¿Listo para competir?</h3>
+      <div class="cf-actions">
+        <button id="btnInscribirse2" class="btn primary">Inscribirme ahora</button>
+        <button id="btnDiscord2" class="btn ghost">Unirme al Discord</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="cf-footer">
+    <small>© 2025 CyberXtreme Programs — CyberFest 2025</small>
+  </footer>
+
+  <!-- JS externo -->
+  <script src="/cyberfest2025/cyberfest2025.js"></script>
+  <script src="/auth.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscripciones - CyberXtreme Programs</title>
+  <link rel="stylesheet" href="/style.css"> <!-- Header y base -->
+  <link rel="stylesheet" href="inscripciones.css"> <!-- Fondo y estilo nuevo -->
+      <link rel="icon" type="image/png" href="/Imagenes/favicon copia2.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <!-- HEADER -->
+    <div class="header">
+        <div class="logo">
+            <a href="/index.html">
+                CyberXtreme Programs
+            </a>
+        </div>
+        
+        <nav class="categories-nav">
+            <a href="#" class="dropdown-toggle">Categorías</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#">Diseño Web <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/categoria-DiseñoWeb/Facil.html">Fácil</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Medio.html">Medio</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
+                    </ul>
+                </li>
+                   <li><a href="/Software/software.html">Software</a></li>
+                <li>
+                    <a href="#">Plantillas <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/Plantillas/plantillas.html">Plantillas Pro</a></li>
+                        <li><a href="/Plantillas Basicas/PlantillasBasicas.html">Plantillas Básicas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar productos...">
+        </div>
+        
+        <div class="user-nav" id="auth-buttons">
+            <a href="/INICIOS-REGISTROS/Iniciar-sesion.html" class="nav-button">Iniciar Sesión</a>
+            <a href="/INICIOS-REGISTROS/Crear-cuenta.html" class="nav-button">Crear Cuenta</a>
+            <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+        </div>
+
+        <div id="user-profile" style="display: none; position: relative;">
+            <div class="user-nav">
+                <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+                <button id="user-name-button" class="nav-button">
+                    <span id="full-name-display"></span> <i class="fas fa-caret-down"></i>
+                </button>
+            </div>
+            <div id="user-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ccc; border-radius: 5px; min-width: 150px; z-index: 1000;">
+                <a href="/mis-compras/mis-compras.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-shopping-bag"></i> Mis compras
+                </a>
+
+                <a href="/Administar-Licencias/panel-admin-licencias.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-key"></i> Panel De Licencias
+                </a>
+
+                <a href="/monedero/wallet.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-wallet"></i> Monedero
+                </a>
+                
+                <a href="/historial/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-history"></i> Historial
+                </a>
+                <button id="logout-button" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer;">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                </button>
+            </div>
+        </div>
+    </div>
+
+  <!-- FORMULARIO -->
+  <main class="form-container animate__animated animate__fadeIn">
+    <h2 class="animate__animated animate__pulse">🚀 Inscripción CyberXtreme Programs</h2>
+
+    <form 
+      id="formInscripcion" 
+      class="animate__animated animate__fadeInUp" 
+      action="https://formspree.io/f/mwpaeplw"
+      method="POST"
+    >
+      <div class="input-group">
+        <label>Nombre del Jugador 1</label>
+        <input type="text" name="jugador1" id="jugador1" required placeholder="Ejemplo: Marco Juares">
+      </div>
+
+      <div class="input-group">
+        <label>Gamertag del Jugador 1</label>
+        <input type="text" name="gamertag1" id="gamertag1" required placeholder="Ejemplo: #chavalito23">
+      </div>
+
+      <div class="input-group">
+        <label>Nombre del Jugador 2</label>
+        <input type="text" name="jugador2" id="jugador2" required placeholder="Ejemplo: Marcos Rivera">
+      </div>
+
+      <div class="input-group">
+        <label>Gamertag del Jugador 2</label>
+        <input type="text" name="gamertag2" id="gamertag2" required placeholder="Ejemplo: #XtremeMarcos">
+      </div>
+
+      <div class="input-group">
+        <label>Correo de contacto</label>
+        <input type="email" name="correo" id="correo" required placeholder="ejemplo@correo.com">
+      </div>
+
+      <div class="input-group">
+        <label>¿Tienen experiencia en torneos?</label>
+        <select name="experiencia" id="experiencia" required>
+          <option value="">Selecciona una opción</option>
+          <option value="Sí, varias veces">Sí, varias veces</option>
+          <option value="Una o dos veces">Una o dos veces</option>
+          <option value="Nunca">Nunca</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>¿En qué plataforma juegan?</label>
+        <select name="plataforma" id="plataforma" required>
+          <option value="">Selecciona una</option>
+          <option value="PC">PC</option>
+          <option value="PlayStation">PlayStation</option>
+          <option value="Xbox">Xbox</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>Comentario opcional</label>
+        <textarea name="comentario" id="comentario" placeholder="¿Algo que quieras agregar?"></textarea>
+      </div>
+
+      <button type="submit" class="btn animate__animated animate__pulse animate__infinite">Enviar Inscripción 🚀</button>
+    </form>
+  </main>
+
+  <footer>
+    © 2025 CyberXtreme Programs — Todos los derechos reservados ⚡
+  </footer>
+
+  <script src="inscripciones.js"></script>
+  <script src="/auth.js" type="module"></script>
+</body>
+</html>
