@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Compras | CyberXtreme Programs</title>
+    <link rel="icon" type="image/png" href="/Imagenes/favicon copia2.png" />
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Colores base neón */
+        :root {
+            --neon-blue: #00FFFF;
+            --neon-green: #39FF14;
+            --dark-bg: #1a1a1a;
+            --darker-bg: #0d0d0d;
+        }
+
+        .purchases-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: var(--dark-bg);
+            border-radius: 10px;
+            /* Sombra principal del contenedor */
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            color: #fff;
+        }
+        
+        .purchases-container h2,
+        .purchases-container h3 {
+            color: var(--neon-blue);
+        }
+
+        .purchase-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-left: 3px solid var(--neon-blue); /* Borde estético */
+        }
+
+        .purchase-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+        
+        .item-details {
+            flex-grow: 1;
+        }
+        
+        .item-details h3 {
+            margin: 0;
+            color: var(--neon-blue);
+        }
+
+        .item-details p {
+            margin: 5px 0 0;
+            font-size: 0.9em;
+        }
+        
+        /* Contenedor de acciones para separar el botón y el contador */
+        .item-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-end;
+        }
+
+        /* ⭐ NUEVO: Estilo para el contador de descargas ⭐ */
+        .download-count {
+            font-size: 0.8em;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-bottom: 5px; 
+            text-align: right;
+            display: block; 
+            border: 1px solid var(--neon-blue);
+            color: var(--neon-blue);
+            background-color: var(--darker-bg);
+        }
+        .download-count.low {
+            color: #FF4500; /* Naranja/Rojo si quedan pocas descargas */
+            border-color: #FF4500;
+        }
+        /* ======================================= */
+        /* === ESTILOS NEÓN PARA BOTONES PADRES === */
+        /* ======================================= */
+
+        .download-button,
+        .activate-redirect-button {
+            padding: 10px 20px;
+            border: 2px solid var(--neon-blue);
+            border-radius: 8px;
+            background-color: var(--darker-bg); /* Fondo más oscuro que el contenedor */
+            color: var(--neon-blue);
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            /* Sombra neón */
+            box-shadow: 0 0 8px rgba(0, 255, 255, 0.5); 
+            min-width: 180px; /* Ancho consistente */
+            text-align: center;
+        }
+
+        .download-button:hover,
+        .activate-redirect-button:hover {
+            background-color: var(--neon-blue);
+            color: var(--darker-bg);
+            box-shadow: 0 0 15px var(--neon-blue), 0 0 20px var(--neon-blue);
+        }
+
+        /* Estado de DESCARGAS agotadas */
+        .download-button.disabled {
+            background-color: #333;
+            border-color: #555;
+            color: #999;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        /* Indicadores de estado de licencia (Clases usadas en mis-compras.js) */
+        .license-status {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            border: 1px solid;
+            text-align: right;
+            font-size: 0.9em;
+        }
+        .license-status.activated {
+            color: var(--neon-green);
+            border-color: var(--neon-green);
+        }
+        .license-status.not-activated {
+            color: #FF4500; /* Naranja/Rojo neón */
+            border-color: #FF4500;
+        }
+
+        #licenses-list, #digital-downloads-list {
+            margin-top: 30px;
+            border-top: 2px solid #555;
+            padding-top: 20px;
+        }
+        
+        /* Media Query para Móviles */
+        @media (max-width: 768px) {
+            .purchase-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .purchase-item img {
+                width: 100%;
+                max-height: 150px;
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            .item-details {
+                min-width: 100%;
+            }
+            .item-actions {
+                width: 100%;
+                align-items: center;
+                margin-top: 10px;
+            }
+            .download-button,
+            .activate-redirect-button,
+            .download-count {
+                width: 100%;
+                min-width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <a href="/index.html">
+                CyberXtreme Programs
+            </a>
+        </div>
+        
+        <nav class="categories-nav">
+            <a href="#" class="dropdown-toggle">Categorías</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#">Diseño Web <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/categoria-DiseñoWeb/Facil.html">Fácil</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Medio.html">Medio</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Plantillas <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/Plantillas/plantillas.html">Plantillas Pro</a></li>
+                        <li><a href="/Plantillas Basicas/PlantillasBasicas.html">Plantillas Básicas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar productos...">
+        </div>
+        
+        <div class="user-nav" id="auth-buttons">
+            <a href="/INICIOS-REGISTROS/Iniciar-sesion.html" class="nav-button">Iniciar Sesión</a>
+            <a href="/INICIOS-REGISTROS/Crear-cuenta.html" class="nav-button">Crear Cuenta</a>
+            <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+        </div>
+
+        <div id="user-profile" style="display: none; position: relative;">
+            <div class="user-nav">
+                <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+                <button id="user-name-button" class="nav-button">
+                    <span id="full-name-display"></span> <i class="fas fa-caret-down"></i>
+                </button>
+            </div>
+            <div id="user-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ccc; border-radius: 5px; min-width: 150px; z-index: 1000;">
+                <a href="/mis-compras/mis-compras.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-shopping-bag"></i> Mis compras
+                </a>
+                
+                <a href="/monedero/wallet.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-wallet"></i> Monedero
+                </a>
+                
+                <a href="/historial/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-history"></i> Historial
+                </a>
+                <button id="logout-button" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer;">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                </button>
+            </div>
+        </div>
+    </div>
+    </div>
+<main class="purchases-container">
+    <h2>Mis Compras</h2>
+
+    <div id="digital-downloads-list">
+        <h3>Descargas Digitales</h3>
+        <p id="no-digital-downloads-message">No has realizado descargas digitales todavía.</p>
+        <div id="downloads-items-container"></div>
+    </div>
+
+    <div id="licenses-list">
+        <h3>Mis Licencias de Software</h3>
+        <p id="no-licenses-message">Proximamente licencias de Software.</p>
+    </div>
+
+    </main>
+
+<footer class="footer">
+    <p>&copy; 2025 CyberXtreme Programs. Todos los derechos reservados.</p>
+</footer>
+
+<script src="/mis-compras/mis-compras.js" type="module"></script>
+<script src="/auth.js" type="module"></script>
+
+</body>
+</html>
