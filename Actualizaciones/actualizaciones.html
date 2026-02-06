@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizaciones | CyberXtreme Programs</title>
+    <link rel="icon" type="image/png" href="/Imagenes/favicon copia2.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        body {
+            background: radial-gradient(circle at top, #0a0f1c, #000);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1, h2 {
+            color: #00FFFF;
+        }
+
+        .update {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 25px;
+            margin-top: 40px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .update:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+        }
+
+        footer {
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER PRINCIPAL ===== -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberXtreme Programs</title>
+    <link rel="icon" type="image/png" href="/Imagenes/favicon copia2.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <a href="/index.html">
+                CyberXtreme Programs
+            </a>
+        </div>
+        
+        <nav class="categories-nav">
+            <a href="#" class="dropdown-toggle">Categorías</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#">Diseño Web <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/categoria-DiseñoWeb/Facil.html">Fácil</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Medio.html">Medio</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Plantillas <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/Plantillas/plantillas.html">Plantillas Pro</a></li>
+                        <li><a href="/Plantillas Basicas/PlantillasBasicas.html">Plantillas Básicas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar productos...">
+        </div>
+        
+        <div class="user-nav" id="auth-buttons">
+            <a href="/INICIOS-REGISTROS/Iniciar-sesion.html" class="nav-button">Iniciar Sesión</a>
+            <a href="/INICIOS-REGISTROS/Crear-cuenta.html" class="nav-button">Crear Cuenta</a>
+            <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+        </div>
+
+        <div id="user-profile" style="display: none; position: relative;">
+            <div class="user-nav">
+                <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+                <button id="user-name-button" class="nav-button">
+                    <span id="full-name-display"></span> <i class="fas fa-caret-down"></i>
+                </button>
+            </div>
+            <div id="user-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ccc; border-radius: 5px; min-width: 150px; z-index: 1000;">
+                <a href="/mis-compras/mis-compras.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-shopping-bag"></i> Mis compras
+                </a>
+                
+                <a href="/monedero/wallet.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-wallet"></i> Monedero
+                </a>
+                
+                <a href="/historial/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-history"></i> Historial
+                </a>
+                <button id="logout-button" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer;">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <main class="main-content" style="padding: 40px; max-width: 1000px; margin: auto;">
+        <h1 style="text-align:center; color:#00FFFF;" class="fade-in">Actualizaciones de CyberXtreme Programs</h1>
+
+        <section class="update fade-in" style="animation-delay: 0.3s;">
+            <h2>🚀 Actualización 2.0 - El inicio de la nueva era</h2>
+            <p>
+                La versión <strong>2.0</strong> marca un hito en la evolución de <strong>CyberXtreme Programs</strong>.
+                Ahora, los usuarios pueden elegir entre nuestras <strong>Plantillas Básicas</strong> para empezar de manera sencilla,
+                o las <strong>Plantillas Pro</strong> diseñadas para proyectos profesionales y personalizados.
+            </p>
+            <p>
+                Además, hemos implementado el <strong>Monedero Digital</strong> 🪙, un sistema que premia la fidelidad de nuestros usuarios.
+                Por cada compra, recibirás automáticamente un <strong>2% de crédito</strong> para futuras adquisiciones. Esto significa
+                que mientras más uses CyberXtreme, más beneficios obtendrás, creando un ecosistema de recompensas continuo.
+            </p>
+            <p>
+                En esta actualización también optimizamos la velocidad de carga, renovamos la interfaz visual y simplificamos
+                la navegación para que la experiencia de usuario sea más fluida e intuitiva. Cada detalle se pensó para
+                que tu interacción con CyberXtreme sea más rápida, atractiva y profesional.
+            </p>
+            <p>
+                Con la versión 2.0, sentamos las bases para futuras funcionalidades, integraciones y mejoras, consolidando nuestra visión:
+                ofrecer herramientas digitales poderosas y accesibles para todos los usuarios, sin importar su nivel de experiencia.
+            </p>
+        </section>
+
+        <section class="update fade-in" style="animation-delay: 0.6s;">
+            <h2>🧠 Próxima Actualización 3.0 - Licencias y programas exclusivos</h2>
+            <p>
+                La versión <strong>3.0</strong> se perfila como la actualización más ambiciosa hasta ahora. Introduciremos el sistema de
+                <strong>Licencias de Software CyberXtreme</strong> 🔐, garantizando que cada programa y servicio digital adquirido esté protegido
+                mediante <strong>códigos de activación únicos</strong> generados automáticamente.
+            </p>
+            <p>
+                Además, se sumarán nuevos programas exclusivos bajo el sello <strong>CyberXtreme</strong>, incluyendo herramientas
+                de productividad, diseño web, desarrollo y gestión digital. Todo pensado para brindar un control total sobre tu entorno de trabajo.
+            </p>
+            <p>
+                También se lanzará un <strong>panel de administración de licencias</strong> donde podrás gestionar activaciones, ver historial
+                de uso y recibir soporte técnico personalizado de manera centralizada y segura.
+            </p>
+            <p>
+                Con esta actualización, no solo protegemos tus adquisiciones, sino que ofrecemos una experiencia completa y profesional,
+                reforzando nuestro compromiso de mantener a CyberXtreme como la plataforma líder en soluciones digitales.
+            </p>
+            <p style="margin-top:10px; font-style:italic;">
+                💡 Esta versión ya está en desarrollo y promete llevar la experiencia de todos los usuarios a un nuevo nivel, con seguridad,
+                eficiencia y control total sobre sus herramientas digitales.
+            </p>
+        </section>
+
+        <section class="update fade-in" style="animation-delay: 0.9s; text-align:center;">
+            <h2>⚡ Seguimos Avanzando</h2>
+            <p>
+                Cada actualización refleja nuestro compromiso con la innovación, la accesibilidad y la excelencia.
+                Queremos que cada usuario sienta que forma parte del crecimiento de CyberXtreme Programs.
+            </p>
+            <p>
+                Gracias por acompañarnos en esta evolución. <br>
+                <strong>El futuro apenas comienza.</strong>
+            </p>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer fade-in" style="animation-delay: 1.2s;">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>CyberXtreme Programs</h3>
+                <p>Soluciones web a medida para tu negocio. Convierte tu pasión por la tecnología en una herramienta de crecimiento.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/contacto/contacto.html">Contacto</a></li>
+                    <li><a href="/Soporte 24/Soporte-24.html">Soporte 24/7</a></li>
+                    <li><a href="/Soporte 24/bot-ventas.html">Asistente De Ventas 24/7</a></li>
+                    <li><a href="/Terminos/terminos.html">Términos y condiciones</a></li>
+                    <li><a href="/mi historia/mi-historia.html">Nuestra Historia</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61580615673129"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/cyberxtremeprograms/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://discord.gg/32bbVNRb7y"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CyberXtreme Programs.  Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="/script.js"></script>
+    <script src="/auth.js" type="module"></script>
+</body>
+</html>

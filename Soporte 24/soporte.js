@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             options: [
                 { text: 'Preguntas sobre productos', next: 'products' },
                 { text: 'Soporte técnico', next: 'tech' },
-                { text: 'Información sobre pedidos o descargas', next: 'orders' },
+                { text: 'Pedidos, descargas o reembolsos', next: 'orders' },
                 { text: 'Hablar con un agente humano', next: 'human' }
             ]
         },
@@ -22,16 +22,41 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         'tech': {
-            message: 'Para soporte técnico, te recomiendo revisar nuestra sección de preguntas frecuentes o contactarnos directamente en soporte@cyberxtreme.com',
+            message: 'Para soporte técnico, te recomiendo revisar nuestra sección de preguntas frecuentes o contactarnos directamente en cyberxtremeprograms@gmail.com',
             options: [
                 { text: 'Volver al inicio', next: 'start' }
             ]
         },
         'orders': {
-            message: 'Para información de pedidos o descargas, por favor revisa tu historial de compras en tu perfil. Si el problema persiste, contacta a nuestro equipo de ventas.',
+            message: '¿Qué tipo de ayuda necesitás sobre tus pedidos?',
+            options: [
+                { text: 'Estado de mi pedido', next: 'order-status' },
+                { text: 'Problemas con descargas', next: 'download-issue' },
+                { text: 'Reembolsos o devoluciones', next: 'refunds' },
+                { text: 'Volver al inicio', next: 'start' }
+            ]
+        },
+        'order-status': {
+            message: 'Podés revisar el estado de tus pedidos en la sección "Mis Compras" dentro de tu cuenta. Si algo no aparece, contactá a soporte con tu número de pedido.',
             options: [
                 { text: 'Volver al inicio', next: 'start' }
             ]
+        },
+        'refunds': {
+            message: 'Lamentamos que hayas tenido un inconveniente. Para procesar un reembolso o devolución, por favor asegúrate de cumplir con las siguientes condiciones:\n\n• La solicitud debe realizarse dentro de los primeros 7 días desde la compra.\n• El producto no debe haber sido activado o descargado más de una vez.\n• Deberás enviar el número de pedido y el motivo del reembolso a nuestro correo: cyberxtremeprograms@gamil.com\n\n¿Querés que te redirija al formulario de reembolso?',
+            options: [
+                { text: 'Sí, quiero solicitar un reembolso', next: 'redirect-refund' },
+                { text: 'No, volver al inicio', next: 'start' }
+            ]
+        },
+        'redirect-refund': {
+            message: 'Redirigiendo al formulario de reembolsos...',
+            options: [],
+            action: () => {
+                setTimeout(() => {
+                    window.location.href = '/rembolsos/rembolsos.html'; // Asegúrate de crear o usar esta ruta
+                }, 1500);
+            }
         },
         'human': {
             message: 'Un momento, por favor. Serás redirigido a una página para contactar a un agente humano.',
@@ -76,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             options: [],
             action: () => {
                 setTimeout(() => {
-                    window.location.href = '/contacto/contacto.html'; // Asegúrate de que esta ruta sea correcta
+                    window.location.href = '/contacto/contacto.html';
                 }, 1500);
             }
         }
@@ -107,20 +132,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleUserResponse(userText, nextState) {
         addMessage(userText, 'user');
-        
-        // Simula la espera del bot
         setTimeout(() => {
             const response = botResponses[nextState];
             addMessage(response.message, 'bot');
             showOptions(response.options);
-
-            if (response.action) {
-                response.action(); // Ejecuta la acción de redirección si existe
-            }
+            if (response.action) response.action();
         }, 500);
     }
 
-    // Iniciar la conversación
     addMessage(botResponses.start.message, 'bot');
     showOptions(botResponses.start.options);
 });

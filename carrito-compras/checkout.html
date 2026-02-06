@@ -64,11 +64,7 @@
             color: #00FFFF;
         }
 
-        #paypal-button-container {
-            margin-top: 20px;
-            padding: 10px;
-        }
-
+        /* Estilos del carrito y totales */
         .order-item {
             display: flex;
             justify-content: space-between;
@@ -102,7 +98,7 @@
         /* Ocultar el <h1> original, usar solo el nuevo */
         h1:not(.centered-title) { display: none; }
 
-        /* Estilos de Notificación Modal */
+        /* --- ESTILOS DE NOTIFICACIÓN MODAL --- */
         #notification-modal {
             display: none;
             position: fixed;
@@ -166,7 +162,60 @@
         .modal-content button:hover {
             background-color: #00D7D7;
         }
+        
+        /* --- NUEVOS ESTILOS PARA LA SELECCIÓN DE PAGO (INTEGRACIÓN MONEDERO) --- */
+        .payment-options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
+        .payment-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            background-color: #f0f0f0; /* Fondo claro del payment-center */
+            color: #000;
+        }
+
+        .payment-option:hover {
+            background-color: #e0e0e0;
+        }
+
+        .payment-option input[type="radio"]:checked + i {
+            color: #00FFFF;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+        }
+
+        .payment-option input[type="radio"] {
+            transform: scale(1.2);
+        }
+
+        #wallet-balance-display {
+            font-weight: bold;
+            color: #38FF38; /* Verde neón para el saldo */
+            margin-left: auto; /* Empuja el saldo a la derecha */
+        }
+
+        #finalize-cyberx-purchase {
+            background-color: #00FFFF;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #finalize-cyberx-purchase:hover {
+            background-color: #00D7D7;
+        }
+        
         /* ===== Media Queries para PC y Celular ===== */
         @media (max-width: 1023px) {
             .checkout-layout {
@@ -195,7 +244,8 @@
             }
 
             #paypal-button-container {
-                transform: scale(0.9);
+                /* Quitamos la transformación ya que puede causar problemas con el tamaño del botón */
+                /* transform: scale(0.9); */
                 transform-origin: 0 0;
             }
 
@@ -212,11 +262,13 @@
     </style>
 </head>
 <body>
-    <!-- Tu HTML existente sigue igual -->
     <div class="header">
         <div class="logo">
-            <a href="/index.html">CyberXtreme Programs</a>
+            <a href="/index.html">
+                CyberXtreme Programs
+            </a>
         </div>
+        
         <nav class="categories-nav">
             <a href="#" class="dropdown-toggle">Categorías</a>
             <ul class="dropdown-menu">
@@ -228,21 +280,27 @@
                         <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
                     </ul>
                 </li>
-                <li><a href="/proximamente/proximamente.html">Software Proximamente</a></li>
+
                 <li>
                     <a href="#">Plantillas <i class="fas fa-caret-right"></i></a>
                     <ul class="dropdown-submenu">
                         <li><a href="/Plantillas/plantillas.html">Plantillas Pro</a></li>
-                        <li><a href="/Plantillas/plantillas-basicas.html">Plantillas Básicas</a></li>
+                        <li><a href="/Plantillas Basicas/PlantillasBasicas.html">Plantillas Básicas</a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
+        
         <div class="search-bar">
             <input type="text" placeholder="Buscar productos...">
         </div>
+        
         <div class="user-nav" id="auth-buttons">
             <a href="/INICIOS-REGISTROS/Iniciar-sesion.html" class="nav-button">Iniciar Sesión</a>
             <a href="/INICIOS-REGISTROS/Crear-cuenta.html" class="nav-button">Crear Cuenta</a>
             <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
         </div>
+
         <div id="user-profile" style="display: none; position: relative;">
             <div class="user-nav">
                 <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
@@ -254,6 +312,11 @@
                 <a href="/mis-compras/mis-compras.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
                     <i class="fas fa-shopping-bag"></i> Mis compras
                 </a>
+                
+                <a href="/monedero/wallet.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-wallet"></i> Monedero
+                </a>
+                
                 <a href="/historial/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
                     <i class="fas fa-history"></i> Historial
                 </a>
@@ -274,10 +337,37 @@
                     <img src="/Imagenes/ad-ejemplo.jpg" alt="Anuncio de plantilla Pro" style="width:100%; max-width: 200px; margin-top: 15px;">
                 </div>
             </div>
+            
             <div class="payment-center">
                 <h3>Centro de Pago</h3>
-                <p>Tu compra es gestionada de forma segura por PayPal.</p>
-                <div id="paypal-button-container"></div>
+                
+                <section id="payment-options-section">
+                    <p style="margin-bottom: 20px; color: #333;">Selecciona tu método de pago preferido para continuar.</p>
+                    <div class="payment-options-container">
+                        
+                        <label class="payment-option paypal-option" for="pay-paypal">
+                            <input type="radio" name="payment-method" id="pay-paypal" value="paypal" checked>
+                            <i class="fab fa-paypal"></i> PayPal
+                        </label>
+
+                        <label class="payment-option cyberx-option" for="pay-cyberx" id="cyberx-wallet-option-label">
+                            <input type="radio" name="payment-method" id="pay-cyberx" value="cyberx">
+                            <i class="fas fa-wallet"></i> Monedero CyberXtreme 
+                            <span id="wallet-balance-display" style="margin-left: auto;">Cargando...</span>
+                        </label>
+                    </div>
+                    <p id="wallet-error-message" style="color: #FF3838; margin-top: 10px; font-weight: bold; display: none;">
+                        Fondos insuficientes en el Monedero CyberXtreme.
+                    </p>
+                </section>
+                
+                <div id="payment-gateway-area" style="margin-top: 30px;">
+                    <div id="paypal-button-container" class="payment-block"></div>
+                    
+                    <button id="finalize-cyberx-purchase" class="payment-block" style="display: none; width: 100%; padding: 15px; font-size: 1.1em;" disabled>
+                        Pagar con Monedero CyberXtreme
+                    </button>
+                </div>
             </div>
             <div class="order-summary">
                 <h3>Info de Compra y Derechos</h3>
@@ -308,6 +398,6 @@
 
     <script src="https://www.paypal.com/sdk/js?client-id=AT9UHY0WPE7JN_VmhHNm-nqVYw3tc26hb8s_yBFiIp6lILycJf7n4pGO7KcOjXY-85PmCLekwzW97oVg&currency=MXN"></script>
     <script src="/auth.js" type="module"></script>
-    <script src="/carrito-compras/checkout.js"></script>
+    <script src="/carrito-compras/checkout.js" type="module"></script> 
 </body>
 </html>

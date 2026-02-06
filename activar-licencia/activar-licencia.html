@@ -7,71 +7,117 @@
     <link rel="icon" type="image/png" href="/Imagenes/favicon copia2.png" />
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
+<style>
+    /* Colores base neón */
+    :root {
+        --neon-blue: #00FFFF;
+        --neon-green: #39FF14;
+        --dark-bg: #1a1a1a;
+        --darker-bg: #0d0d0d;
+    }
+
+    /* === ESTILOS NEÓN PARA EL CONTENEDOR DE ACTIVACIÓN === */
+    .activation-container {
+        max-width: 600px; /* Tamaño adecuado para un formulario */
+        margin: 50px auto;
+        padding: 30px;
+        background-color: var(--dark-bg);
+        border-radius: 10px;
+        /* Sombra principal del contenedor */
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        color: #fff;
+        text-align: center;
+    }
+    
+    .activation-container h2 {
+        color: var(--neon-blue);
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-size: 2em;
+    }
+
+    .activation-container p {
+        margin-bottom: 25px;
+        font-size: 1.1em;
+        color: #ccc;
+    }
+
+    /* === ESTILOS NEÓN PARA EL FORMULARIO === */
+    .activation-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .activation-form input[type="text"] {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid var(--neon-blue);
+        border-radius: 5px;
+        background-color: #2c2c2c;
+        color: #fff;
+        font-size: 1em;
+        /* Sombra de neón suave */
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+        transition: border-color 0.3s, box-shadow 0.3s;
+        box-sizing: border-box; /* Incluir padding y border en el ancho */
+    }
+
+    .activation-form input[type="text"]:focus {
+        outline: none;
+        border-color: var(--neon-green);
+        /* Sombra de neón verde al enfocar */
+        box-shadow: 0 0 10px rgba(57, 255, 20, 0.8);
+    }
+
+    /* === ESTILOS NEÓN PARA EL BOTÓN DE ACTIVAR === */
+    #activate-button {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid var(--neon-green);
+        border-radius: 8px;
+        background-color: var(--darker-bg);
+        color: var(--neon-green);
+        font-weight: bold;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        /* Sombra de neón verde */
+        box-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+    }
+
+    #activate-button:hover {
+        background-color: var(--neon-green);
+        color: var(--darker-bg);
+        /* Efecto de brillo intenso */
+        box-shadow: 0 0 15px var(--neon-green), 0 0 20px var(--neon-green);
+    }
+    
+    /* === ESTILOS PARA MENSAJES DE ESTADO (opcional) === */
+    #activation-message {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 5px;
+        font-weight: bold;
+        color: #fff;
+        display: none; /* El JS lo muestra */
+    }
+    /* Estilos de error/éxito si los añades en JS */
+    #activation-message.error { background-color: #581515; border: 1px solid #FF4500; }
+    #activation-message.success { background-color: #153815; border: 1px solid var(--neon-green); }
+
+    /* Media query base para el footer */
+    @media (max-width: 768px) {
         .activation-container {
-            max-width: 600px;
-            margin: 50px auto;
+            margin: 20px auto;
             padding: 20px;
-            background-color: #1a1a1a;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-            color: #fff;
-            text-align: center;
         }
+    }
+    
+    /* El resto de estilos (purchases-container, purchase-item, etc.) no son necesarios aquí 
+       pero los mantengo por si acaso los copiaste, aunque la página no los usa. */
 
-        .activation-container h2 {
-            color: #00FFFF;
-        }
-
-        .activation-container p {
-            margin-bottom: 20px;
-        }
-
-        .activation-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .activation-form input {
-            padding: 10px;
-            border: 1px solid #00FFFF;
-            border-radius: 5px;
-            background-color: #333;
-            color: #fff;
-            font-size: 1em;
-            text-align: center;
-        }
-        
-        .activation-form button {
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
-            background-color: #00FFFF;
-            color: #000;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .activation-form button:hover {
-            background-color: #00B3B3;
-        }
-
-        #activation-message {
-            margin-top: 20px;
-            font-weight: bold;
-        }
-
-        .message-success {
-            color: #4CAF50; /* Verde */
-        }
-
-        .message-error {
-            color: #f44336; /* Rojo */
-        }
-    </style>
+</style>
 </head>
 <body>
     <div class="header">
@@ -81,24 +127,27 @@
             </a>
         </div>
         
-<nav class="categories-nav">
-    <a href="#" class="dropdown-toggle">Categorías</a>
-    <ul class="dropdown-menu">
-        <li>
-            <a href="#">Diseño Web <i class="fas fa-caret-right"></i></a>
-            <ul class="dropdown-submenu">
-                <li><a href="/categoria-DiseñoWeb/Facil.html">Fácil</a></li>
-                <li><a href="/categoria-DiseñoWeb/Medio.html">Medio</a></li>
-                <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
+        <nav class="categories-nav">
+            <a href="#" class="dropdown-toggle">Categorías</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#">Diseño Web <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/categoria-DiseñoWeb/Facil.html">Fácil</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Medio.html">Medio</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Plantillas <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/Plantillas/plantillas.html">Plantillas Pro</a></li>
+                        <li><a href="/Plantillas Basicas/PlantillasBasicas.html">Plantillas Básicas</a></li>
+                    </ul>
+                </li>
             </ul>
-        </li>
-        <li><a href="/proximamente/proximamente.html">Software Proximamente</a></li>
-        <li>
-            <a href="/Plantillas/plantillas.html">Plantillas <i class="fas fa-caret-right"></i></a>
-            <ul class="dropdown-submenu">
-                <li><a href="/Plantillas/plantillas.html">Plantillas Pro</a></li>
-                <li><a href="/Plantillas/plantillas-basicas.html">Plantillas Básicas</a></li>
-</nav>
+        </nav>
         
         <div class="search-bar">
             <input type="text" placeholder="Buscar productos...">
@@ -121,7 +170,12 @@
                 <a href="/mis-compras/mis-compras.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
                     <i class="fas fa-shopping-bag"></i> Mis compras
                 </a>
-                <a href="/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                
+                <a href="/monedero/wallet.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-wallet"></i> Monedero
+                </a>
+                
+                <a href="/historial/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
                     <i class="fas fa-history"></i> Historial
                 </a>
                 <button id="logout-button" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer;">
@@ -132,16 +186,17 @@
     </div>
     
     <main class="activation-container">
-        <h2>Activa tu Producto</h2>
-        <p>Introduce la clave de licencia que encontraste en "Mis Compras" para activar tu producto.</p>
+        <h2><i class="fas fa-key"></i> Activa tu Producto</h2>
+        <p>Introduce la clave de licencia que encontraste en "<a href="/mis-compras/mis-compras.html" style="color: var(--neon-green); text-decoration: none;">Mis Compras</a>" para activar tu producto.</p>
+        
         <div class="activation-form">
             <input type="text" id="license-input" placeholder="Introduce tu clave de licencia" />
-            <button id="activate-button">Activar</button>
+            <button id="activate-button" type="button"><i class="fas fa-bolt"></i> Activar</button>
         </div>
         <div id="activation-message"></div>
     </main>
 
-    <footer class="footer">
+        <footer class="footer">
         <div class="footer-container">
             <div class="footer-info">
                 <h3>CyberXtreme Programs</h3>
@@ -150,32 +205,29 @@
             <div class="footer-links">
                 <h3>Enlaces Rápidos</h3>
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="#">Suscripciones</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/contacto/contacto.html">Contacto</a></li>
+                    <li><a href="/Soporte 24/Soporte-24.html">Soporte 24/7</a></li>
+                    <li><a href="/Soporte 24/bot-ventas.html">Asistente De Ventas 24/7</a></li>
+                    <li><a href="/Terminos/terminos.html">Términos y condiciones</a></li>
+                    <li><a href="/mi historia/mi-historia.html">Nuestra Historia</a></li>
                 </ul>
             </div>
             <div class="footer-social">
                 <h3>Síguenos</h3>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61580615673129"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/cyberxtremeprograms/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://discord.gg/32bbVNRb7y"><i class="fab fa-discord"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 CyberXtreme Programs. Todos los derechos reservados.</p>
+            <p>&copy; 2025 CyberXtreme Programs.  Todos los derechos reservados.</p>
         </div>
     </footer>
     
-    <script src="/script.js"></script>
     <script src="/auth.js" type="module"></script>
-    <script src="/carrito-compras/carrito.js"></script>
-    <script src="/historial.js"></script>
-    <script src="/mis-compras/mis-compras.js"></script>
-    <script src="/producto.js"></script>
-    <script src="activacion.js"></script>
+    <script src="activacion.js" type="module"></script>
 </body>
 </html>

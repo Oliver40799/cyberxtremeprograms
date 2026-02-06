@@ -8,9 +8,116 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/mi-historia.css">
+
+    <style>
+      body {
+        background: radial-gradient(ellipse at bottom, #0d0d0d 0%, #000 100%);
+        color: #e0e0e0;
+        font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      /* 🌌 Fondo animado */
+      #particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: radial-gradient(circle at 50% 50%, rgba(0,255,255,0.1), transparent 70%);
+        animation: moveGlow 8s ease-in-out infinite alternate;
+        filter: blur(60px);
+      }
+
+      @keyframes moveGlow {
+        0% { transform: translateY(0) scale(1); }
+        100% { transform: translateY(-20px) scale(1.1); }
+      }
+
+      main {
+        max-width: 1000px;
+        margin: 120px auto;
+        padding: 40px;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(0,255,255,0.15);
+        border-radius: 20px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 0 20px rgba(0,255,255,0.1);
+        animation: fadeIn 1s ease-in-out forwards;
+      }
+
+      .section-title {
+        color: #00eaff;
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        opacity: 0;
+        animation: fadeInUp 1s ease forwards;
+        animation-delay: 0.2s;
+      }
+
+      .history-intro {
+        text-align: justify;
+        font-size: 1.15rem;
+        color: #b0faff;
+        margin-bottom: 40px;
+        opacity: 0;
+        animation: fadeInUp 1s ease forwards;
+        animation-delay: 0.4s;
+      }
+
+      .history-list p, .history-list ul {
+        line-height: 1.8;
+        opacity: 0;
+        animation: fadeInUp 1s ease forwards;
+      }
+
+      .history-list ul {
+        margin-left: 25px;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          transform: translateY(40px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      footer {
+        margin-top: 100px;
+        background: rgba(0,0,0,0.7);
+        border-top: 1px solid rgba(0,255,255,0.1);
+        color: #ccc;
+        text-align: center;
+        padding: 30px;
+        animation: fadeInUp 1s ease forwards;
+        animation-delay: 1.2s;
+      }
+
+      footer h3 {
+        color: #00eaff;
+      }
+
+      a {
+        color: #00eaff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
 </head>
 <body>
+    <div id="particles"></div>
 
+    <!-- 🔹 Tu header original -->
     <div class="header">
         <div class="logo">
             <a href="/index.html">
@@ -18,24 +125,27 @@
             </a>
         </div>
         
-<nav class="categories-nav">
-    <a href="#" class="dropdown-toggle">Categorías</a>
-    <ul class="dropdown-menu">
-        <li>
-            <a href="#">Diseño Web <i class="fas fa-caret-right"></i></a>
-            <ul class="dropdown-submenu">
-                <li><a href="/categoria-DiseñoWeb/Facil.html">Fácil</a></li>
-                <li><a href="/categoria-DiseñoWeb/Medio.html">Medio</a></li>
-                <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
+        <nav class="categories-nav">
+            <a href="#" class="dropdown-toggle">Categorías</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#">Diseño Web <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/categoria-DiseñoWeb/Facil.html">Fácil</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Medio.html">Medio</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Plantillas <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/Plantillas/plantillas.html">Plantillas Pro</a></li>
+                        <li><a href="/Plantillas Basicas/PlantillasBasicas.html">Plantillas Básicas</a></li>
+                    </ul>
+                </li>
             </ul>
-        </li>
-        <li><a href="/proximamente/proximamente.html">Software Proximamente</a></li>
-        <li>
-            <a href="/Plantillas/plantillas.html">Plantillas <i class="fas fa-caret-right"></i></a>
-            <ul class="dropdown-submenu">
-                <li><a href="/Plantillas/plantillas.html">Plantillas Pro</a></li>
-                <li><a href="/Plantillas/plantillas-basicas.html">Plantillas Básicas</a></li>
-</nav>
+        </nav>
         
         <div class="search-bar">
             <input type="text" placeholder="Buscar productos...">
@@ -58,7 +168,12 @@
                 <a href="/mis-compras/mis-compras.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
                     <i class="fas fa-shopping-bag"></i> Mis compras
                 </a>
-                <a href="/mi-historia.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                
+                <a href="/monedero/wallet.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-wallet"></i> Monedero
+                </a>
+                
+                <a href="/historial/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
                     <i class="fas fa-history"></i> Historial
                 </a>
                 <button id="logout-button" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer;">
@@ -67,55 +182,33 @@
             </div>
         </div>
     </div>
+
+    <!-- 🔹 Contenido principal -->
     <main class="history-page-content">
         <div class="container history-container">
-            <h1 class="section-title">Mi Historia: CyberXtreme & CyberXtreme Programs</h1>
-            <p class="history-intro">
-                Todo comenzó con una idea que parecía pequeña, pero que en realidad era una chispa encendiendo algo mucho más grande. Esa chispa se llamó CyberXtreme.
-            </p>
-            
+            <h1 class="section-title">Mi historia – El origen de CyberXtreme y CyberXtreme Programs</h1>
             <div class="history-list">
-                <p>
-                    En un principio, CyberXtreme no era más que un sueño alojado en Tienda Nube, un subdominio prestado, un espacio limitado donde se empezaron a subir productos, crear categorías y soñar con que algún día los gamers y los amantes de la tecnología entrarían ahí para elegir su consola, su PC o su componente favorito. Era un comienzo humilde, pero fue el primer latido. Ese momento fue cuando realmente nació el hermano mayor, aunque todavía no había visto la luz del todo.
-                </p>
-                <p>
-                    Con el tiempo, CyberXtreme creció como idea. Pasó de ser un simple experimento a convertirse en una visión: una tienda gigante que en el futuro uniría a los nombres más grandes del mundo gamer y tech: NVIDIA, PlayStation, Xbox, Intel, AMD y más. CyberXtreme estaba destinado a ser la casa de todas esas marcas, un lugar donde la innovación y la pasión se encontraran con el usuario final. Sin embargo, el hermano mayor tenía que esperar… porque antes de abrir sus puertas necesitaba que alguien le allanara el camino.
-                </p>
-                <p>
-                    Y fue ahí donde nació su hermano menor: CyberXtreme Programs.
-                </p>
-                <p>
-                    CyberXtreme Programs llegó como la parte técnica, el que no vende productos sino que crea herramientas, configuradores y software. Mientras el hermano mayor soñaba con ser un mercado lleno de marcas y poder, el hermano menor se enfocó en aprender, en construir desde cero, en trabajar con Visual Studio Code y en desarrollar el cerebro de todo lo que vendría después.
-                </p>
-                <p>
-                    Aunque Programs es el “hermano menor”, fue el primero en dar un paso al frente. Él representa la base, los cimientos de lo que CyberXtreme será en el futuro. Programs es el laboratorio, el taller, el lugar donde se crea el código que más adelante sostendrá a la gran tienda. Es como ese hermano que, aunque sea más chico, se adelanta para abrir el camino, sabiendo que el mayor vendrá detrás con toda su grandeza.
-                </p>
-                <p>
-                    Y así quedó marcada la historia:
-                </p>
-                <ul>
-                    <li>
-                        <b>CyberXtreme (hermano mayor)</b>: el destino, la gran tienda gamer y tecnológica que reunirá a gigantes como NVIDIA, PlayStation y Xbox. El que todavía no abre, pero cuyo futuro está escrito en grande.
-                    </li>
-                    <li>
-                        <b>CyberXtreme Programs (hermano menor)</b>: el pionero, el primero en salir al mundo. El que construye software, configuradores de PCs y herramientas que servirán tanto para la comunidad como para la tienda que algún día se levantará.
-                    </li>
-                </ul>
-                <p>
-                    Ambos son distintos, pero comparten la misma esencia: la pasión por la tecnología, el gaming y la innovación. Uno es el sueño comercial, el otro es la base técnica. Uno representa el futuro, el otro es el presente que lo está preparando todo.
-                </p>
-                <p>
-                    Hoy, la historia de CyberXtreme Programs apenas comienza. Y aunque muchos verán primero al hermano menor, lo que realmente está pasando es que se está construyendo el camino para que, cuando llegue el momento, CyberXtreme aparezca con toda su fuerza, consolidado, apoyado por las herramientas que su hermano menor habrá dejado listas.
-                </p>
-                <p>
-                    La historia no es solo de proyectos o de nombres. Es una historia de evolución, de paciencia, de sueños y de visión. Es la historia de cómo un chico tomó una idea simple en Tienda Nube y la transformó en un universo propio. Es la historia de cómo nacieron dos hermanos: uno con los ojos puestos en el futuro y otro con las manos trabajando en el presente.
-                </p>
-                <p>
-                    Y lo más emocionante es que… esta historia recién empieza. 🚀
-                </p>
+                <p>Todo comenzó con una visión clara: crear un espacio donde la tecnología, la innovación y la experiencia digital se unieran en un solo ecosistema. Así nació CyberXtreme, una marca construida para redefinir la forma en que las personas interactúan con el mundo tecnológico. Desde sus primeros pasos, CyberXtreme se propuso romper los límites tradicionales del comercio electrónico, combinando lo mejor del rendimiento, el diseño y la confiabilidad.</p>
+
+                <p>CyberXtreme se estableció como una tienda tecnológica integral, un lugar donde los usuarios pueden encontrar desde componentes de alto rendimiento, consolas, accesorios, realidad virtual, y todo lo necesario para potenciar su experiencia gamer o profesional. Cada producto, cada categoría y cada detalle fueron diseñados para transmitir una identidad sólida: potencia, modernidad y confianza. Pero lo que realmente distingue a CyberXtreme no es solo su catálogo, sino su propósito: ofrecer una experiencia tecnológica completa, accesible y personalizada.</p>
+
+                <p>Con el paso del tiempo, la marca creció y dio lugar a su hermano menor: CyberXtreme Programs. Mientras CyberXtreme se enfoca en el hardware, dispositivos físicos y productos de tecnología avanzada, su contraparte, CyberXtreme Programs, nació con una meta diferente pero complementaria: expandir la marca hacia el mundo del software, las licencias digitales y las herramientas de productividad.</p>
+
+                <p>CyberXtreme Programs representa la evolución natural de la marca. Un espacio especializado en plantillas web, programas, herramientas de desarrollo y software profesional diseñado tanto para creadores como para empresas. Desde productos básicos hasta soluciones avanzadas, Programs refleja la pasión de CyberXtreme por brindar calidad y accesibilidad en el entorno digital.</p>
+
+                <p>Ambas ramas —CyberXtreme y CyberXtreme Programs— funcionan como un mismo universo, conectado por un ideal común: hacer que la tecnología sea más cercana, útil y poderosa para todos. No se trata solo de vender productos, sino de crear experiencias, inspirar creatividad y construir un futuro donde cada cliente tenga las herramientas necesarias para alcanzar su máximo potencial.</p>
+
+                <p>Hoy, CyberXtreme continúa creciendo, con nuevos servicios como el monedero electrónico, el sistema de reembolsos inteligente y los programas de fidelidad, que fortalecen la confianza de sus usuarios y llevan la experiencia de compra a otro nivel. Cada actualización, cada lanzamiento y cada mejora son un paso más en la evolución de esta marca que no deja de innovar.</p>
+
+                <p>Detrás de cada línea de código, de cada producto y de cada diseño, hay una filosofía: no seguir tendencias, sino crearlas. Y es así como CyberXtreme, junto a su hermano CyberXtreme Programs, sigue escribiendo su historia, día tras día, con la misma fuerza, pasión y propósito que dieron inicio a todo.</p>
+
+                <p><b>CyberXtreme. Tecnología sin límites.<br>
+                   CyberXtreme Programs. Software sin barreras.</b></p>
             </div>
         </div>
     </main>
+
+    <!-- 🔹 Footer -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-info">
@@ -126,32 +219,28 @@
                 <h3>Enlaces Rápidos</h3>
                 <ul>
                     <li><a href="/index.html">Inicio</a></li>
-                    <li><a href="/proximamente/proximamente.html">Software Proximamente</a></li>
-                    <li><a href="/Plantillas/plantillas.html">Plantillas</a></li>
-                    <li><a href="/Subscripciones/CyberPro+.html">Suscripciones</a></li>
-                    <li><a href="/proximamente/proximamente.html">Activar Licencia</a></li> 
                     <li><a href="/contacto/contacto.html">Contacto</a></li>
-                    <li><a href="/terminos.html">Terminos y condiciones</a></li>
+                    <li><a href="/Soporte 24/Soporte-24.html">Soporte 24/7</a></li>
+                    <li><a href="/Soporte 24/bot-ventas.html">Asistente De Ventas 24/7</a></li>
+                    <li><a href="/Terminos/terminos.html">Términos y condiciones</a></li>
+                    <li><a href="/mi historia/mi-historia.html">Nuestra Historia</a></li>
                 </ul>
             </div>
             <div class="footer-social">
                 <h3>Síguenos</h3>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61580615673129"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/cyberxtremeprograms/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://discord.gg/32bbVNRb7y"><i class="fab fa-discord"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 CyberXtreme Programs. Todos los derechos reservados.</p>
+            <p>&copy; 2025 CyberXtreme Programs.  Todos los derechos reservados.</p>
         </div>
     </footer>
+
     <script src="/script.js"></script>
     <script src="/auth.js" type="module"></script>
-    <script src="/carrito-compras/carrito.js"></script>
-    <script src="/historial.js"></script>
-    <script src="/mis-compras/descargas-digitales.js"></script>
-    <script src="mi-historia.js"></script>
 </body>
 </html>

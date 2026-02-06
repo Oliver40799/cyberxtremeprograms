@@ -12,11 +12,11 @@
 
     <div class="left-ad-container">
         <h4 class="ad-title">Anuncio</h4>
-        <img src="https://via.placeholder.com/120x550.png?text=Ad+1" alt="Anuncio 1" class="ad-image">
+        <img src="/Imagenes/ads/Anuncio1.png" alt="Anuncio 1" class="ad-image">
     </div>
     <div class="right-ad-container">
-        <h4 class="ad-title">Promoción</h4>
-        <img src="https://via.placeholder.com/120x550.png?text=Ad+1" alt="Anuncio 2" class="ad-image">
+        <h4 class="ad-title">Proximamente</h4>
+        <img src="/Imagenes/ads/Anuncio2.png" alt="Anuncio 2" class="ad-image">
     </div>
 
     <div class="header">
@@ -37,13 +37,18 @@
                         <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
                     </ul>
                 </li>
-                <li><a href="/proximamente/proximamente.html">Software Proximamente</a></li>
+
                 <li>
                     <a href="#">Plantillas <i class="fas fa-caret-right"></i></a>
                     <ul class="dropdown-submenu">
                         <li><a href="/Plantillas/plantillas.html">Plantillas Pro</a></li>
-                        <li><a href="/Plantillas/plantillas-basicas.html">Plantillas Básicas</a></li>
+                        <li><a href="/Plantillas Basicas/PlantillasBasicas.html">Plantillas Básicas</a></li>
                     </ul>
+                </li>
+                    <li>
+                    <a href="Software/Preventa.html">Software <i class=></i></a>
+                </li>
+            </ul>
         </nav>
         
         <div class="search-bar">
@@ -67,6 +72,9 @@
                 <a href="/mis-compras/mis-compras.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
                     <i class="fas fa-shopping-bag"></i> Mis compras
                 </a>
+                <a href="/monedero/wallet.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-wallet"></i> Monedero
+                </a>
                 <a href="/historial/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
                     <i class="fas fa-history"></i> Historial
                 </a>
@@ -77,68 +85,77 @@
         </div>
     </div>
     
-    <div class="main-content">
-        <div class="logo-section">
-            <h1>CXP</h1>
-        </div>
+<div class="main-content">
+    <div class="logo-section">
+        <h1 id="main-logo">CXP</h1>
+    </div>
+
         <div class="carousel-container">
             <div class="carousel-slide active">
-                <img src="https://via.placeholder.com/1200x600.png?text=Oferta+de+lanzamiento" alt="Oferta de Lanzamiento">
+                <img src="/Imagenes/Carrusel/OFERTA LANZAMIENTO.png" alt="Oferta de Lanzamiento">
                 <div class="slide-content">
                     <h2>¡Lanzamiento!</h2>
                     <p>Nuestra nueva solución De Plantillas Pro a un 20% de ¡descuento!</p>
-                    <button>Ver oferta</button>
+                    <a href="/Plantillas/plantillas.html" class="slide-button">Conoce más</a>
                 </div>
             </div>
             <div class="carousel-slide">
-                <img src="https://via.placeholder.com/1200x600.png?text=Gana+mas+clientes" alt="Gana más clientes">
+                <img src="/Imagenes/Carrusel/COTIZACION.png" alt="Gana más clientes">
                 <div class="slide-content">
                     <h2>Gana más clientes</h2>
                     <p>Moderniza tu negocio con un diseño profesional y atractivo.</p>
-                    <button>Conoce más</button>
+                    <a href="/categoria-DiseñoWeb/Fuerte.html" class="slide-button">Conoce más</a>
                 </div>
             </div>
             <div class="carousel-slide">
-                <img src="https://via.placeholder.com/1200x600.png?text=Facil+de+usar" alt="Fácil de usar">
+                <img src="/Imagenes/Carrusel/Facil.png" alt="Fácil de usar">
                 <div class="slide-content">
-                    <h2>Fácil de usar</h2>
-                    <p>Nuestras soluciones son intuitivas y no requieren experiencia en programación.</p>
-                    <button>Conoce más</button>
+                    <a href="/Plantillas/plantillas.html" class="slide-button">Conoce más</a>
                 </div>
             </div>
             <button class="prev-button">&lt;</button>
             <button class="next-button">&gt;</button>
         </div>
+        
         <section class="products-section">
-            <h2>Soluciones Web CyberXtreme Programs</h2>
+            <h2>Soluciones Web Sencillas CyberXtreme Programs</h2>
             <div class="product-grid">
-                <div class="product-card" data-id="product-1">
-                    <img src="/Imagenes/pagina_web_ejemplo1.jpg" alt="Pagina Web Ejemplo 1" class="product-image">
-                    <h3 class="product-name">Diseño Web Avanzado</h3>
-                    <p class="product-price">$5,500 MXN</p>
-                    <button class="add-to-cart-btn" data-id="diseño-web-avanzado" data-name="Diseño Web Avanzado" data-price="5500" data-image="/Imagenes/pagina_web_ejemplo1.jpg" data-digital="true">Añadir al carrito</button>
+                <div class="product-card" data-id="product-1" data-url="/Plantillas Basicas/productos-basicos/detalle-cursos-tecnologia.html">
+                    <a href="/Plantillas Basicas/productos-basicos/detalle-cursos-tecnologia.html" class="product-link">
+                        <img src="/Imagenes/Plantillas-Basicas/Tecnologia/Tecnologia1.png" alt="Pagina Web Ejemplo 1" class="product-image">
+                        <h3 class="product-name">Cursos Tecnología</h3>
+                    </a>
+                    <p class="product-price">$170 MXN</p>
+                    <button class="add-to-cart-btn" data-id="cursos-tecnologia" data-name="Cursos Tecnología" data-price="170" data-image="/Imagenes/Plantillas-Basicas/Tecnologia/Tecnologia1.png" data-digital="true">Añadir al carrito</button>
                 </div>
-                <div class="product-card" data-id="product-2">
-                    <img src="/Imagenes/pagina_web_ejemplo2.png" alt="Pagina Web Ejemplo 2" class="product-image">
-                    <h3 class="product-name">Tienda en Línea Completa</h3>
-                    <p class="product-price">$9,000 MXN</p>
-                    <button class="add-to-cart-btn" data-id="tienda-en-linea-completa" data-name="Tienda en Línea Completa" data-price="9000" data-image="/Imagenes/pagina_web_ejemplo2.png" data-digital="true">Añadir al carrito</button>
+                
+                <div class="product-card" data-id="product-2" data-url="/Plantillas Basicas/productos-basicos/detalle-landinggimnasio.html">
+                    <a href="/Plantillas Basicas/productos-basicos/detalle-landinggimnasio.html" class="product-link">
+                        <img src="/Imagenes/Plantillas-Basicas/Gimnasio/Gimnasio1.png" alt="Pagina Web Ejemplo 2" class="product-image">
+                        <h3 class="product-name">Landing Gimnasio</h3>
+                    </a>
+                    <p class="product-price">$250 MXN</p>
+                    <button class="add-to-cart-btn" data-id="landinggimnasio" data-name="Landing Gimnasio" data-price="250" data-image="/Imagenes/Plantillas-Basicas/Gimnasio/Gimnasio1.png" data-digital="true">Añadir al carrito</button>
                 </div>
-                <div class="product-card" data-id="product-3">
-                    <img src="/Imagenes/pagina_web_ejemplo3.jpg" alt="Pagina Web Ejemplo 3" class="product-image">
-                    <h3 class="product-name">Landing Page Personalizada</h3>
-                    <p class="product-price">$3,200 MXN</p>
-                    <button class="add-to-cart-btn" data-id="landing-page-personalizada" data-name="Landing Page Personalizada" data-price="3200" data-image="/Imagenes/pagina_web_ejemplo3.jpg" data-digital="true">Añadir al carrito</button>
+                
+                <div class="product-card" data-id="product-3" data-url="/Plantillas Basicas/productos-basicos/detalle-portafolio-basico.html">
+                    <a href="/Plantillas Basicas/productos-basicos/detalle-portafolio-basico.html" class="product-link">
+                        <img src="/Imagenes/Plantillas-Basicas/Basico/Basico.png" alt="Pagina Web Ejemplo 3" class="product-image">
+                        <h3 class="product-name">Portafolio Básico</h3>
+                    </a>
+                    <p class="product-price">$99 MXN</p>
+                    <button class="add-to-cart-btn" data-id="portafolio-basico" data-name="Portafolio Básico" data-price="99" data-image="/Imagenes/pagina_web_ejemplo3.jpg" data-digital="true">Añadir al carrito</button>
                 </div>
             </div>
         </section>
+        
         <section class="benefits-section">
             <h2>¿Por qué elegirnos?</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <i class="fas fa-magic fa-3x" style="color:#00FFFF;"></i>
                     <h3>Diseños Adaptados</h3>
-                    <p>Soluciones web pensadas para las necesidades de los cibercafés.</p>
+                    <p>Soluciones web pensadas para tus necesidad</p>
                 </div>
                 <div class="benefit-card">
                     <i class="fas fa-laptop-code fa-3x" style="color:#00FFFF;"></i>
@@ -169,19 +186,20 @@
                     <li><a href="/Soporte 24/bot-ventas.html">Asistente De Ventas 24/7</a></li>
                     <li><a href="/Terminos/terminos.html">Términos y condiciones</a></li>
                     <li><a href="/mi historia/mi-historia.html">Nuestra Historia</a></li>
+                    <li><a href="/Actualizaciones/actualizaciones.html">Actualizaciones</a></li>
                 </ul>
             </div>
             <div class="footer-social">
                 <h3>Síguenos</h3>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61580615673129"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/cyberxtremeprograms/"><i class="fab fa-instagram"></i></a>
                     <a href="https://discord.gg/32bbVNRb7y"><i class="fab fa-discord"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 CyberXtreme Programs.  Todos los derechos reservados.</p>
+            <p>&copy; 2026 CyberXtreme Programs.  Todos los derechos reservados.</p>
         </div>
     </footer>
     

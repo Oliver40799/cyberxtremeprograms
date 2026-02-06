@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Zenith | Preventa Oficial</title>
+    <link rel="icon" type="image/png" href="/Imagenes/favicon copia2.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            background: radial-gradient(circle at top, #0d0f17, #050509);
+            overflow-x: hidden;
+        }
+
+        .type-cursor {
+            width: 4px;
+            height: 1.2em;
+            background-color: #22d3ee;
+            display: inline-block;
+            border-radius: 2px;
+            animation: blink 1s steps(2, start) infinite;
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0; }
+        }
+
+        .fade-in {
+            animation: fadeIn 1.2s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .hidden-section {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="text-white min-h-screen flex items-center justify-center px-6">
+
+<!-- ================= INTRO ================= -->
+<section id="intro" class="min-h-screen flex flex-col items-center justify-center text-center">
+    <h1 class="text-5xl md:text-6xl font-extrabold text-cyan-400 flex items-center gap-2">
+        <span id="zenith-text"></span>
+        <span class="type-cursor"></span>
+    </h1>
+
+    <p class="mt-3 text-sm md:text-base text-gray-400 tracking-wide fade-in" style="animation-delay:2s">
+        By CyberXtreme-Programs Development Team
+    </p>
+</section>
+
+<!-- ================= CONTENIDO ================= -->
+<main id="content" class="hidden-section max-w-4xl w-full text-center fade-in">
+
+    <!-- HERO -->
+    <h1 class="text-5xl md:text-6xl font-extrabold text-cyan-400 mb-4">
+        Zenith
+    </h1>
+
+    <p class="text-xl md:text-2xl text-gray-300 mb-6">
+        Descarga y conversión multimedia profesional.<br>
+        <span class="text-cyan-400 font-semibold">Próximamente.</span>
+    </p>
+
+    <div class="inline-block px-5 py-2 mb-10 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-sm">
+        🚀 Lanzamiento en desarrollo
+    </div>
+
+    <!-- DESCRIPCIÓN -->
+    <p class="text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+        <strong class="text-white">Zenith</strong> es una herramienta avanzada diseñada para creadores, editores y usuarios exigentes
+        que buscan descargas rápidas, limpias y en la máxima calidad posible.
+        Sin anuncios, sin límites absurdos y sin comprometer la fidelidad del contenido.
+    </p>
+
+    <!-- FEATURES -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+
+        <div class="bg-gray-900/60 p-6 rounded-2xl border border-gray-800 hover:border-cyan-400/40 transition">
+            <i class="fas fa-video text-3xl text-cyan-400 mb-3"></i>
+            <h3 class="font-semibold text-lg mb-2">Video en Alta Calidad</h3>
+            <p class="text-sm text-gray-400">
+                Descargas en resoluciones avanzadas con soporte para múltiples formatos.
+            </p>
+        </div>
+
+        <div class="bg-gray-900/60 p-6 rounded-2xl border border-gray-800 hover:border-cyan-400/40 transition">
+            <i class="fas fa-music text-3xl text-cyan-400 mb-3"></i>
+            <h3 class="font-semibold text-lg mb-2">Audio Hi-Fi</h3>
+            <p class="text-sm text-gray-400">
+                Extracción de audio en alta fidelidad, sin pérdidas ni compresión innecesaria.
+            </p>
+        </div>
+
+        <div class="bg-gray-900/60 p-6 rounded-2xl border border-gray-800 hover:border-cyan-400/40 transition">
+            <i class="fas fa-bolt text-3xl text-cyan-400 mb-3"></i>
+            <h3 class="font-semibold text-lg mb-2">Velocidad Real</h3>
+            <p class="text-sm text-gray-400">
+                Motor optimizado para aprovechar tu conexión sin saturar el sistema.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-gray-900/70 border border-cyan-400/30 rounded-3xl p-8 shadow-xl">
+
+        <h2 class="text-2xl font-bold mb-3 text-white">
+            Acceso anticipado + descuento exclusivo
+        </h2>
+
+        <p class="text-gray-400 mb-6">
+            Registrá tus datos y sé de los primeros en enterarte cuando Zenith esté listo.
+            Los registrados obtendrán un <span class="text-cyan-400 font-semibold">descuento especial de lanzamiento</span>.
+        </p>
+
+        <!-- FORM (AGREGADO, SIN QUITAR NADA) -->
+        <form
+          action="https://formspree.io/f/mbdarwwz"
+          method="POST"
+          class="flex flex-col md:flex-row gap-4 justify-center"
+          onsubmit="showMsg()"
+        >
+            <input
+                type="text"
+                name="nombre"
+                required
+                placeholder="Nombre"
+                class="px-5 py-3 rounded-xl bg-gray-800 border border-gray-700 focus:outline-none focus:border-cyan-400 text-white w-full md:w-64"
+            >
+
+            <input
+                type="email"
+                name="email"
+                required
+                placeholder="tu@email.com"
+                class="px-5 py-3 rounded-xl bg-gray-800 border border-gray-700 focus:outline-none focus:border-cyan-400 text-white w-full md:w-64"
+            >
+
+            <button
+                type="submit"
+                class="px-8 py-3 rounded-xl font-bold text-gray-900 bg-gradient-to-r from-cyan-400 to-green-400 hover:scale-105 transition">
+                Quiero mi descuento
+            </button>
+        </form>
+
+        <p id="formMsg" class="text-sm mt-4 text-cyan-400 hidden">
+            ✅ Registro enviado correctamente. Te avisaremos pronto.
+        </p>
+
+        <p class="text-xs text-gray-500 mt-4">
+            🔒 No spam. No publicidad. Solo aviso de lanzamiento.
+        </p>
+
+    </div>
+
+    <!-- FOOTER -->
+    <p class="text-gray-600 text-xs mt-10">
+        © 2026 CyberXtreme Programs — Zenith Software
+    </p>
+
+</main>
+
+<!-- Font Awesome -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+<script>
+const text = "Zenith";
+const speed = 130;
+let index = 0;
+const element = document.getElementById("zenith-text");
+
+function typeWriter() {
+    if (index < text.length) {
+        element.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, speed);
+    }
+}
+
+function showMsg() {
+    setTimeout(() => {
+        document.getElementById("formMsg").classList.remove("hidden");
+    }, 500);
+}
+
+window.onload = () => {
+    typeWriter();
+    setTimeout(() => {
+        document.getElementById("intro").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    }, 8000);
+};
+</script>
+
+</body>
+</html>

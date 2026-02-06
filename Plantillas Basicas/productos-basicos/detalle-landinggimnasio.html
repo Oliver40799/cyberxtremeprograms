@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Gimnasio | CyberXtreme Programs</title>
+    <link rel="icon" type="image/png" href="/Imagenes/favicon copia2.png" />
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/producto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <a href="/index.html">
+                CyberXtreme Programs
+            </a>
+        </div>
+        
+        <nav class="categories-nav">
+            <a href="#" class="dropdown-toggle">Categorías</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#">Diseño Web <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/categoria-DiseñoWeb/Facil.html">Fácil</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Medio.html">Medio</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Plantillas <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/Plantillas/plantillas.html">Plantillas Pro</a></li>
+                        <li><a href="/Plantillas Basicas/PlantillasBasicas.html">Plantillas Básicas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar productos...">
+        </div>
+        
+        <div class="user-nav" id="auth-buttons">
+            <a href="/INICIOS-REGISTROS/Iniciar-sesion.html" class="nav-button">Iniciar Sesión</a>
+            <a href="/INICIOS-REGISTROS/Crear-cuenta.html" class="nav-button">Crear Cuenta</a>
+            <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+        </div>
+
+        <div id="user-profile" style="display: none; position: relative;">
+            <div class="user-nav">
+                <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+                <button id="user-name-button" class="nav-button">
+                    <span id="full-name-display"></span> <i class="fas fa-caret-down"></i>
+                </button>
+            </div>
+            <div id="user-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ccc; border-radius: 5px; min-width: 150px; z-index: 1000;">
+                <a href="/mis-compras/mis-compras.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-shopping-bag"></i> Mis compras
+                </a>
+                
+                <a href="/monedero/wallet.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-wallet"></i> Monedero
+                </a>
+                
+                <a href="/historial/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+                    <i class="fas fa-history"></i> Historial
+                </a>
+                <button id="logout-button" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer;">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <h1>Plantilla Landing Gimnasio</h1>
+        <div class="product-page">
+            <div class="product-image-container">
+                <div class="carousel">
+                    <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                    <img src="/Imagenes/Plantillas-Basicas/Gimnasio/Gimnasio1.png" alt="Plantilla Landing Gimnasio" class="product-main-image">
+                    <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="product-details">
+                <p class="product-price-large">$250 MXN</p>
+                <div class="product-actions">
+                    <button class="add-to-cart-btn narrow" 
+                        data-id="landinggimnasio"
+                        data-name="Landing Gimnasio"
+                        data-price="250"
+                        data-image="/Imagenes/Plantillas-Basicas/Gimnasio/Gimnasio1.png"
+                        data-download="/Descargas/plantillas-basicas/landinggimnasio.zip">
+                        Agregar al carrito
+                    </button>
+                </div>
+                
+                <div class="product-features">
+                    <h3>Características Básicas</h3>
+                    <ul>
+                        <li>**Diseño de Alto Impacto:** Estilo motivacional y energético.</li>
+                        <li>**Sección de Clases/Horarios:** Permite mostrar las actividades disponibles.</li>
+                        <li>**Formulario de Prueba Gratuita:** Enfocado en la captación de nuevos miembros.</li>
+                        <li>**Fácil de Personalizar:** Adapta los colores a la marca de tu gimnasio.</li>
+                        <li>**Totalmente adaptable:** Se ve bien en móviles y tabletas.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <section class="description-section">
+            <h2>Descripción Completa</h2>
+            <p>
+                La plantilla **Landing Gimnasio** es ideal para gimnasios, estudios de fitness, y entrenadores personales que buscan un diseño que transmita energía y profesionalismo. Incluye secciones clave para destacar las instalaciones, los tipos de entrenamiento y los testimonios de éxito. Es una solución básica pero poderosa para impulsar las inscripciones y promover un estilo de vida saludable.
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>CyberXtreme Programs</h3>
+                <p>Soluciones web a medida para tu negocio. Convierte tu pasión por la tecnología en una herramienta de crecimiento.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/contacto/contacto.html">Contacto</a></li>
+                    <li><a href="/Soporte 24/Soporte-24.html">Soporte 24/7</a></li>
+                    <li><a href="/Soporte 24/bot-ventas.html">Asistente De Ventas 24/7</a></li>
+                    <li><a href="/Terminos/terminos.html">Términos y condiciones</a></li>
+                    <li><a href="/mi historia/mi-historia.html">Nuestra Historia</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61580615673129"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/cyberxtremeprograms/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://discord.gg/32bbVNRb7y"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CyberXtreme Programs.  Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="/auth.js" type="module"></script>
+    <script src="/carrito-compras/carrito.js"></script>
+    <script src="/Plantillas/plantillas.js"></script>
+    <script>
+        // Carrusel manual
+        const images = [
+            "/Imagenes/Plantillas-Basicas/Gimnasio/Gimnasio1.png", // Imagen principal
+            "/Imagenes/Plantillas-Basicas/Gimnasio/Gimnasio2.png"
+        ];
+        let currentIndex = 0;
+        const carouselImage = document.querySelector(".carousel img");
+        const prevBtn = document.querySelector(".carousel-btn.prev");
+        const nextBtn = document.querySelector(".carousel-btn.next");
+
+        carouselImage.src = images[currentIndex]; // Asegura que la imagen principal se muestre primero
+
+        prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            carouselImage.src = images[currentIndex];
+        });
+
+        nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            carouselImage.src = images[currentIndex];
+        });
+    </script>
+
+</body>
+</html>

@@ -1913,3 +1913,215 @@ body {
     100% { border-color: transparent; }
 }
 
+/* ESTILOS PARA WALLET */
+/* ============================================== */
+/* ESTILOS ESPECÍFICOS DEL MONEDERO */
+/* ============================================== */
+
+/* Layout Principal de 2 Columnas */
+.wallet-layout {
+    display: flex;
+    gap: 30px;
+    padding: 40px 0;
+    min-height: 70vh;
+}
+
+.balance-summary, .transaction-history {
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Columna Izquierda: Balance (más estrecha) */
+.balance-summary {
+    flex: 1; 
+    min-width: 300px;
+    border: 2px solid #00FFFF; /* Borde Cyber Azul */
+}
+
+/* Columna Derecha: Historial (más ancha) */
+.transaction-history {
+    flex: 2; 
+}
+
+/* Título de la Página */
+.centered-title {
+    text-align: center;
+    color: #00FFFF;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+/* Estilos de las Tarjetas de la sección de Resumen */
+.balance-summary h3, .transaction-history h3 {
+    border-bottom: 2px solid #00FFFF;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #00FFFF;
+}
+
+
+/* ============================================== */
+/* ESTILOS DE LA TARJETA VIRTUAL (MONEDERO) */
+/* ============================================== */
+
+/* Contenedor de la Tarjeta */
+.wallet-card {
+    /* Fondo con gradiente ciberpunk */
+    background: linear-gradient(135deg, #00FFFF, #0077FF);
+    color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    /* Efecto de relieve y sombra neón */
+    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.5), 
+                0 0 10px rgba(255, 255, 255, 0.8) inset;
+    position: relative;
+    overflow: hidden; /* Para contener las rayas de decoración */
+}
+
+/* Patrón de rayas decorativo (Estética Cyber) */
+.wallet-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+        45deg, 
+        rgba(255, 255, 255, 0.05), 
+        rgba(255, 255, 255, 0.05) 10px, 
+        transparent 10px, 
+        transparent 20px
+    );
+    opacity: 0.6;
+    z-index: 0;
+}
+
+/* Estilo para el contenido de la tarjeta */
+.card-content {
+    position: relative; /* Asegura que el contenido esté sobre el patrón */
+    z-index: 1; 
+}
+
+/* Título pequeño (Ej. Monedero Digital) */
+.card-title {
+    font-size: 1.1em;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+/* El saldo principal */
+.card-balance {
+    font-size: 2.5em;
+    font-weight: bold;
+    display: block;
+    /* Color de contraste vibrante */
+    color: #FFD700; 
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+    margin: 5px 0 15px;
+}
+
+/* Etiqueta de la moneda y número de usuario/tarjeta */
+.card-info-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-info-footer .logo-chip {
+    font-size: 1.5em;
+    color: #FFD700;
+}
+
+
+/* Botones de acción */
+.wallet-action button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.wallet-action button:hover {
+    background-color: #FFA500;
+}
+
+/* Historial de Transacciones */
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed #444;
+    color: #fff;
+}
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.transaction-item .type {
+    font-weight: bold;
+}
+
+.transaction-item .amount.deposit {
+    color: #38FF38; /* Verde para depósitos/recompensas */
+    font-weight: bold;
+}
+
+.transaction-item .amount.withdraw {
+    color: #FF3838; /* Rojo para retiros/uso */
+    font-weight: bold;
+}
+
+/* Estilo Base del Botón CyberXtreme */
+.slide-button {
+    /* Layout y tamaño */
+    display: inline-block;
+    padding: 12px 30px; /* Un poco más grande */
+    
+    /* Tipografía */
+    color: #FFFFFF; /* Texto blanco vibrante */
+    font-weight: bold;
+    text-transform: uppercase; /* Para más impacto */
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-size: 1em;
+
+    /* Fondo y Bordes */
+    background-color: rgba(0, 255, 255, 0.15); /* Fondo Cian semi-transparente */
+    border: 2px solid #00FFFF; /* Borde Cian Neón */
+    border-radius: 5px;
+
+    /* Transiciones y cursor */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Transición suave para todos los efectos */
+
+    /* ⭐ Efecto Neón Suave (sombra) ⭐ */
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.5); 
+}
+
+/* Efecto Hover (Cuando el usuario pasa el mouse) */
+.slide-button:hover {
+    /* El botón brilla más y es más sólido */
+    background-color: #00FFFF; /* Se vuelve completamente Cian */
+    color: #1a1a1a; /* Texto oscuro para el contraste */
+    
+    /* El efecto neón se intensifica */
+    box-shadow: 0 0 15px #00FFFF, 0 0 25px #00FFFF;
+    transform: translateY(-2px); /* Un pequeño levantamiento para darle vida */
+}
+
