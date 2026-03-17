@@ -1,117 +1,292 @@
-@import url("https://fonts.googleapis:com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+/* ============================= */
+/* BASE */
+/* ============================= */
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-   font-family: "Poppins", sans-serif; 
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(to bottom, #000000, #1a1a1a);
-    background-size: cover;
-    background-position: center;
+body{
+
+min-height:100vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:radial-gradient(circle at top,#0f172a,#020617);
+
+color:white;
 }
 
-.wrapper {
-    width: 420px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    border-radius: 10px;
-    padding: 30px 40px;
+/* ============================= */
+/* CONTENEDOR */
+/* ============================= */
+
+.wrapper{
+
+width:420px;
+
+background:rgba(15,23,42,.75);
+backdrop-filter:blur(14px);
+
+border:1px solid rgba(255,255,255,.08);
+border-radius:18px;
+
+padding:40px;
+
+text-align:center;
+
+box-shadow:
+0 10px 50px rgba(0,0,0,.6),
+0 0 25px rgba(0,255,255,.05);
 }
 
-.wrapper h1 {
-   font-size: 36px;
-   text-align: center;
+/* ============================= */
+/* ICONO SUPERIOR */
+/* ============================= */
+
+.top-icon{
+
+width:65px;
+margin-bottom:10px;
 }
 
-.wrapper .input-box {
-    position: relative;
-    width: 100%;
-    height: 50px;
-    margin: 30px 0;
+/* ============================= */
+/* TITULO CYBERXTREME */
+/* ============================= */
+
+.program-title{
+
+font-size:15px;
+color:#94a3b8;
+
+margin-bottom:18px;
+letter-spacing:.5px;
 }
 
-.input-box input {
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    border: 2px solid rgba(255, 255, 255, .2);
-    border-radius: 40px;
-    font-size: 16px;
-    color: #ffffff;
-    padding: 20px 45px 20px 20px;
+/* ============================= */
+/* TITULO FORM */
+/* ============================= */
+
+.wrapper h1{
+
+font-size:28px;
+
+margin-bottom:25px;
+
+color:#00ffff;
+
+text-shadow:0 0 10px rgba(0,255,255,.25);
 }
 
-.input-box input::placeholder {
-    color: #ffffff;
+/* ============================= */
+/* INPUTS */
+/* ============================= */
+
+.input-box{
+
+position:relative;
+width:100%;
+
+margin:15px 0;
 }
 
-.input-box i {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
+.input-box input{
+
+width:100%;
+
+padding:12px 40px 12px 15px;
+
+border-radius:8px;
+
+border:1px solid rgba(255,255,255,.08);
+
+background:#020617;
+
+color:white;
+
+outline:none;
+
+transition:.25s;
 }
 
-.wrapper .remember-forgot {
-    display: flex;
-    justify-content: space-between;
-    font-size: -15px 0 15px;
-    margin: -15px 0 15px;
+.input-box input:focus{
+
+border-color:#00ffff;
 }
 
-.remember-forgot label input {
-    accent-color: #000000;
-    margin-right: 3px;
+/* iconos */
+
+.input-icon{
+
+position:absolute;
+
+right:12px;
+top:50%;
+
+transform:translateY(-50%);
+
+color:#94a3b8;
 }
 
-.remember-forgot a {
-    color: #ffffff;
-    text-decoration: none;
+/* ============================= */
+/* OJO PASSWORD */
+/* ============================= */
+
+.toggle-password{
+
+position:absolute;
+
+right:38px;
+top:50%;
+
+transform:translateY(-50%);
+
+cursor:pointer;
+
+color:#94a3b8;
 }
 
-.remember-forgot a:hover {
-    text-decoration: underline;
+/* ============================= */
+/* RECORDAR */
+/* ============================= */
+
+.remember-forgot{
+
+display:flex;
+justify-content:space-between;
+
+font-size:13px;
+
+margin:10px 0 20px;
 }
 
-.wrapper .btn {
-    width: 100%;
-    height: 45px;
-    background: #00d9ff;
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    cursor: pointer;
-    font-size: 16px;
-    color: #333;
-    font-weight: 600;
+.remember-forgot a{
+
+color:#00ffff;
+text-decoration:none;
 }
 
-.wrapper .register-link {
-    font-size: 14.5px;
-    text-align: center;
-    margin: 20px 0 15px;
+/* ============================= */
+/* BOTON LOGIN */
+/* ============================= */
+
+.btn{
+
+width:100%;
+
+padding:12px;
+
+border:none;
+
+border-radius:8px;
+
+background:#00ffff;
+color:#000;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.25s;
+
+margin-bottom:20px;
 }
 
-.register-link p a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
+.btn:hover{
+
+background:#0ff;
+
+transform:translateY(-1px);
+
+box-shadow:0 5px 20px rgba(0,255,255,.3);
 }
 
-.register-link p a:hover {
-    text-decoration: underline;
+/* ============================= */
+/* SEPARADOR */
+/* ============================= */
+
+.social-login-separator{
+
+display:flex;
+align-items:center;
+
+gap:10px;
+
+margin:20px 0;
+
+font-size:13px;
+
+color:#94a3b8;
+}
+
+.social-login-separator hr{
+
+flex:1;
+border:none;
+border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* ============================= */
+/* BOTONES SOCIALES */
+/* ============================= */
+
+.btn-google,
+.btn-microsoft{
+
+width:100%;
+
+padding:11px;
+
+border-radius:8px;
+
+border:1px solid rgba(255,255,255,.08);
+
+background:#020617;
+
+color:white;
+
+cursor:pointer;
+
+margin-bottom:10px;
+
+transition:.25s;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+gap:8px;
+}
+
+.btn-google:hover{
+
+background:#111827;
+border-color:#ea4335;
+}
+
+.btn-microsoft:hover{
+
+background:#111827;
+border-color:#00a4ef;
+}
+
+/* ============================= */
+/* REGISTRO */
+/* ============================= */
+
+.register-link{
+
+font-size:13px;
+margin-top:12px;
+}
+
+.register-link a{
+
+color:#00ffff;
+text-decoration:none;
 }

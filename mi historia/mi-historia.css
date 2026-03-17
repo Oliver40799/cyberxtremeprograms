@@ -1,0 +1,216 @@
+/* ============================= */
+/* FONDO DE LA PAGINA */
+/* ============================= */
+
+body{
+background:radial-gradient(ellipse at bottom,#0d0d0d 0%,#000 100%);
+color:#e2e8f0;
+font-family:'Inter',sans-serif;
+overflow-x:hidden;
+position:relative;
+}
+
+/* ============================= */
+/* EFECTO DE LUZ */
+/* ============================= */
+
+#particles{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+z-index:-1;
+
+background:
+radial-gradient(circle at 40% 50%, rgba(0,255,255,.12), transparent 70%),
+radial-gradient(circle at 70% 20%, rgba(0,255,255,.06), transparent 70%);
+
+filter:blur(70px);
+
+animation:moveGlow 10s ease-in-out infinite alternate;
+}
+
+@keyframes moveGlow{
+
+0%{
+transform:translateY(0) scale(1);
+}
+
+100%{
+transform:translateY(-25px) scale(1.15);
+}
+
+}
+
+/* ============================= */
+/* CONTENEDOR GENERAL */
+/* ============================= */
+
+.history-page-content{
+
+max-width:1100px;
+margin:120px auto 80px;
+padding:0 25px;
+
+}
+
+/* ============================= */
+/* TARJETA HISTORIA */
+/* ============================= */
+
+.history-container{
+
+background:rgba(15,23,42,.78);
+backdrop-filter:blur(14px);
+
+border:1px solid rgba(255,255,255,.08);
+border-radius:22px;
+
+padding:55px 60px;
+
+box-shadow:
+0 15px 50px rgba(0,0,0,.6),
+0 0 35px rgba(0,255,255,.06);
+
+animation:fadeIn .9s ease forwards;
+}
+
+/* ============================= */
+/* TITULO */
+/* ============================= */
+
+.history-container .section-title{
+
+color:#00ffff;
+
+text-align:center;
+
+font-size:34px;
+
+margin-bottom:40px;
+
+font-weight:700;
+
+text-shadow:0 0 15px rgba(0,255,255,.25);
+
+}
+
+/* ============================= */
+/* TEXTO */
+/* ============================= */
+
+.history-container .history-list p{
+
+font-size:16px;
+
+line-height:1.9;
+
+color:#cbd5e1;
+
+margin-bottom:22px;
+
+text-align:justify;
+
+opacity:0;
+
+animation:fadeUp .8s ease forwards;
+
+}
+
+/* animaciones escalonadas */
+
+.history-container .history-list p:nth-child(1){animation-delay:.2s}
+.history-container .history-list p:nth-child(2){animation-delay:.3s}
+.history-container .history-list p:nth-child(3){animation-delay:.4s}
+.history-container .history-list p:nth-child(4){animation-delay:.5s}
+.history-container .history-list p:nth-child(5){animation-delay:.6s}
+.history-container .history-list p:nth-child(6){animation-delay:.7s}
+.history-container .history-list p:nth-child(7){animation-delay:.8s}
+
+/* ============================= */
+/* FRASE FINAL */
+/* ============================= */
+
+.history-container .history-list p:last-child{
+
+text-align:center;
+
+font-size:18px;
+
+font-weight:600;
+
+color:#00ffff;
+
+margin-top:35px;
+
+text-shadow:0 0 10px rgba(0,255,255,.25);
+
+}
+
+/* ============================= */
+/* ANIMACIONES */
+/* ============================= */
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media(max-width:900px){
+
+.history-container{
+padding:40px 30px;
+}
+
+.history-container .section-title{
+font-size:28px;
+}
+
+.history-container .history-list p{
+font-size:15px;
+}
+
+}
+
+@media(max-width:500px){
+
+.history-page-content{
+margin:90px auto 60px;
+}
+
+.history-container .section-title{
+font-size:24px;
+}
+
+}

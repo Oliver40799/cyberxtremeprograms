@@ -1,79 +1,129 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const historyListContainer = document.getElementById('history-list');
-    const clearButton = document.getElementById('clear-history-button');
+document.addEventListener("DOMContentLoaded", () => {
 
-    // Esta es una lista de productos de ejemplo. En un proyecto real, se obtendrían de una base de datos.
-    const products = [
-        { id: "product-1", name: "Diseño Web Avanzado", price: 5500, image: "/Imagenes/pagina_web_ejemplo1.jpg" },
-        { id: "product-2", name: "Tienda en Línea Completa", price: 9000, image: "/Imagenes/pagina_web_ejemplo2.png" },
-        { id: "product-3", name: "Landing Page Personalizada", price: 3200, image: "/Imagenes/pagina_web_ejemplo3.jpg" },
-        { id: "diseno-web-avanzado", name: "Diseño Web Avanzado", price: 5500, image: "/Imagenes/pagina_web_ejemplo1.jpg" },
-        { id: "tienda-en-linea-completa", name: "Tienda en Línea Completa", price: 9000, image: "/Imagenes/pagina_web_ejemplo2.png" },
-        { id: "landing-page-personalizada", name: "Landing Page Personalizada", price: 3200, image: "/Imagenes/pagina_web_ejemplo3.jpg" },
-        { id: "academia-de-cursos-online", name: "Academia de Cursos Online", price: 7800, image: "/Imagenes/academia-de-cursos-online.jpg" },
-        { id: "agencia-de-marketing-digital", name: "Agencia de Marketing Digital", price: 6200, image: "/Imagenes/agencia-de-marketing-digital.jpg" },
-        { id: "agencia-de-viajes", name: "Agencia de Viajes", price: 4800, image: "/Imagenes/agencia-de-viajes.jpg" },
-        { id: "clinica-medica-con-citas", name: "Clínica Médica con Citas", price: 8500, image: "/Imagenes/clinica-medica-con-citas.jpg" },
-        { id: "diseno-de-interiores", name: "Diseño de Interiores", price: 4500, image: "/Imagenes/diseno-de-interiores.jpg" },
-        { id: "editorial-o-libreria-online", name: "Editorial o Librería Online", price: 5900, image: "/Imagenes/editorial-o-libreria-online.jpg" },
-        { id: "floreria-con-envios", name: "Florería con Envíos", price: 4100, image: "/Imagenes/floreria-con-envios.jpg" },
-        { id: "gimnasio-con-membresias", name: "Gimnasio con Membresías", price: 6700, image: "/Imagenes/gimnasio-con-membresias.jpg" },
-        { id: "plantilla-de-asesoria-financiera", name: "Plantilla de Asesoría Financiera", price: 3800, image: "/Imagenes/plantilla-de-asesoria-financiera.jpg" },
-        { id: "restaurante-con-reservas", name: "Restaurante con Reservas", price: 5300, image: "/Imagenes/restaurante-con-reservas.jpg" },
-        { id: "salon-de-belleza-con-agenda", name: "Salón de Belleza con Agenda", price: 4900, image: "/Imagenes/salon-de-belleza-con-agenda.jpg" },
-        { id: "servicios-de-limpieza-a-domicilio", name: "Servicios de Limpieza a Domicilio", price: 4200, image: "/Imagenes/servicios-de-limpieza-a-domicilio.jpg" },
-        { id: "sitio-de-fotografo-profesional", name: "Sitio de Fotógrafo Profesional", price: 3500, image: "/Imagenes/sitio-de-fotografo-profesional.jpg" },
-        { id: "sitio-para-musica-y-bandas", name: "Sitio para Música y Bandas", price: 5100, image: "/Imagenes/sitio-para-musica-y-bandas.jpg" },
-        { id: "sitio-para-podcast", name: "Sitio para Podcast", price: 4700, image: "/Imagenes/sitio-para-podcast.jpg" },
-        { id: "tienda-de-alimentos-organicos", name: "Tienda de Alimentos Orgánicos", price: 6400, image: "/Imagenes/tienda-de-alimentos-organicos.jpg" },
-        { id: "tienda-de-electronica", name: "Tienda de Electrónica", price: 7200, image: "/Imagenes/tienda-de-electronica.jpg" },
-        { id: "tienda-de-muebles", name: "Tienda de Muebles", price: 8100, image: "/Imagenes/tienda-de-muebles.jpg" },
-        { id: "tienda-de-ropa-minimalista", name: "Tienda de Ropa Minimalista", price: 4000, image: "/Imagenes/tienda-de-ropa-minimalista.jpg" },
-        { id: "venta-de-productos-digitales", name: "Venta de Productos Digitales", price: 5800, image: "/Imagenes/venta-de-productos-digitales.jpg" }
-    ];
+const historyList = document.getElementById("history-list");
+const clearBtn = document.getElementById("clear-history-button");
 
+if(!historyList) return;
 
-    function renderHistory() {
-        const historyIds = JSON.parse(localStorage.getItem('history')) || [];
-        
-        historyListContainer.innerHTML = ''; // Limpia el contenedor
+let history = JSON.parse(localStorage.getItem("history")) || [];
 
-        if (historyIds.length === 0) {
-            historyListContainer.innerHTML = '<p>No has visto ningún producto todavía.</p>';
-            if (clearButton) clearButton.style.display = 'none';
-            return;
-        }
+renderHistory();
 
-        const uniqueHistoryIds = [...new Set(historyIds)].reverse();
+function renderHistory(){
 
-        uniqueHistoryIds.forEach(productId => {
-            const product = products.find(p => p.id === productId);
-            if (product) {
-                const productCard = document.createElement('div');
-                productCard.classList.add('history-card');
-                productCard.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}">
-                    <h3>${product.name}</h3>
-                    <p>$${product.price.toFixed(2)} MXN</p>
-                `;
-                historyListContainer.appendChild(productCard);
-            }
-        });
+historyList.innerHTML = "";
 
-        if (clearButton) clearButton.style.display = 'block';
-    }
+if(history.length === 0){
 
-    if (clearButton) {
-        clearButton.addEventListener('click', () => {
-            const confirmClear = confirm("¿Estás seguro de que quieres limpiar tu historial de visualización?");
-            if (confirmClear) {
-                localStorage.removeItem('history');
-                renderHistory();
-            }
-        });
-    }
+historyList.innerHTML = "<p>No has visto ningún producto todavía.</p>";
 
-    if (window.location.pathname.endsWith('historial.html')) {
-        renderHistory();
-    }
+if(clearBtn) clearBtn.style.display = "none";
+
+return;
+
+}
+
+const historyCopy = [...history].reverse();
+
+historyCopy.forEach(product => {
+
+const card = document.createElement("div");
+
+card.className = "history-card";
+
+card.innerHTML = ` <a href="${product.url}"> <img src="${product.image}" alt="${product.name}">
+
+<h3>${product.name}</h3>
+<p>$${product.price} MXN</p>
+</a>
+`;
+
+historyList.appendChild(card);
+
+});
+
+if(clearBtn) clearBtn.style.display = "block";
+
+}
+
+/* =============================== */
+/* BOTÓN LIMPIAR HISTORIAL */
+/* =============================== */
+
+if(clearBtn){
+
+clearBtn.addEventListener("click", () => {
+
+showDeleteModal();
+
+});
+
+}
+
+/* =============================== */
+/* MODAL BONITO */
+/* =============================== */
+
+function showDeleteModal(){
+
+const modal = document.createElement("div");
+
+modal.className = "cx-modal";
+
+modal.innerHTML = `
+
+<div class="cx-modal-box">
+
+<h3>⚠ Limpiar historial</h3>
+
+<p>¿Seguro que quieres borrar todo tu historial de visualización?</p>
+
+<div class="cx-modal-buttons">
+
+<button class="cx-cancel">Cancelar</button>
+
+<button class="cx-delete">Eliminar</button>
+
+</div>
+
+</div>
+
+`;
+
+document.body.appendChild(modal);
+
+/* cancelar */
+
+modal.querySelector(".cx-cancel").onclick = () => {
+
+modal.remove();
+
+};
+
+/* eliminar */
+
+modal.querySelector(".cx-delete").onclick = () => {
+
+const cards = document.querySelectorAll(".history-card");
+
+cards.forEach(card => {
+card.classList.add("fade-out");
+});
+
+setTimeout(()=>{
+
+localStorage.removeItem("history");
+
+history = [];
+
+renderHistory();
+
+},500);
+
+modal.remove();
+
+};
+
+}
+
 });

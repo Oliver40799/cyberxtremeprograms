@@ -1,0 +1,290 @@
+/* ============================= */
+/* CONTENEDOR PRINCIPAL */
+/* ============================= */
+
+.cart-container{
+max-width:1100px;
+margin:40px auto;
+padding:30px;
+background:rgba(15,23,42,.6);
+border:1px solid rgba(255,255,255,.08);
+border-radius:16px;
+backdrop-filter:blur(6px);
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+/* ============================= */
+/* TITULO */
+/* ============================= */
+
+.cart-container h2{
+font-size:28px;
+margin-bottom:25px;
+color:#00ffff;
+font-weight:700;
+}
+
+/* ============================= */
+/* ITEMS DEL CARRITO */
+/* ============================= */
+
+.cart-items{
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-bottom:30px;
+}
+
+/* producto */
+
+.cart-item{
+display:flex;
+align-items:center;
+gap:20px;
+background:#0f172a;
+border:1px solid rgba(255,255,255,.05);
+border-radius:12px;
+padding:15px;
+transition:.25s;
+}
+
+.cart-item:hover{
+border-color:#00ffff;
+}
+
+/* imagen */
+
+.cart-item img{
+width:70px;
+height:70px;
+object-fit:cover;
+border-radius:8px;
+}
+
+/* info */
+
+.cart-item-info{
+flex:1;
+}
+
+.cart-item-name{
+font-size:16px;
+font-weight:600;
+margin-bottom:5px;
+}
+
+.cart-item-price{
+color:#00ffff;
+font-weight:600;
+}
+
+/* eliminar */
+
+.remove-item{
+background:transparent;
+border:1px solid rgba(255,255,255,.15);
+color:#cbd5e1;
+padding:6px 12px;
+border-radius:6px;
+cursor:pointer;
+transition:.25s;
+}
+
+.remove-item:hover{
+border-color:#ff4d4d;
+color:#ff4d4d;
+}
+
+/* ============================= */
+/* RESUMEN */
+/* ============================= */
+
+.cart-summary{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding-top:20px;
+border-top:1px solid rgba(255,255,255,.1);
+}
+
+.cart-summary p{
+font-size:18px;
+font-weight:600;
+}
+
+/* ============================= */
+/* BOTON CHECKOUT */
+/* ============================= */
+
+#checkout-button{
+background:#00ffff;
+border:none;
+padding:12px 24px;
+border-radius:8px;
+font-weight:700;
+font-size:15px;
+cursor:pointer;
+transition:.25s;
+}
+
+#checkout-button:hover{
+background:#0ff;
+transform:translateY(-2px);
+box-shadow:0 8px 25px rgba(0,255,255,.35);
+}
+
+/* ============================= */
+/* CARRITO VACIO */
+/* ============================= */
+
+.cart-items p{
+color:#94a3b8;
+font-size:15px;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media(max-width:768px){
+
+.cart-container{
+margin:20px;
+padding:20px;
+}
+
+.cart-item{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.cart-summary{
+flex-direction:column;
+gap:15px;
+align-items:flex-start;
+}
+
+}
+
+/* ================================= */
+/* ITEM DEL CARRITO */
+/* ================================= */
+
+.cart-item{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+background:#0f172a;
+border:1px solid rgba(255,255,255,.06);
+border-radius:12px;
+padding:16px;
+margin-bottom:15px;
+transition:.25s;
+}
+
+.cart-item:hover{
+border-color:#00ffff;
+}
+
+/* ================================= */
+/* CONTENEDOR IZQUIERDO */
+/* ================================= */
+
+.item-details-container{
+display:flex;
+align-items:center;
+gap:15px;
+flex:1;
+}
+
+/* imagen */
+
+.item-details-container img{
+width:70px;
+height:70px;
+object-fit:cover;
+border-radius:8px;
+}
+
+/* info */
+
+.item-details h3{
+margin:0;
+font-size:16px;
+font-weight:600;
+color:white;
+}
+
+.item-details p{
+margin:2px 0;
+font-size:13px;
+color:#94a3b8;
+}
+
+/* ================================= */
+/* CONTROLES DE CANTIDAD */
+/* ================================= */
+
+.quantity-controls{
+display:flex;
+align-items:center;
+gap:10px;
+background:#020617;
+border:1px solid rgba(255,255,255,.08);
+padding:5px 10px;
+border-radius:8px;
+}
+
+.quantity-controls span{
+font-weight:600;
+min-width:20px;
+text-align:center;
+}
+
+/* botones */
+
+.quantity-minus,
+.quantity-plus{
+background:transparent;
+border:none;
+color:white;
+font-size:18px;
+cursor:pointer;
+padding:2px 6px;
+transition:.2s;
+}
+
+.quantity-minus:hover,
+.quantity-plus:hover{
+color:#00ffff;
+}
+
+/* ================================= */
+/* BOTON ELIMINAR */
+/* ================================= */
+
+.item-remove{
+background:transparent;
+border:1px solid rgba(255,255,255,.15);
+color:#cbd5e1;
+padding:6px 12px;
+border-radius:6px;
+cursor:pointer;
+transition:.25s;
+}
+
+.item-remove:hover{
+border-color:#ff4d4d;
+color:#ff4d4d;
+}
+
+/* ================================= */
+/* TOTAL */
+/* ================================= */
+
+#cart-total{
+color:#00ffff;
+font-weight:700;
+font-size:20px;
+}

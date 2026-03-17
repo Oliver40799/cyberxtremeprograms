@@ -1,0 +1,163 @@
+/* CONTENEDOR GENERAL */
+
+.container{
+max-width:1250px;
+margin:70px auto;
+padding:40px 20px;
+}
+
+/* SECCION */
+
+.products-section h2{
+text-align:center;
+font-size:34px;
+color:#00ffff;
+margin-bottom:50px;
+font-weight:700;
+text-shadow:0 0 15px rgba(0,255,255,.25);
+}
+
+/* GRID DE PRODUCTOS */
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+/* TARJETA PRODUCTO */
+
+.product-card{
+background:rgba(15,23,42,.85);
+border:1px solid rgba(255,255,255,.08);
+border-radius:18px;
+padding:18px;
+text-align:center;
+transition:.25s;
+box-shadow:0 10px 30px rgba(0,0,0,.5);
+position:relative;
+overflow:hidden;
+}
+
+.product-card:hover{
+transform:translateY(-6px);
+border-color:#00ffff;
+box-shadow:0 0 20px rgba(0,255,255,.15);
+}
+
+/* LINK PRODUCTO */
+
+.product-link{
+text-decoration:none;
+color:inherit;
+}
+
+/* IMAGEN */
+
+.product-image{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:15px;
+transition:.3s;
+}
+
+.product-card:hover .product-image{
+transform:scale(1.04);
+}
+
+/* NOMBRE PRODUCTO */
+
+.product-name{
+font-size:17px;
+font-weight:600;
+color:#ffffff;
+margin-bottom:8px;
+}
+
+/* PRECIO */
+
+.product-price{
+font-size:16px;
+color:#00ffff;
+font-weight:700;
+margin-bottom:14px;
+}
+
+/* BOTON CARRITO */
+
+.add-to-cart-btn{
+width:100%;
+padding:11px;
+border-radius:8px;
+border:2px solid #00ffff;
+background:#020617;
+color:#00ffff;
+font-weight:600;
+cursor:pointer;
+transition:.25s;
+}
+
+.add-to-cart-btn:hover{
+background:#00ffff;
+color:#000;
+box-shadow:0 0 14px rgba(0,255,255,.5);
+}
+
+/* EFECTO CARD BRILLO */
+
+.product-card::before{
+content:"";
+position:absolute;
+top:0;
+left:-120%;
+width:120%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(0,255,255,.18),transparent);
+transition:.6s;
+}
+
+.product-card:hover::before{
+left:120%;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.products-section h2{
+font-size:26px;
+}
+
+.product-image{
+height:160px;
+}
+
+}
+
+/* ============================== */
+/* TOAST CYBERXTREME */
+/* ============================== */
+
+.cx-toast{
+position:fixed;
+bottom:30px;
+right:30px;
+background:#020617;
+color:#00ffff;
+padding:14px 22px;
+border-radius:10px;
+border:1px solid rgba(0,255,255,.3);
+box-shadow:0 0 20px rgba(0,255,255,.25);
+font-weight:600;
+opacity:0;
+transform:translateY(20px);
+transition:.3s;
+z-index:9999;
+}
+
+.cx-toast.show{
+opacity:1;
+transform:translateY(0);
+}

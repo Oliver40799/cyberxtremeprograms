@@ -1,0 +1,206 @@
+/* CONTENEDOR */
+
+.purchases-container{
+max-width:1050px;
+margin:70px auto;
+padding:45px;
+background:rgba(15,23,42,.82);
+backdrop-filter:blur(14px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:22px;
+box-shadow:0 18px 55px rgba(0,0,0,.65),0 0 30px rgba(0,255,255,.05);
+color:#e2e8f0;
+}
+
+/* TITULO PRINCIPAL */
+
+.purchases-container h2{
+font-size:34px;
+color:#00ffff;
+text-align:center;
+margin-bottom:40px;
+font-weight:700;
+letter-spacing:.4px;
+text-shadow:0 0 15px rgba(0,255,255,.25);
+}
+
+/* TITULOS SECCION */
+
+.purchases-container h3{
+margin-top:45px;
+margin-bottom:18px;
+color:#00ffff;
+font-size:20px;
+font-weight:600;
+border-bottom:1px solid rgba(255,255,255,.08);
+padding-bottom:10px;
+}
+
+/* ITEM COMPRA */
+
+.purchase-item{
+display:flex;
+align-items:center;
+gap:18px;
+background:#020617;
+border:1px solid rgba(255,255,255,.08);
+border-radius:16px;
+padding:20px;
+margin-bottom:16px;
+transition:.25s;
+}
+
+.purchase-item:hover{
+border-color:#00ffff;
+transform:translateY(-3px);
+box-shadow:0 0 18px rgba(0,255,255,.08);
+}
+
+/* IMAGEN PRODUCTO */
+
+.purchase-item img{
+width:90px;
+height:90px;
+object-fit:cover;
+border-radius:10px;
+}
+
+/* DETALLES */
+
+.item-details{
+flex:1;
+min-width:0;
+}
+
+.item-details h3{
+margin:0;
+font-size:19px;
+color:#ffffff;
+font-weight:600;
+}
+
+.item-details p{
+margin-top:6px;
+font-size:14px;
+color:#94a3b8;
+line-height:1.5;
+}
+
+/* ACCIONES */
+
+.item-actions{
+display:flex;
+flex-direction:column;
+align-items:flex-end;
+gap:10px;
+min-width:180px;
+}
+
+/* CONTADOR DESCARGAS */
+
+.download-count{
+font-size:12px;
+font-weight:600;
+padding:6px 12px;
+border-radius:7px;
+border:1px solid #00ffff;
+color:#00ffff;
+background:#020617;
+}
+
+.download-count.low{
+border-color:#ff4d4d;
+color:#ff4d4d;
+}
+
+/* BOTON DESCARGA */
+
+.download-button{
+padding:11px 20px;
+border-radius:9px;
+border:2px solid #00ffff;
+background:#020617;
+color:#00ffff;
+font-weight:600;
+cursor:pointer;
+transition:.25s;
+text-align:center;
+box-shadow:0 0 10px rgba(0,255,255,.25);
+}
+
+.download-button:hover{
+background:#00ffff;
+color:#000;
+box-shadow:0 0 16px rgba(0,255,255,.6),0 0 26px rgba(0,255,255,.4);
+}
+
+/* BOTON DESACTIVADO */
+
+.download-button.disabled{
+background:#1f2937;
+border-color:#374151;
+color:#6b7280;
+cursor:not-allowed;
+box-shadow:none;
+}
+
+/* MENSAJES VACIOS */
+
+#no-digital-downloads-message,
+#no-licenses-message{
+color:#94a3b8;
+font-size:14px;
+margin-top:10px;
+}
+
+/* SECCIONES */
+
+#licenses-list,
+#digital-downloads-list{
+margin-top:40px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.purchase-item{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.purchase-item img{
+width:100%;
+max-height:180px;
+}
+
+.item-actions{
+width:100%;
+align-items:center;
+margin-top:12px;
+}
+
+.download-button,
+.download-count{
+width:100%;
+text-align:center;
+}
+
+}
+
+.license-panel-btn{
+display:inline-block;
+margin-top:8px;
+font-size:12px;
+padding:6px 10px;
+border-radius:6px;
+background:rgba(34,211,238,.15);
+border:1px solid rgba(34,211,238,.3);
+color:#22d3ee;
+text-decoration:none;
+transition:.2s;
+}
+
+.license-panel-btn:hover{
+background:rgba(34,211,238,.25);
+}

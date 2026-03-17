@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mis Reembolsos | CyberXtreme Programs</title>
+<link rel="icon" href="/Imagenes/favicon copia2.png">
+<link rel="stylesheet" href="/index-modern.css">
+<link rel="stylesheet" href="/rembolsos/mis-reembolsos.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <a href="/index.html">
+                CyberXtreme Programs
+            </a>
+        </div>
+        
+        <nav class="categories-nav">
+            <a href="#" class="dropdown-toggle">Categorías</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#">Diseño Web <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/categoria-DiseñoWeb/Facil.html">Fácil</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Medio.html">Medio</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
+                    </ul>
+                </li>
+                   <li><a href="/Software/productos-software-premium/zenith.html">Zenith</a></li>
+                <li>
+                    <a href="#">Plantillas <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/Plantillas/plantillas.html">Plantillas Pro</a></li>
+                        <li><a href="/Plantillas Basicas/PlantillasBasicas.html">Plantillas Básicas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar productos...">
+        </div>
+        
+        <div class="user-nav" id="auth-buttons">
+            <a href="/INICIOS-REGISTROS/Iniciar-sesion.html" class="nav-button">Iniciar Sesión</a>
+            <a href="/INICIOS-REGISTROS/Crear-cuenta.html" class="nav-button">Crear Cuenta</a>
+            <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+        </div>
+
+        <div id="user-profile" style="display: none; position: relative;">
+            <div class="user-nav">
+                <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+                <button id="user-name-button" class="nav-button">
+                    <span id="full-name-display"></span> <i class="fas fa-caret-down"></i>
+                </button>
+            </div>
+            <div id="user-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; border-radius: 5px; min-width: 150px; z-index: 1000;">
+                <a href="/mis-compras/mis-compras.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; ">
+                    <i class="fas fa-shopping-bag"></i> Mis compras
+                </a>
+
+                <a href="/Administar-Licencias/panel-admin-licencias.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; ">
+                    <i class="fas fa-key"></i> Panel De Licencias
+                </a>
+
+                <a href="/monedero/wallet.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; ">
+                    <i class="fas fa-wallet"></i> Monedero
+                </a>
+
+                <a href="/rembolsos/mis-reembolsos.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none;">
+                <i class="fas fa-rotate-left"></i> Reembolsos
+                </a>
+                
+                <a href="/historial/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none;">
+                    <i class="fas fa-history"></i> Historial
+                </a>
+                <button id="logout-button" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer;">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                </button>
+            </div>
+        </div>
+    </div>
+
+<!-- HERO SOPORTE -->
+
+<section class="refund-hero">
+
+<div class="refund-hero-content">
+
+<h1>
+<i class="fas fa-undo-alt"></i>
+Centro de Reembolsos
+</h1>
+
+<p>
+Consulta el estado de tus solicitudes y revisa las respuestas del equipo CyberXtreme.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ESTADISTICAS -->
+
+<section class="refund-stats">
+
+<div class="refund-stat-card">
+<i class="fas fa-paper-plane"></i>
+<h3 id="stat-enviados">0</h3>
+<p>Enviados</p>
+</div>
+
+<div class="refund-stat-card">
+<i class="fas fa-search"></i>
+<h3 id="stat-revisando">0</h3>
+<p>En revisión</p>
+</div>
+
+<div class="refund-stat-card">
+<i class="fas fa-check-circle"></i>
+<h3 id="stat-aprobados">0</h3>
+<p>Aprobados</p>
+</div>
+
+<div class="refund-stat-card">
+<i class="fas fa-times-circle"></i>
+<h3 id="stat-rechazados">0</h3>
+<p>Rechazados</p>
+</div>
+
+</section>
+
+
+<!-- LISTA PRINCIPAL -->
+
+<main class="refunds-main">
+
+<div class="refunds-container">
+
+<div class="refund-header">
+
+<h2>
+<i class="fas fa-list"></i>
+Mis solicitudes
+</h2>
+
+<a href="/rembolsos/rembolsos.html" id="refundNewBtn" class="refund-new-btn">
+<i class="fas fa-plus"></i> Nueva solicitud
+</a>
+</div>
+
+
+<div id="refundsList" class="refunds-list">
+
+<!-- Firebase insertará las cards aquí -->
+
+</div>
+
+</div>
+
+</main>
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>CyberXtreme Programs</h3>
+                <p>Soluciones web a medida para tu negocio. Convierte tu pasión por la tecnología en una herramienta de crecimiento.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/contacto/contacto.html">Contacto</a></li>
+                    <li><a href="/Terminos de programas/index.html">Terminos y condiciones de programas</a></li>
+                    <li><a href="/Terminos/terminos.html">Términos y condiciones</a></li>
+                    <li><a href="/mi historia/mi-historia.html">Nuestra Historia</a></li>
+                    <li><a href="/Actualizaciones/actualizaciones.html">Actualizaciones</a></li>
+                    <li><a href="/programas-infoactualizaciones/programas-infoactualizaciones.html">Programas Info & Actualizaciones </a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61580615673129"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/cyberxtremeprograms/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://discord.gg/32bbVNRb7y"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CyberXtreme Programs. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+<script src="/script.js"></script>
+<script src="/auth.js" type="module"></script>
+<script type="module" src="/rembolsos/mis-reembolsos.js"></script>
+
+</body>
+</html>

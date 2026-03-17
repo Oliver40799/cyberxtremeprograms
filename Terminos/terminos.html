@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Términos y Condiciones | CyberXtreme Programs</title>
-    <link rel="icon" type="image/png" href="/Imagenes/favicon copia2.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/terminos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberXtreme Programs | Términos y Condiciones</title>
+  <link rel="icon" type="image/png" href="/Imagenes/favicon copia2.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/index-modern.css">
+  <link rel="stylesheet" href="/Terminos/terminos.css">
+
 </head>
 <body>
+
+<div id="particles"></div>
 
     <div class="header">
         <div class="logo">
@@ -18,24 +21,27 @@
             </a>
         </div>
         
-<nav class="categories-nav">
-    <a href="#" class="dropdown-toggle">Categorías</a>
-    <ul class="dropdown-menu">
-        <li>
-            <a href="#">Diseño Web <i class="fas fa-caret-right"></i></a>
-            <ul class="dropdown-submenu">
-                <li><a href="/categoria-DiseñoWeb/Facil.html">Fácil</a></li>
-                <li><a href="/categoria-DiseñoWeb/Medio.html">Medio</a></li>
-                <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
+        <nav class="categories-nav">
+            <a href="#" class="dropdown-toggle">Categorías</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#">Diseño Web <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/categoria-DiseñoWeb/Facil.html">Fácil</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Medio.html">Medio</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
+                    </ul>
+                </li>
+                   <li><a href="/Software/productos-software-premium/zenith.html">Zenith</a></li>
+                <li>
+                    <a href="#">Plantillas <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/Plantillas/plantillas.html">Plantillas Pro</a></li>
+                        <li><a href="/Plantillas Basicas/PlantillasBasicas.html">Plantillas Básicas</a></li>
+                    </ul>
+                </li>
             </ul>
-        </li>
-        <li><a href="/proximamente/proximamente.html">Software Proximamente</a></li>
-        <li>
-            <a href="/Plantillas/plantillas.html">Plantillas <i class="fas fa-caret-right"></i></a>
-            <ul class="dropdown-submenu">
-                <li><a href="/Plantillas/plantillas.html">Plantillas Pro</a></li>
-                <li><a href="/Plantillas/plantillas-basicas.html">Plantillas Básicas</a></li>
-</nav>
+        </nav>
         
         <div class="search-bar">
             <input type="text" placeholder="Buscar productos...">
@@ -54,11 +60,24 @@
                     <span id="full-name-display"></span> <i class="fas fa-caret-down"></i>
                 </button>
             </div>
-            <div id="user-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ccc; border-radius: 5px; min-width: 150px; z-index: 1000;">
-                <a href="/mis-compras/mis-compras.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+            <div id="user-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; border-radius: 5px; min-width: 150px; z-index: 1000;">
+                <a href="/mis-compras/mis-compras.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; ">
                     <i class="fas fa-shopping-bag"></i> Mis compras
                 </a>
-                <a href="/historial/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+
+                <a href="/Administar-Licencias/panel-admin-licencias.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; ">
+                    <i class="fas fa-key"></i> Panel De Licencias
+                </a>
+
+                <a href="/monedero/wallet.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; ">
+                    <i class="fas fa-wallet"></i> Monedero
+                </a>
+
+                <a href="/rembolsos/mis-reembolsos.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none;">
+                <i class="fas fa-rotate-left"></i> Reembolsos
+                </a>
+                
+                <a href="/historial/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none;">
                     <i class="fas fa-history"></i> Historial
                 </a>
                 <button id="logout-button" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer;">
@@ -67,127 +86,291 @@
             </div>
         </div>
     </div>
-    <main class="terms-page-content">
-        <div class="container terms-container">
-            <h1 class="section-title">Términos y Condiciones</h1>
-            <p class="last-updated">Última Actualización: 5 de septiembre de 2025</p>
 
-<div class="terms-text">
-    <p>Bienvenido a CyberXtreme Programs. Al acceder y utilizar nuestro sitio web, usted acepta cumplir y quedar sujeto a los siguientes Términos y Condiciones de uso. Estos términos constituyen un acuerdo legalmente vinculante entre usted y CyberXtreme Programs respecto al acceso, navegación y utilización de nuestra plataforma. Le recomendamos leer cuidadosamente todo este documento, ya que establece derechos, responsabilidades y limitaciones importantes. Si no está de acuerdo con alguna disposición, le solicitamos no continuar utilizando nuestro sitio web.</p>
+<main>
+  <h1 class="section-title">Términos y Condiciones</h1>
+  <p class="intro-text">Construimos un entorno digital seguro, confiable y transparente para todos nuestros usuarios.</p>
+  <p class="last-updated">Última actualización: 20 de diciembre de 2025</p>
 
-    <h2>1. Propiedad Intelectual</h2>
-    <p>Todo el contenido disponible en este sitio web, incluyendo, pero no limitado a, el diseño gráfico, logotipos, código fuente, imágenes, íconos, audios, videos, documentos, plantillas, manuales y material descargable, es propiedad exclusiva de CyberXtreme Programs o de sus respectivos licenciantes. Estos materiales se encuentran protegidos por las leyes de derechos de autor y propiedad intelectual a nivel nacional e internacional.</p>
-    <p>El usuario no adquiere ningún derecho de propiedad intelectual sobre dichos contenidos por el simple uso del sitio. Únicamente se le concede una licencia limitada para acceder a ellos en conformidad con estos términos. Queda estrictamente prohibida la reproducción total o parcial, distribución, comunicación pública, transformación o explotación de los materiales sin autorización expresa por escrito.</p>
-    <p>En caso de violación a estas disposiciones, CyberXtreme Programs podrá ejercer las acciones legales correspondientes, incluyendo la reclamación de daños y perjuicios y la cancelación inmediata del acceso al usuario infractor.</p>
+  <div class="terms-text">
+    <p>Bienvenido a CyberXtreme Programs. Al acceder y utilizar nuestro sitio web, usted acepta cumplir y quedar sujeto a los siguientes Términos y Condiciones de uso. Estos términos constituyen un acuerdo legalmente vinculante entre usted y CyberXtreme Programs respecto al acceso, navegación y utilización de nuestra plataforma. Le recomendamos leer cuidadosamente todo este documento, ya que establece derechos, responsabilidades y limitaciones importantes. Si no está de acuerdo con alguna disposición, le solicitamos no continuar utilizando nuestro sitio web.</p>
 
-    <h2>2. Licencias de Uso</h2>
-    <p>Al adquirir un producto digital de nuestra plataforma, usted recibe una licencia de uso no exclusiva, no transferible y revocable para emplear dicho producto conforme a las condiciones aquí establecidas. Esta licencia puede ser de carácter personal o comercial, según lo indicado en la descripción del producto en el momento de la compra.</p>
-    <p>La licencia no otorga derechos de reventa, sublicenciamiento, distribución masiva ni cesión a terceros. Cualquier uso no autorizado será considerado una infracción de nuestros derechos de propiedad intelectual. El incumplimiento de estas condiciones dará lugar a la revocación automática de la licencia sin derecho a reembolso.</p>
-    <p>CyberXtreme Programs se reserva el derecho de auditar el uso de sus productos con el fin de verificar el cumplimiento de estas condiciones, pudiendo restringir el acceso a clientes que incumplan las normas establecidas.</p>
+    <h2>1. Propiedad Intelectual</h2>
+    <p>Todo el contenido disponible en este sitio web, incluyendo, pero no limitado a, el diseño gráfico, logotipos, código fuente, imágenes, íconos, audios, videos, documentos, plantillas, manuales y material descargable, es propiedad exclusiva de CyberXtreme Programs o de sus respectivos licenciantes. Estos materiales se encuentran protegidos por las leyes de derechos de autor y propiedad intelectual a nivel nacional e internacional.</p>
+    <p>El usuario no adquiere ningún derecho de propiedad intelectual sobre dichos contenidos por el simple uso del sitio. Únicamente se le concede una licencia limitada para acceder a ellos en conformidad con estos términos. Queda estrictamente prohibida la reproducción total o parcial, distribución, comunicación pública, transformación o explotación de los materiales sin autorización expresa por escrito.</p>
+    <p>En caso de violación a estas disposiciones, CyberXtreme Programs podrá ejercer las acciones legales correspondientes, incluyendo la reclamación de daños y perjuicios y la cancelación inmediata del acceso al usuario infractor.</p>
 
-    <h2>3. Restricciones de Uso</h2>
-    <p>Está terminantemente prohibido utilizar los servicios de CyberXtreme Programs con fines fraudulentos, ilegales, inmorales o que atenten contra el orden público. Esto incluye, sin limitarse a, la creación de contenido malicioso, la distribución de software malintencionado, el uso de ingeniería inversa sobre nuestros programas o la manipulación del código fuente con propósitos ilícitos.</p>
-    <p>El usuario se compromete a no realizar copias no autorizadas de nuestros productos, no compartir licencias con terceros sin consentimiento previo y no utilizar herramientas automatizadas como bots o scrapers para extraer información de nuestro sitio.</p>
-    <p>El incumplimiento de estas restricciones puede derivar en la suspensión inmediata de la cuenta, la cancelación de las licencias adquiridas y la persecución de responsabilidades legales correspondientes.</p>
+    <h2>2. Licencias de Uso</h2>
+    <p>Al adquirir un producto digital de nuestra plataforma, usted recibe una licencia de uso no exclusiva, no transferible y revocable para emplear dicho producto conforme a las condiciones aquí establecidas. Esta licencia puede ser de carácter personal o comercial, según lo indicado en la descripción del producto en el momento de la compra.</p>
+    <p>La licencia no otorga derechos de reventa, sublicenciamiento, distribución masiva ni cesión a terceros. Cualquier uso no autorizado será considerado una infracción de nuestros derechos de propiedad intelectual. El incumplimiento de estas condiciones dará lugar a la revocación automática de la licencia sin derecho a reembolso.</p>
+    <p>CyberXtreme Programs se reserva el derecho de auditar el uso de sus productos con el fin de verificar el cumplimiento de estas condiciones, pudiendo restringir el acceso a clientes que incumplan las normas establecidas.</p>
 
-    <h2>4. Registro de Cuenta</h2>
-    <p>Para acceder a determinados servicios o realizar compras en nuestra plataforma, es necesario registrarse creando una cuenta de usuario. Durante el proceso de registro, usted deberá proporcionar información veraz, actualizada y completa. Está prohibido el uso de datos falsos, impersonación de terceros o la creación de múltiples cuentas con fines abusivos.</p>
-    <p>El usuario es el único responsable de la custodia de sus credenciales de acceso (usuario y contraseña). Cualquier actividad realizada desde su cuenta será considerada bajo su responsabilidad, incluso si no la realizó personalmente.</p>
-    <p>En caso de detectar un acceso no autorizado, el usuario deberá notificarlo de inmediato a CyberXtreme Programs. Nos reservamos el derecho de suspender o eliminar cuentas que incumplan estos términos o presenten actividades sospechosas.</p>
+    <h2>3. Restricciones de Uso</h2>
+    <p>Está terminantemente prohibido utilizar los servicios de CyberXtreme Programs con fines fraudulentos, ilegales, inmorales o que atenten contra el orden público. Esto incluye, sin limitarse a, la creación de contenido malicioso, la distribución de software malintencionado, el uso de ingeniería inversa sobre nuestros programas o la manipulación del código fuente con propósitos ilícitos.</p>
+    <p>El usuario se compromete a no realizar copias no autorizadas de nuestros productos, no compartir licencias con terceros sin consentimiento previo y no utilizar herramientas automatizadas como bots o scrapers para extraer información de nuestro sitio.</p>
+    <p>El incumplimiento de estas restricciones puede derivar en la suspensión inmediata de la cuenta, la cancelación de las licencias adquiridas y la persecución de responsabilidades legales correspondientes.</p>
 
-    <h2>5. Exactitud de la Información</h2>
-    <p>CyberXtreme Programs no garantiza que la totalidad de la información contenida en el sitio sea siempre precisa, completa o actualizada. Aunque nos esforzamos en mantener nuestros contenidos correctos y útiles, pueden existir errores tipográficos, técnicos o de actualización que escapan a nuestro control.</p>
-    <p>Usted se compromete a verificar la exactitud de la información antes de tomar decisiones basadas en ella. CyberXtreme Programs no será responsable de los perjuicios derivados de la confianza depositada en información incorrecta, incompleta o desactualizada.</p>
-    <p>Asimismo, cualquier información proporcionada por el usuario al sitio deberá ser exacta y legítima. El suministro de datos falsos o engañosos constituye una violación a estos términos y puede derivar en la suspensión de la cuenta.</p>
+    <h2>4. Registro de Cuenta</h2>
+    <p>Para acceder a determinados servicios o realizar compras en nuestra plataforma, es necesario registrarse creando una cuenta de usuario. Durante el proceso de registro, usted deberá proporcionar información veraz, actualizada y completa. Está prohibido el uso de datos falsos, impersonación de terceros o la creación de múltiples cuentas con fines abusivos.</p>
+    <p>El usuario es el único responsable de la custodia de sus credenciales de acceso (usuario y contraseña). Cualquier actividad realizada desde su cuenta será considerada bajo su responsabilidad, incluso si no la realizó personalmente.</p>
+    <p>En caso de detectar un acceso no autorizado, el usuario deberá notificarlo de inmediato a CyberXtreme Programs. Nos reservamos el derecho de suspender o eliminar cuentas que incumplan estos términos o presenten actividades sospechosas.</p>
 
-    <h2>6. Pagos y Facturación</h2>
-    <p>Todos los pagos realizados en nuestra plataforma deberán efectuarse mediante los métodos autorizados y habilitados en el momento de la transacción. Los precios de los productos están expresados en la moneda correspondiente e incluyen los impuestos aplicables, salvo que se indique lo contrario.</p>
-    <p>CyberXtreme Programs no almacena información sensible de pago en sus servidores, como números de tarjetas de crédito o claves bancarias. El procesamiento de pagos es realizado a través de terceros proveedores de servicios seguros, bajo sus propios términos y políticas de privacidad.</p>
-    <p>El usuario es responsable de verificar que los datos de facturación proporcionados sean correctos. Los errores en la información suministrada pueden retrasar o imposibilitar la entrega de los productos digitales adquiridos.</p>
+    <h2>5. Exactitud de la Información</h2>
+    <p>CyberXtreme Programs no garantiza que la totalidad de la información contenida en el sitio sea siempre precisa, completa o actualizada. Aunque nos esforzamos en mantener nuestros contenidos correctos y útiles, pueden existir errores tipográficos, técnicos o de actualización que escapan a nuestro control.</p>
+    <p>Usted se compromete a verificar la exactitud de la información antes de tomar decisiones basadas en ella. CyberXtreme Programs no será responsable de los perjuicios derivados de la confianza depositada en información incorrecta, incompleta o desactualizada.</p>
+    <p>Asimismo, cualquier información proporcionada por el usuario al sitio deberá ser exacta y legítima. El suministro de datos falsos o engañosos constituye una violación a estos términos y puede derivar en la suspensión de la cuenta.</p>
 
-    <h2>7. Política de Reembolsos</h2>
-    <p>Dado que los productos ofrecidos por CyberXtreme Programs son de naturaleza digital e intangibles, una vez realizada la compra y entregado el producto no se ofrecen reembolsos, salvo en casos excepcionales donde el archivo esté dañado o presente errores irremediables que imposibiliten su utilización.</p>
-    <p>En tales casos, el usuario deberá notificar el problema dentro de los 7 días posteriores a la compra, proporcionando pruebas suficientes para su revisión. De confirmarse el error, CyberXtreme Programs podrá reemplazar el producto defectuoso por una versión corregida o, en última instancia, emitir un reembolso parcial o total.</p>
-    <p>El mal uso del producto, errores en la descarga, incompatibilidades técnicas no especificadas o falta de conocimiento del usuario no constituyen motivos válidos de reembolso.</p>
+    <h2>6. Pagos y Facturación</h2>
+    <p>Todos los pagos realizados en nuestra plataforma deberán efectuarse mediante los métodos autorizados y habilitados en el momento de la transacción. Los precios de los productos están expresados en la moneda correspondiente e incluyen los impuestos aplicables, salvo que se indique lo contrario.</p>
+    <p>CyberXtreme Programs no almacena información sensible de pago en sus servidores, como números de tarjetas de crédito o claves bancarias. El procesamiento de pagos es realizado a través de terceros proveedores de servicios seguros, bajo sus propios términos y políticas de privacidad.</p>
+    <p>El usuario es responsable de verificar que los datos de facturación proporcionados sean correctos. Los errores en la información suministrada pueden retrasar o imposibilitar la entrega de los productos digitales adquiridos.</p>
 
-    <h2>8. Soporte Técnico</h2>
-    <p>CyberXtreme Programs ofrece soporte técnico a todos los clientes que hayan adquirido productos con licencia válida. El soporte puede ser solicitado a través de los canales oficiales establecidos en el sitio web. El tiempo de respuesta dependerá de la carga de trabajo y la complejidad de la solicitud.</p>
-    <p>El soporte se limita a la instalación, configuración y resolución de problemas directamente relacionados con nuestros productos. No incluye formación personalizada, desarrollo a medida o asistencia en tecnologías de terceros que no formen parte de nuestra solución.</p>
-    <p>CyberXtreme Programs se reserva el derecho de negar soporte a usuarios que incumplan estos términos, utilicen versiones no autorizadas de nuestros productos o mantengan actitudes abusivas hacia nuestro personal de atención.</p>
+        <h2>7. Política de Reembolsos</h2>
+    <div class="refund-section">
+      <p>En <strong>CyberXtreme Programs</strong> valoramos la confianza de nuestros clientes y nos esforzamos por brindar una experiencia transparente y justa. Sabemos que pueden surgir situaciones especiales, por eso ofrecemos una política de reembolsos clara y responsable.</p>
 
-    <h2>9. Limitación de Responsabilidad</h2>
-    <p>En ningún caso CyberXtreme Programs será responsable de daños directos, indirectos, incidentales, especiales o consecuenciales que resulten del uso o la imposibilidad de uso de nuestros servicios, productos o contenidos, incluso si se ha advertido sobre la posibilidad de dichos daños.</p>
-    <p>El uso de nuestros productos digitales se realiza bajo la exclusiva responsabilidad del usuario. CyberXtreme Programs no garantiza que los productos estén libres de errores, vulnerabilidades de seguridad o que funcionen en todos los entornos posibles.</p>
-    <p>Nuestra responsabilidad, en cualquier caso, estará limitada al importe efectivamente abonado por el usuario por el producto adquirido.</p>
+      <div class="refund-box">
+        <h3>🧾 Condiciones Generales</h3>
+        <p>Los reembolsos aplican únicamente para productos digitales adquiridos a través de nuestra plataforma oficial <strong>cyberxtremeprograms.store</strong>. Dado que nuestros productos son de naturaleza digital, una vez descargados o activados, se consideran entregados.</p>
+        <p>No obstante, podrás solicitar un reembolso si:</p>
+        <ul>
+          <li>El producto fue adquirido por error antes de la descarga.</li>
+          <li>El archivo entregado presenta errores técnicos graves.</li>
+          <li>No se descargó ni activó el producto, y la solicitud se hace dentro de los 7 días posteriores a la compra.</li>
+        </ul>
+      </div>
 
-    <h2>10. Seguridad del Sitio</h2>
-    <p>El usuario se compromete a no realizar acciones que comprometan la seguridad del sitio, incluyendo, pero no limitado a: ataques de denegación de servicio (DDoS), inyecciones de código, intentos de hackeo, introducción de malware o cualquier actividad que dañe la integridad de la plataforma.</p>
-    <p>Cualquier intento de vulnerar la seguridad será considerado una violación grave a estos términos y dará lugar a la cancelación inmediata de la cuenta, la revocación de todas las licencias y la denuncia a las autoridades competentes.</p>
-    <p>CyberXtreme Programs utiliza medidas de seguridad avanzadas para proteger los datos de los usuarios, pero no garantiza que el sitio esté libre de riesgos. El usuario acepta asumir la responsabilidad por el uso de sistemas de seguridad adicionales, como antivirus o firewalls personales.</p>
+      <div class="refund-box">
+        <h3>🚫 No Aplica Reembolso Cuando</h3>
+        <ul>
+          <li>El cliente ya descargó, instaló o utilizó el producto.</li>
+          <li>Existen incompatibilidades técnicas no indicadas en la descripción.</li>
+          <li>El plazo de 7 días ya expiró.</li>
+          <li>El usuario simplemente cambió de opinión.</li>
+          <li>El producto fue adquirido fuera de los canales oficiales.</li>
+        </ul>
+      </div>
 
-    <h2>11. Uso Aceptable</h2>
-    <p>El usuario se compromete a utilizar los servicios de CyberXtreme Programs únicamente con fines legales y éticos. Está prohibido emplear nuestras herramientas para distribuir contenido ilegal, difamatorio, discriminatorio, violento o que infrinja derechos de terceros.</p>
-    <p>Asimismo, el usuario no podrá utilizar nuestros productos para crear servicios que compitan directamente con CyberXtreme Programs sin nuestra autorización expresa.</p>
-    <p>El incumplimiento de esta cláusula puede derivar en sanciones que incluyen la suspensión permanente de la cuenta y la revocación de las licencias adquiridas.</p>
+<div class="refund-box">
+  <h3>📨 Solicitud de Reembolso</h3>
+  <p>
+    Si necesitás solicitar un reembolso, deberás completar el 
+    <strong>Formulario de Reembolsos</strong> disponible en nuestra página oficial de 
+    <strong>CyberXtreme Programs</strong>. Este proceso garantiza una atención rápida y ordenada para cada caso.
+  </p>
 
-    <h2>12. Enlaces a Terceros</h2>
-    <p>Nuestro sitio web puede contener enlaces a sitios web externos operados por terceros. Dichos enlaces se ofrecen únicamente para conveniencia del usuario y no implican respaldo, patrocinio o responsabilidad sobre su contenido.</p>
-    <p>CyberXtreme Programs no controla ni garantiza la disponibilidad, veracidad, legalidad o seguridad de dichos sitios externos. El acceso a ellos se realiza bajo el propio riesgo del usuario.</p>
-    <p>Recomendamos leer detenidamente los términos y condiciones y políticas de privacidad de cada sitio externo antes de interactuar con ellos.</p>
+  <p>
+    🔗 Podés acceder directamente al formulario desde el siguiente enlace:<br>
+    <a href="/rembolsos/rembolsos.html" 
+       style="color:#00FFFF; text-decoration:underline;">
+       Abrir Formulario de Reembolsos
+    </a>
+  </p>
 
-    <h2>13. Modificaciones a los Términos</h2>
-    <p>CyberXtreme Programs se reserva el derecho de modificar estos Términos y Condiciones en cualquier momento y sin previo aviso. Los cambios entrarán en vigor inmediatamente después de su publicación en esta página.</p>
-    <p>Es responsabilidad del usuario revisar periódicamente esta sección para estar al tanto de las actualizaciones. El uso continuado del sitio web tras la publicación de los cambios constituye la aceptación expresa de las nuevas condiciones.</p>
-    <p>En caso de modificaciones sustanciales, CyberXtreme Programs podrá notificar a los usuarios mediante correo electrónico u otros medios de comunicación oficiales.</p>
+  <p>Para enviar correctamente la solicitud, se te pedirá la siguiente información:</p>
+  <ul>
+    <li><strong>Nombre completo</strong></li>
+    <li><strong>Correo electrónico</strong> utilizado en la compra</li>
+    <li><strong>Código de compra</strong> (por ejemplo: <code>#CXP-001234</code>)</li>
+    <li><strong>Fecha de compra</strong></li>
+    <li><strong>Nombre del producto</strong></li>
+    <li><strong>Motivo detallado de la solicitud</strong></li>
+  </ul>
 
-    <h2>14. Jurisdicción y Ley Aplicable</h2>
-    <p>Estos Términos y Condiciones se regirán e interpretarán de acuerdo con las leyes vigentes en el país de domicilio social de CyberXtreme Programs. Cualquier disputa que surja entre las partes será resuelta exclusivamente en los tribunales competentes de dicha jurisdicción.</p>
-    <p>El usuario renuncia expresamente a cualquier otro fuero que pudiera corresponderle por razón de su domicilio presente o futuro.</p>
-    <p>Si alguna disposición de estos términos fuera considerada inválida o inaplicable, las disposiciones restantes continuarán en plena vigencia y efecto.</p>
-
-    <h2>15. Contacto</h2>
-    <p>Si tiene preguntas, dudas o comentarios sobre estos Términos y Condiciones, puede comunicarse con nosotros a través de nuestro formulario de contacto en el sitio web o mediante nuestro correo electrónico oficial. Nos comprometemos a responder en el menor tiempo posible dentro de los horarios establecidos.</p>
-    <p>CyberXtreme Programs agradece la confianza depositada por nuestros clientes y usuarios, y reafirma su compromiso de ofrecer productos digitales de calidad y servicios transparentes.</p>
+  <p>
+    Una vez enviado el formulario, nuestro equipo revisará la información y dará respuesta en un plazo máximo de 
+    <strong>2 días hábiles</strong> (o incluso antes, dependiendo del caso). 
+    En situaciones que requieran verificación adicional, la respuesta se emitirá en un plazo máximo de 
+    <strong>4 días hábiles</strong>.
+  </p>
+  
+  <p>
+    Nos comprometemos a mantener una comunicación clara y directa durante todo el proceso, 
+    priorizando siempre la confianza y satisfacción de nuestros clientes.
+  </p>
 </div>
 
-        </div>
-    </main>
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-info">
-                <h3>CyberXtreme Programs</h3>
-                <p>Soluciones web a medida para tu negocio. Convierte tu pasión por la tecnología en unas herramienta de crecimiento.</p>
-            </div>
-            <div class="footer-links">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="/index.html">Inicio</a></li>
-                    <li><a href="/proximamente/proximamente.html">Software Proximamente</a></li>
-                    <li><a href="/Plantillas/plantillas.html">Plantillas</a></li>
-                    <li><a href="/Subscripciones/CyberPro+.html">Suscripciones</a></li>
-                    <li><a href="/proximamente/proximamente.html">Activar Licencia</a></li> 
-                    <li><a href="/contacto/contacto.html">Contacto</a></li>
-                    <li><a href="terminos.html">Terminos y condiciones</a></li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <h3>Síguenos</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-discord"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 CyberXtreme Programs. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-    <script src="/script.js"></script>
-    <script src="/auth.js" type="module"></script>
-    <script src="/carrito-compras/carrito.js"></script>
-    <script src="/historial.js"></script>
-    <script src="/mis-compras/descargas-digitales.js"></script>
-    <script src="terminos.js"></script>
+
+
+      <div class="refund-box">
+        <h3>🔄 Reemplazo y Transparencia</h3>
+        <p>Antes de emitir un reembolso, <strong>CyberXtreme Programs</strong> puede ofrecerte una solución alternativa: una versión corregida, un reemplazo o un crédito en tu monedero digital. Nuestro compromiso es la satisfacción del cliente bajo los principios de ética y transparencia.</p>
+        <p><strong>CyberXtreme Programs</strong> — porque tu confianza es nuestro mayor valor.</p>
+      </div>
+    </div>
+
+
+    <h2>8. Soporte Técnico</h2>
+    <p>CyberXtreme Programs ofrece soporte técnico a todos los clientes que hayan adquirido productos con licencia válida. El soporte puede ser solicitado a través de los canales oficiales establecidos en el sitio web. El tiempo de respuesta dependerá de la carga de trabajo y la complejidad de la solicitud.</p>
+    <p>El soporte se limita a la instalación, configuración y resolución de problemas directamente relacionados con nuestros productos. No incluye formación personalizada, desarrollo a medida o asistencia en tecnologías de terceros que no formen parte de nuestra solución.</p>
+    <p>CyberXtreme Programs se reserva el derecho de negar soporte a usuarios que incumplan estos términos, utilicen versiones no autorizadas de nuestros productos o mantengan actitudes abusivas hacia nuestro personal de atención.</p>
+
+    <h2>9. Limitación de Responsabilidad</h2>
+    <p>En ningún caso CyberXtreme Programs será responsable de daños directos, indirectos, incidentales, especiales o consecuenciales que resulten del uso o la imposibilidad de uso de nuestros servicios, productos o contenidos, incluso si se ha advertido sobre la posibilidad de dichos daños.</p>
+    <p>El uso de nuestros productos digitales se realiza bajo la exclusiva responsabilidad del usuario. CyberXtreme Programs no garantiza que los productos estén libres de errores, vulnerabilidades de seguridad o que funcionen en todos los entornos posibles.</p>
+    <p>Nuestra responsabilidad, en cualquier caso, estará limitada al importe efectivamente abonado por el usuario por el producto adquirido.</p>
+
+    <h2>10. Seguridad del Sitio</h2>
+    <p>El usuario se compromete a no realizar acciones que comprometan la seguridad del sitio, incluyendo, pero no limitado a: ataques de denegación de servicio (DDoS), inyecciones de código, intentos de hackeo, introducción de malware o cualquier actividad que dañe la integridad de la plataforma.</p>
+    <p>Cualquier intento de vulnerar la seguridad será considerado una violación grave a estos términos y dará lugar a la cancelación inmediata de la cuenta, la revocación de todas las licencias y la denuncia a las autoridades competentes.</p>
+    <p>CyberXtreme Programs utiliza medidas de seguridad avanzadas para proteger los datos de los usuarios, pero no garantiza que el sitio esté libre de riesgos. El usuario acepta asumir la responsabilidad por el uso de sistemas de seguridad adicionales, como antivirus o firewalls personales.</p>
+
+    <h2>11. Uso Aceptable</h2>
+    <p>El usuario se compromete a utilizar los servicios de CyberXtreme Programs únicamente con fines legales y éticos. Está prohibido emplear nuestras herramientas para distribuir contenido ilegal, difamatorio, discriminatorio, violento o que infrinja derechos de terceros.</p>
+    <p>Asimismo, el usuario no podrá utilizar nuestros productos para crear servicios que compitan directamente con CyberXtreme Programs sin nuestra autorización expresa.</p>
+    <p>El incumplimiento de esta cláusula puede derivar en sanciones que incluyen la suspensión permanente de la cuenta y la revocación de las licencias adquiridas.</p>
+
+    <h2>12. Enlaces a Terceros</h2>
+    <p>Nuestro sitio web puede contener enlaces a sitios web externos operados por terceros. Dichos enlaces se ofrecen únicamente para conveniencia del usuario y no implican respaldo, patrocinio o responsabilidad sobre su contenido.</p>
+    <p>CyberXtreme Programs no controla ni garantiza la disponibilidad, veracidad, legalidad o seguridad de dichos sitios externos. El acceso a ellos se realiza bajo el propio riesgo del usuario.</p>
+    <p>Recomendamos leer detenidamente los términos y condiciones y políticas de privacidad de cada sitio externo antes de interactuar con ellos.</p>
+
+    <h2>13. Modificaciones a los Términos</h2>
+    <p>CyberXtreme Programs se reserva el derecho de modificar estos Términos y Condiciones en cualquier momento y sin previo aviso. Los cambios entrarán en vigor inmediatamente después de su publicación en esta página.</p>
+    <p>Es responsabilidad del usuario revisar periódicamente esta sección para estar al tanto de las actualizaciones. El uso continuado del sitio web tras la publicación de los cambios constituye la aceptación expresa de las nuevas condiciones.</p>
+    <p>En caso de modificaciones sustanciales, CyberXtreme Programs podrá notificar a los usuarios mediante correo electrónico u otros medios de comunicación oficiales.</p>
+
+    <h2>14. Jurisdicción y Ley Aplicable</h2>
+    <p>Estos Términos y Condiciones se regirán e interpretarán de acuerdo con las leyes vigentes en el país de domicilio social de CyberXtreme Programs. Cualquier disputa que surja entre las partes será resuelta exclusivamente en los tribunales competentes de dicha jurisdicción.</p>
+    <p>El usuario renuncia expresamente a cualquier otro fuero que pudiera corresponderle por razón de su domicilio presente o futuro.</p>
+    <p>Si alguna disposición de estos términos fuera considerada inválida o inaplicable, las disposiciones restantes continuarán en plena vigencia y efecto.</p>
+
+    <h2>15. Contacto</h2>
+    <p>Si tiene preguntas, dudas o comentarios sobre estos Términos y Condiciones, puede comunicarse con nosotros a través de nuestro formulario de contacto en el sitio web o mediante nuestro correo electrónico oficial. Nos comprometemos a responder en el menor tiempo posible dentro de los horarios establecidos.</p>
+    <p>CyberXtreme Programs agradece la confianza depositada por nuestros clientes y usuarios, y reafirma su compromiso de ofrecer productos digitales de calidad y servicios transparentes.</p>
+
+    <div class="software-policy">
+    <h2>📜 Política de Uso, Licenciamiento y Distribución de Software</h2>
+    
+    <p><strong>1. Identidad del proveedor</strong></p>
+    <p>CyberXtreme Programs es una plataforma dedicada al desarrollo, distribución y licenciamiento de software, herramientas digitales, programas informáticos y servicios relacionados con tecnología. Al utilizar cualquiera de nuestros productos o servicios, el usuario acepta los términos descritos en este documento.</p>
+
+    <p><strong>2. Aceptación de los términos</strong></p>
+    <p>El acceso, descarga, instalación, ejecución o uso de cualquier software proporcionado por CyberXtreme Programs implica la aceptación total e incondicional de esta política. Si el usuario no está de acuerdo con alguno de los términos, deberá abstenerse de usar el software.</p>
+
+    <p><strong>3. Tipos de licencia</strong></p>
+    <p>CyberXtreme Programs puede ofrecer distintos tipos de licencia, incluyendo pero no limitándose a:</p>
+    <ul>
+        <li>Licencia gratuita</li>
+        <li>Licencia personal</li>
+        <li>Licencia educativa</li>
+        <li>Licencia comercial</li>
+        <li>Licencia empresarial</li>
+    </ul>
+    <p>Cada licencia define los permisos, limitaciones y alcance del uso del software.</p>
+
+    <p><strong>4. Alcance del uso permitido</strong></p>
+    <p>El usuario podrá:</p>
+    <ul>
+        <li>Usar el software únicamente para los fines establecidos en la licencia adquirida.</li>
+        <li>Instalarlo en la cantidad de dispositivos permitidos.</li>
+        <li>Utilizarlo para proyectos personales o comerciales solo si la licencia lo autoriza.</li>
+    </ul>
+
+    <p><strong>5. Restricciones de uso</strong></p>
+    <p>Queda estrictamente prohibido:</p>
+    <ul>
+        <li>Copiar, duplicar o redistribuir el software sin autorización.</li>
+        <li>Revender, sublicenciar, alquilar o ceder el software.</li>
+        <li>Modificar, alterar o crear versiones derivadas.</li>
+        <li>Descompilar, realizar ingeniería inversa o manipular el código.</li>
+        <li>Eliminar marcas, avisos legales o sistemas de protección.</li>
+        <li>Compartir claves, licencias o accesos.</li>
+        <li>Usar el software con fines ilegales, maliciosos o fraudulentos.</li>
+    </ul>
+
+    <p><strong>6. Propiedad intelectual</strong></p>
+    <p>Todo el software, código, diseño, interfaz, nombres, logotipos y documentación son propiedad exclusiva de CyberXtreme Programs. El usuario no adquiere derechos de propiedad, únicamente una licencia de uso limitada.</p>
+
+    <p><strong>7. Activación y validación</strong></p>
+    <p>Algunos productos pueden requerir:</p>
+    <ul>
+        <li>Activación por clave</li>
+        <li>Validación online</li>
+        <li>Conexión periódica a servidores</li>
+    </ul>
+    <p>Estas medidas se utilizan para: verificar licencias legítimas, prevenir el uso no autorizado y mejorar la seguridad del software.</p>
+
+    <p><strong>8. Actualizaciones y modificaciones</strong></p>
+    <p>CyberXtreme Programs se reserva el derecho de:</p>
+    <ul>
+        <li>Actualizar el software</li>
+        <li>Corregir errores</li>
+        <li>Agregar o eliminar funciones</li>
+        <li>Modificar requisitos técnicos</li>
+    </ul>
+    <p>Algunas actualizaciones pueden requerir una licencia activa o plan vigente.</p>
+
+    <p><strong>9. Compatibilidad</strong></p>
+    <p>No se garantiza compatibilidad total con:</p>
+    <ul>
+        <li>Sistemas operativos antiguos</li>
+        <li>Versiones modificadas</li>
+        <li>Hardware no compatible</li>
+    </ul>
+    <p>El usuario es responsable de verificar los requisitos antes de instalar.</p>
+
+    <p><strong>10. Soporte técnico</strong></p>
+    <p>El soporte técnico:</p>
+    <ul>
+        <li>Depende del plan o licencia contratada</li>
+        <li>No cubre versiones modificadas o pirateadas</li>
+        <li>Puede variar en tiempos de respuesta</li>
+    </ul>
+    <p>CyberXtreme Programs no garantiza soporte ilimitado ni inmediato.</p>
+
+    <p><strong>11. Limitación de responsabilidad</strong></p>
+    <p>El software se proporciona “tal cual”, sin garantías explícitas o implícitas. CyberXtreme Programs no será responsable por:</p>
+    <ul>
+        <li>Pérdida de datos</li>
+        <li>Daños directos o indirectos</li>
+        <li>Interrupciones de servicio</li>
+        <li>Uso indebido del software</li>
+    </ul>
+    <p>El usuario acepta usar el software bajo su propio riesgo.</p>
+
+    <p><strong>12. Seguridad y datos</strong></p>
+    <p>El software puede recopilar información técnica como:</p>
+    <ul>
+        <li>Tipo de dispositivo</li>
+        <li>Versión del sistema</li>
+        <li>Errores y rendimiento</li>
+    </ul>
+    <p>No se recopilan datos personales sensibles sin consentimiento explícito.</p>
+
+    <p><strong>13. Suspensión y cancelación</strong></p>
+    <p>CyberXtreme Programs podrá:</p>
+    <ul>
+        <li>Suspender licencias por incumplimiento</li>
+        <li>Bloquear accesos</li>
+        <li>Cancelar cuentas sin previo aviso en casos graves</li>
+    </ul>
+    <p>Especialmente en casos de piratería o abuso.</p>
+
+    <p><strong>14. Terminación de la licencia</strong></p>
+    <p>La licencia se dará por terminada automáticamente si el usuario incumple esta política. Al finalizar la licencia, el usuario deberá:</p>
+    <ul>
+        <li>Dejar de usar el software</li>
+        <li>Eliminar todas las copias instaladas</li>
+    </ul>
+
+    <p><strong>15. Cambios en la política</strong></p>
+    <p>CyberXtreme Programs puede modificar esta política en cualquier momento. El uso continuado del software tras los cambios implica aceptación automática.</p>
+
+    <p><strong>16. Legislación aplicable</strong></p>
+    <p>Esta política se rige por las leyes aplicables en la jurisdicción correspondiente. Cualquier disputa será resuelta ante las autoridades competentes.</p>
+
+</div>
+</div>
+</main>
+
+<footer>
+  <h3>CyberXtreme Programs</h3>
+  <p>Soluciones web a medida para tu negocio. Convierte tu pasión por la tecnología en una herramienta de crecimiento.</p>
+  <p>&copy; 2026 CyberXtreme Programs. Todos los derechos reservados.</p>
+</footer>
+
+<script src="/script.js"></script>
+<script src="/auth.js" type="module"></script>
 </body>
 </html>

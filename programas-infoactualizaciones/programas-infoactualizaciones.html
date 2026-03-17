@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programas | Info & Actualizaciones</title>
+    <link rel="icon" type="image/png" href="/Imagenes/favicon copia2.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/index-modern.css">
+     <link rel="stylesheet" href="estilo.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER SIMPLE (usa tu mismo menú que todas tus páginas) -->
+    <div class="header">
+        <div class="logo">
+            <a href="/index.html">
+                CyberXtreme Programs
+            </a>
+        </div>
+        
+        <nav class="categories-nav">
+            <a href="#" class="dropdown-toggle">Categorías</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#">Diseño Web <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/categoria-DiseñoWeb/Facil.html">Fácil</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Medio.html">Medio</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
+                    </ul>
+                </li>
+                   <li><a href="/Software/productos-software-premium/zenith.html">Zenith</a></li>
+                <li>
+                    <a href="#">Plantillas <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/Plantillas/plantillas.html">Plantillas Pro</a></li>
+                        <li><a href="/Plantillas Basicas/PlantillasBasicas.html">Plantillas Básicas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar productos...">
+        </div>
+        
+        <div class="user-nav" id="auth-buttons">
+            <a href="/INICIOS-REGISTROS/Iniciar-sesion.html" class="nav-button">Iniciar Sesión</a>
+            <a href="/INICIOS-REGISTROS/Crear-cuenta.html" class="nav-button">Crear Cuenta</a>
+            <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+        </div>
+
+        <div id="user-profile" style="display: none; position: relative;">
+            <div class="user-nav">
+                <a href="/carrito-compras/carrito.html" class="nav-button"><i class="fas fa-shopping-cart"></i> Mi Carrito</a>
+                <button id="user-name-button" class="nav-button">
+                    <span id="full-name-display"></span> <i class="fas fa-caret-down"></i>
+                </button>
+            </div>
+            <div id="user-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; border-radius: 5px; min-width: 150px; z-index: 1000;">
+                <a href="/mis-compras/mis-compras.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; ">
+                    <i class="fas fa-shopping-bag"></i> Mis compras
+                </a>
+
+                <a href="/Administar-Licencias/panel-admin-licencias.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; ">
+                    <i class="fas fa-key"></i> Panel De Licencias
+                </a>
+
+                <a href="/monedero/wallet.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; ">
+                    <i class="fas fa-wallet"></i> Monedero
+                </a>
+
+                <a href="/rembolsos/mis-reembolsos.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none;">
+                <i class="fas fa-rotate-left"></i> Reembolsos
+                </a>
+                
+                <a href="/historial/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none;">
+                    <i class="fas fa-history"></i> Historial
+                </a>
+                <button id="logout-button" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer;">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENIDO -->
+    <main class="main-content" style="padding: 40px; max-width: 1000px; margin:auto;">
+
+<div class="hero-updates fade-in">
+
+<h1>
+Información & Actualizaciones de Zenith
+</h1>
+
+<p>
+Descubre las mejoras más recientes, nuevas funciones y
+la evolución continua del ecosistema CyberXtreme Programs.
+</p>
+
+</div>
+
+<!-- ============================
+         VERSION ACTUAL (1.0.0)
+============================= -->
+<div class="update-box fade-in" style="animation-delay:0.6s;">
+    <span class="version-tag">Versión actual: 1.0.0</span>
+    <h2>🔥 Lanzamiento Oficial de Zenith</h2>
+    <p>
+        Zenith 1.0.0 marca el inicio del motor de descargas profesional con sistema de límites inteligente,
+        historial dinámico y arquitectura optimizada para máxima estabilidad.
+    </p>
+    <ul>
+        <li>⚡ Motor de descarga optimizado con yt-dlp</li>
+        <li>🎬 Soporte para Video en MP4 hasta 1080p (Plan Gratuito)</li>
+        <li>🎵 Descarga de audio MP3 en alta calidad</li>
+        <li>📊 Sistema de límites automáticos con reinicio cada 24h</li>
+        <li>🧠 Historial inteligente sincronizado en tiempo real</li>
+        <li>🔐 Sistema de licencia PRO con validación en la nube</li>
+        <li>🚀 Interfaz moderna con diseño neon minimalista</li>
+    </ul>
+</div>
+
+<!-- ============================
+         PROXIMA VERSION (1.1.0)
+============================= -->
+<div class="update-box fade-in" style="animation-delay:0.9s;">
+    <span class="version-tag">Próxima actualización menor: 1.1.0</span>
+    <h2>⚙️ Estabilidad + Mejoras Internas</h2>
+    <p>
+        La versión 1.1.0 estará enfocada en mejorar estabilidad general, optimizar consumo
+        de memoria y pulir detalles visuales del sistema.
+    </p>
+    <ul>
+        <li>⚡ Inicio más rápido del programa</li>
+        <li>🧠 Optimización del manejo de historial</li>
+        <li>📉 Reducción de consumo de RAM en segundo plano</li>
+        <li>🎨 Ajustes visuales y mejoras en animaciones</li>
+        <li>🔧 Corrección de pequeños errores detectados en producción</li>
+    </ul>
+</div>
+
+<!-- ============================
+         PROXIMA GRAN VERSION (2.0.0)
+============================= -->
+<div class="update-box fade-in" style="animation-delay:1.2s;">
+    <span class="version-tag">Próxima gran actualización: 2.0.0</span>
+    <h2>🎨 Personalización Total + Nuevo Sistema Visual</h2>
+    <p>
+        Zenith 2.0.0 traerá la evolución completa del sistema con personalización avanzada,
+        nuevos temas visuales y mejoras profundas en experiencia de usuario.
+    </p>
+
+    <h3>Características Destacadas:</h3>
+    <ul>
+        <li>🎨 Cambio dinámico de temas (Oscuro, Neon, Minimal, Custom)</li>
+        <li>🖌️ Editor de colores personalizado para interfaz</li>
+        <li>📊 Dashboard renovado con estadísticas avanzadas</li>
+        <li>🚀 Motor de descarga mejorado con procesamiento paralelo</li>
+        <li>🧩 Sistema modular preparado para futuras expansiones</li>
+        <li>🌐 Preparación para soporte multi-plataforma</li>
+        <li>🔮 Modo Experimental para funciones beta</li>
+    </ul>
+</div>
+
+
+        <!-- ============================
+                 SEPARADOR: PRÓXIMOS PROGRAMAS
+        ============================ -->
+        <hr style="border: none; border-top: 3px dashed rgba(0,255,255,0.4); margin: 60px 0; animation-delay: 1.5s;" class="fade-in">
+
+        <h1 class="fade-in" style="text-align:center; animation-delay:1.5s; color: #00FFFF;">
+            Próximos Programas y Lanzamientos
+        </h1>
+
+        <!-- ============================
+                 PROGRAMA FLUXER (Pilar)
+        ============================ -->
+<div class="update-box fade-in" style="animation-delay:1.8s;">
+    <span class="version-tag">Programa Central (Pilar)</span>
+    <h2>🚀 Zenith Core (Ecosistema)</h2>
+    <p>
+        Zenith es el núcleo principal del ecosistema CyberXtreme Programs. Su desarrollo es continuo
+        y está diseñado para convertirse en la plataforma base desde la cual evolucionarán
+        todas las futuras herramientas, módulos y sistemas avanzados de la suite.
+    </p>
+    <ul>
+        <li>✅ Base Arquitectónica Sólida: Motor optimizado y escalable preparado para futuras expansiones.</li>
+        <li>🔗 Integración Total: Compatible con próximos módulos, herramientas y servicios del ecosistema.</li>
+        <li>🛡️ Seguridad Prioritaria: Todas las mejoras críticas y optimizaciones se implementan primero en Zenith.</li>
+        <li>⚙️ Evolución Constante: Actualizaciones periódicas enfocadas en rendimiento, estabilidad y experiencia.</li>
+    </ul>
+</div>
+
+        <!-- ============================
+                 PRÓXIMO LANZAMIENTO ESPECÍFICO (Antivirus)
+        ============================ -->
+        <div class="update-box fade-in" style="animation-delay:2.1s;">
+            <span class="version-tag future-release">
+                No Disponible, Por ahora...
+            </span>
+        
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>CyberXtreme Programs</h3>
+                <p>Soluciones web a medida para tu negocio. Convierte tu pasión por la tecnología en una herramienta de crecimiento.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/contacto/contacto.html">Contacto</a></li>
+                    <li><a href="/Terminos de programas/index.html">Terminos y condiciones de programas</a></li>
+                    <li><a href="/Terminos/terminos.html">Términos y condiciones</a></li>
+                    <li><a href="/mi historia/mi-historia.html">Nuestra Historia</a></li>
+                    <li><a href="/Actualizaciones/actualizaciones.html">Actualizaciones</a></li>
+                    <li><a href="/programas-infoactualizaciones/programas-infoactualizaciones.html">Programas Info & Actualizaciones </a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61580615673129"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/cyberxtremeprograms/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://discord.gg/32bbVNRb7y"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CyberXtreme Programs. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <script src="/auth.js" type="module"></script>
+</body>
+</html>

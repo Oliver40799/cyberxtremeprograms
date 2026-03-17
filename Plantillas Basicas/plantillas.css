@@ -1,0 +1,293 @@
+/* =============================== */
+/* CONTENEDOR GENERAL */
+/* =============================== */
+
+.container{
+max-width:1300px;
+margin:80px auto;
+padding:40px 25px;
+}
+
+/* =============================== */
+/* TITULO SECCION */
+/* =============================== */
+
+.products-section h2{
+text-align:center;
+font-size:36px;
+color:#00ffff;
+margin-bottom:60px;
+font-weight:700;
+letter-spacing:.5px;
+text-shadow:0 0 20px rgba(0,255,255,.35);
+}
+
+/* =============================== */
+/* GRID PRODUCTOS */
+/* =============================== */
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:35px;
+}
+
+/* =============================== */
+/* TARJETA PRODUCTO */
+/* =============================== */
+
+.product-card{
+
+background:rgba(15,23,42,.85);
+border:1px solid rgba(255,255,255,.06);
+border-radius:18px;
+
+padding:20px;
+text-align:center;
+
+transition:.3s;
+
+box-shadow:
+0 12px 30px rgba(0,0,0,.6);
+
+position:relative;
+overflow:hidden;
+
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+
+}
+
+/* Hover */
+
+.product-card:hover{
+
+transform:translateY(-8px);
+
+border-color:#00ffff;
+
+box-shadow:
+0 0 20px rgba(0,255,255,.18),
+0 12px 35px rgba(0,0,0,.7);
+
+}
+
+/* =============================== */
+/* LINK PRODUCTO */
+/* =============================== */
+
+.product-link{
+text-decoration:none;
+color:inherit;
+display:block;
+}
+
+/* =============================== */
+/* IMAGEN PRODUCTO */
+/* =============================== */
+
+.product-image{
+
+width:100%;
+height:185px;
+
+object-fit:cover;
+
+border-radius:12px;
+
+margin-bottom:15px;
+
+transition:.35s;
+
+box-shadow:
+0 8px 18px rgba(0,0,0,.6);
+
+}
+
+.product-card:hover .product-image{
+transform:scale(1.05);
+}
+
+/* =============================== */
+/* NOMBRE PRODUCTO */
+/* =============================== */
+
+.product-name{
+
+font-size:17px;
+font-weight:600;
+
+color:#ffffff;
+
+margin-bottom:10px;
+
+min-height:40px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+}
+
+/* =============================== */
+/* PRECIO */
+/* =============================== */
+
+.product-price{
+
+font-size:18px;
+color:#00ffff;
+
+font-weight:700;
+
+margin-bottom:18px;
+
+text-shadow:0 0 12px rgba(0,255,255,.25);
+
+}
+
+/* =============================== */
+/* BOTON CARRITO */
+/* =============================== */
+
+.add-to-cart-btn{
+
+width:100%;
+
+padding:12px;
+
+border-radius:10px;
+
+border:2px solid #00ffff;
+
+background:#020617;
+
+color:#00ffff;
+
+font-size:14px;
+font-weight:600;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.add-to-cart-btn:hover{
+
+background:#00ffff;
+color:#000;
+
+box-shadow:
+0 0 15px rgba(0,255,255,.6);
+
+transform:translateY(-2px);
+
+}
+
+/* =============================== */
+/* EFECTO BRILLO CARD */
+/* =============================== */
+
+.product-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-120%;
+
+width:120%;
+height:100%;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(0,255,255,.15),
+transparent
+);
+
+transition:.7s;
+
+}
+
+.product-card:hover::before{
+left:120%;
+}
+
+/* =============================== */
+/* RESPONSIVE */
+/* =============================== */
+
+@media(max-width:900px){
+
+.container{
+padding:30px 20px;
+}
+
+.products-section h2{
+font-size:28px;
+}
+
+.product-grid{
+gap:25px;
+}
+
+.product-image{
+height:160px;
+}
+
+}
+
+@media(max-width:500px){
+
+.product-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+/* =============================== */
+/* TOAST CYBERXTREME */
+/* =============================== */
+
+.cx-toast{
+
+position:fixed;
+
+bottom:30px;
+right:30px;
+
+background:#020617;
+
+color:#00ffff;
+
+padding:14px 22px;
+
+border-radius:10px;
+
+border:1px solid rgba(0,255,255,.3);
+
+box-shadow:
+0 0 20px rgba(0,255,255,.25);
+
+font-weight:600;
+
+opacity:0;
+
+transform:translateY(20px);
+
+transition:.35s;
+
+z-index:9999;
+
+}
+
+.cx-toast.show{
+
+opacity:1;
+transform:translateY(0);
+
+}

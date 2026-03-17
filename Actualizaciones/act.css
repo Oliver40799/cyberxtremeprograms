@@ -1,0 +1,213 @@
+/* ============================= */
+/* BASE */
+/* ============================= */
+
+body{
+background:radial-gradient(circle at top,#0b1224,#000);
+color:#e5e7eb;
+font-family:'Poppins',sans-serif;
+overflow-x:hidden;
+}
+
+/* ============================= */
+/* TITULO PRINCIPAL */
+/* ============================= */
+
+.main-content h1{
+font-size:42px;
+text-align:center;
+margin-bottom:60px;
+color:#00ffff;
+text-shadow:0 0 20px rgba(0,255,255,.35);
+letter-spacing:.5px;
+}
+
+/* ============================= */
+/* CONTENEDOR */
+/* ============================= */
+
+.main-content{
+position:relative;
+}
+
+/* ============================= */
+/* LINEA DE TIMELINE */
+/* ============================= */
+
+.main-content::before{
+content:"";
+position:absolute;
+left:28px;
+top:0;
+width:3px;
+height:100%;
+background:linear-gradient(#00ffff,transparent);
+opacity:.25;
+}
+
+/* ============================= */
+/* TARJETAS UPDATE */
+/* ============================= */
+
+.update{
+position:relative;
+margin-left:75px;
+background:rgba(15,23,42,.85);
+border:1px solid rgba(0,255,255,.12);
+border-radius:18px;
+padding:35px;
+margin-top:45px;
+box-shadow:0 15px 40px rgba(0,0,0,.6);
+backdrop-filter:blur(12px);
+transition:.35s;
+}
+
+/* ============================= */
+/* PUNTO DE TIMELINE */
+/* ============================= */
+
+.update::before{
+content:"";
+position:absolute;
+left:-47px;
+top:35px;
+width:16px;
+height:16px;
+background:#00ffff;
+border-radius:50%;
+box-shadow:0 0 15px #00ffff;
+}
+
+/* ============================= */
+/* HOVER TARJETAS */
+/* ============================= */
+
+.update:hover{
+transform:translateY(-6px);
+border-color:#00ffff;
+box-shadow:0 0 30px rgba(0,255,255,.25);
+}
+
+/* ============================= */
+/* TITULO VERSION */
+/* ============================= */
+
+.update h2{
+font-size:24px;
+color:#00ffff;
+margin-bottom:15px;
+}
+
+/* ============================= */
+/* TEXTO */
+/* ============================= */
+
+.update p{
+line-height:1.75;
+font-size:15px;
+color:#cbd5e1;
+margin-bottom:12px;
+}
+
+/* ============================= */
+/* LISTA DE MEJORAS */
+/* ============================= */
+
+.update ul{
+margin-top:10px;
+padding-left:0;
+list-style:none;
+}
+
+.update ul li{
+position:relative;
+padding-left:24px;
+margin-bottom:8px;
+font-size:15px;
+color:#cbd5e1;
+}
+
+/* puntito estilo cyber */
+
+.update ul li::before{
+content:"";
+position:absolute;
+left:0;
+top:9px;
+width:8px;
+height:8px;
+border-radius:50%;
+background:#00ffff;
+box-shadow:0 0 8px #00ffff;
+}
+
+/* ============================= */
+/* TAG VERSION */
+/* ============================= */
+
+.version-tag{
+display:inline-block;
+padding:5px 12px;
+border-radius:12px;
+font-size:13px;
+background:#00ffff20;
+border:1px solid #00ffff;
+color:#00ffff;
+margin-bottom:14px;
+}
+
+/* ============================= */
+/* SECCION FINAL */
+/* ============================= */
+
+.update.center{
+text-align:center;
+}
+
+/* ============================= */
+/* ANIMACION */
+/* ============================= */
+
+.fade-in{
+opacity:0;
+transform:translateY(30px);
+animation:fadeUp 1.2s forwards;
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media(max-width:800px){
+
+.main-content::before{
+display:none;
+}
+
+.update{
+margin-left:0;
+}
+
+.update::before{
+display:none;
+}
+
+.main-content h1{
+font-size:30px;
+}
+
+}

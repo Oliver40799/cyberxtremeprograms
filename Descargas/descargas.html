@@ -6,8 +6,8 @@
     <title>Descarga | CyberXtreme Programs</title>
     <link rel="icon" type="image/png" href="/Imagenes/favicon copia2.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/descarga.css"> </head>
+    <link rel="stylesheet" href="/index-modern.css">
+    <link rel="stylesheet" href="descargas.css"> </head>
 <body>
 
     <div class="header">
@@ -17,24 +17,27 @@
             </a>
         </div>
         
-<nav class="categories-nav">
-    <a href="#" class="dropdown-toggle">Categorías</a>
-    <ul class="dropdown-menu">
-        <li>
-            <a href="#">Diseño Web <i class="fas fa-caret-right"></i></a>
-            <ul class="dropdown-submenu">
-                <li><a href="/categoria-DiseñoWeb/Facil.html">Fácil</a></li>
-                <li><a href="/categoria-DiseñoWeb/Medio.html">Medio</a></li>
-                <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
+        <nav class="categories-nav">
+            <a href="#" class="dropdown-toggle">Categorías</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#">Diseño Web <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/categoria-DiseñoWeb/Facil.html">Fácil</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Medio.html">Medio</a></li>
+                        <li><a href="/categoria-DiseñoWeb/Fuerte.html">Fuerte</a></li>
+                    </ul>
+                </li>
+                   <li><a href="/Software/productos-software-premium/zenith.html">Zenith</a></li>
+                <li>
+                    <a href="#">Plantillas <i class="fas fa-caret-right"></i></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="/Plantillas/plantillas.html">Plantillas Pro</a></li>
+                        <li><a href="/Plantillas Basicas/PlantillasBasicas.html">Plantillas Básicas</a></li>
+                    </ul>
+                </li>
             </ul>
-        </li>
-        <li><a href="/proximamente/proximamente.html">Software Proximamente</a></li>
-        <li>
-            <a href="/Plantillas/plantillas.html">Plantillas <i class="fas fa-caret-right"></i></a>
-            <ul class="dropdown-submenu">
-                <li><a href="/Plantillas/plantillas.html">Plantillas Pro</a></li>
-                <li><a href="/Plantillas/plantillas-basicas.html">Plantillas Básicas</a></li>
-</nav>
+        </nav>
         
         <div class="search-bar">
             <input type="text" placeholder="Buscar productos...">
@@ -53,11 +56,24 @@
                     <span id="full-name-display"></span> <i class="fas fa-caret-down"></i>
                 </button>
             </div>
-            <div id="user-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ccc; border-radius: 5px; min-width: 150px; z-index: 1000;">
-                <a href="/mis-compras/mis-compras.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+            <div id="user-dropdown-menu" style="display: none; position: absolute; top: 100%; right: 0; border-radius: 5px; min-width: 150px; z-index: 1000;">
+                <a href="/mis-compras/mis-compras.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; ">
                     <i class="fas fa-shopping-bag"></i> Mis compras
                 </a>
-                <a href="/historial/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; color: #333;">
+
+                <a href="/Administar-Licencias/panel-admin-licencias.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; ">
+                    <i class="fas fa-key"></i> Panel De Licencias
+                </a>
+
+                <a href="/monedero/wallet.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none; ">
+                    <i class="fas fa-wallet"></i> Monedero
+                </a>
+
+                <a href="/rembolsos/mis-reembolsos.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none;">
+                <i class="fas fa-rotate-left"></i> Reembolsos
+                </a>
+                
+                <a href="/historial/historial.html" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer; text-decoration: none;">
                     <i class="fas fa-history"></i> Historial
                 </a>
                 <button id="logout-button" style="display: block; width: 100%; padding: 10px; border: none; background: none; text-align: left; cursor: pointer;">
@@ -66,18 +82,31 @@
             </div>
         </div>
     </div>
-
     <main class="download-page-content">
         <div class="download-container">
-            <h1 class="download-title">Descarga tu Producto</h1>
-            <p class="download-subtitle">¡Gracias por tu compra! Tu descarga está lista.</p>
+            
+<div class="purchase-success">
+    <i class="fas fa-circle-check success-icon"></i>
+
+    <h1 class="download-title">Compra completada</h1>
+
+    <p class="download-subtitle">
+        Gracias por confiar en <strong>CyberXtreme Programs</strong>.  
+        Tu producto digital está listo para descargar.
+    </p>
+
+    <p class="download-message">
+        Nuestro objetivo es ayudarte a construir proyectos increíbles.
+        Esperamos que esta herramienta te ayude a crecer y crear algo grande.
+    </p>
+</div>
             
             <div class="product-info-box">
                 <i class="fas fa-box-open product-icon"></i>
                 <h2 id="product-name" class="product-name"></h2>
             </div>
             
-            <a id="download-button" href="#" class="download-button" download>
+            <a id="download-button" href="#" class="download-button">
                 <i class="fas fa-download"></i> Descargar Ahora
             </a>
 
@@ -94,31 +123,29 @@
                 <h3>Enlaces Rápidos</h3>
                 <ul>
                     <li><a href="/index.html">Inicio</a></li>
-                    <li><a href="/proximamente/proximamente.html">Software Proximamente</a></li>
-                    <li><a href="/Plantillas/plantillas.html">Plantillas</a></li>
-                    <li><a href="/Subscripciones/CyberPro+.html">Suscripciones</a></li>
-                    <li><a href="/proximamente/proximamente.html">Activar Licencia</a></li> 
                     <li><a href="/contacto/contacto.html">Contacto</a></li>
-                    <li><a href="/Terminos/terminos.html">Terminos y condiciones</a></li>
+                    <li><a href="/Terminos de programas/index.html">Terminos y condiciones de programas</a></li>
+                    <li><a href="/Terminos/terminos.html">Términos y condiciones</a></li>
                     <li><a href="/mi historia/mi-historia.html">Nuestra Historia</a></li>
+                    <li><a href="/Actualizaciones/actualizaciones.html">Actualizaciones</a></li>
+                    <li><a href="/programas-infoactualizaciones/programas-infoactualizaciones.html">Programas Info & Actualizaciones </a></li>
                 </ul>
             </div>
             <div class="footer-social">
                 <h3>Síguenos</h3>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61580615673129"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/cyberxtremeprograms/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://discord.gg/32bbVNRb7y"><i class="fab fa-discord"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 CyberXtreme Programs.  Todos los derechos reservados.</p>
+            <p>&copy; 2026 CyberXtreme Programs. Todos los derechos reservados.</p>
         </div>
     </footer>
     
-    
     <script src="/auth.js" type="module"></script>
-    <script src="descargas.js"></script>
+    <script src="descargas.js" type="module"></script>
 </body>
 </html>

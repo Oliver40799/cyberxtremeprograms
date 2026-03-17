@@ -1,52 +1,147 @@
-// plantillas.js
-document.addEventListener('DOMContentLoaded', () => {
-    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+import { dbLicencias } from "/Administar-Licencias/firebase-licencias.js";
 
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const product = {
-                id: button.dataset.id,
-                name: button.dataset.name,
-                price: parseFloat(button.dataset.price),
-                image: button.dataset.image,
-                isDigital: true,
-                quantity: 1
-            };
+import {
+collection,
+getDocs,
+doc,
+getDoc
+} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const existingProductIndex = cart.findIndex(item => item.id === product.id);
 
-            if (existingProductIndex > -1) {
-                cart[existingProductIndex].quantity += 1;
-            } else {
-                cart.push(product);
-            }
+document.addEventListener("DOMContentLoaded", loadProducts);
 
-            localStorage.setItem('cart', JSON.stringify(cart));
 
-            // Toast abajo
-            const toast = document.createElement('div');
-            toast.textContent = `"${product.name}" ha sido añadido al carrito.`;
-            toast.style = `
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                background: #4caf50;
-                color: white;
-                padding: 10px 20px;
-                border-radius: 5px;
-                box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-                z-index: 9999;
-                opacity: 0;
-                transition: opacity 0.3s ease-in-out;
-            `;
-            document.body.appendChild(toast);
-            setTimeout(() => toast.style.opacity = 1, 10);
-            setTimeout(() => {
-                toast.style.opacity = 0;
-                setTimeout(() => toast.remove(), 300);
-            }, 2000);
-        });
-    });
+async function loadProducts(){
+
+const container=document.getElementById("product-list");
+
+if(!container) return;
+
+const querySnapshot=await getDocs(collection(dbLicencias,"products"));
+
+querySnapshot.forEach((docItem)=>{
+
+const product=docItem.data();
+const id=docItem.id;
+
+const card=document.createElement("div");
+card.className="product-card";
+
+card.innerHTML=`
+
+<a href="/Plantillas/producto.html?id=${id}" class="product-link">
+<img src="${product.image}" class="product-image">
+<h3 class="product-name">${product.name}</h3>
+</a>
+
+<p class="product-price">$${product.price} MXN</p>
+
+<button class="add-to-cart-btn" data-id="${id}">
+Añadir al carrito
+</button>
+
+`;
+
+container.appendChild(card);
+
 });
 
+activateCartButtons();
+
+}
+
+
+
+function activateCartButtons(){
+
+const buttons=document.querySelectorAll(".add-to-cart-btn");
+
+buttons.forEach(button=>{
+
+button.addEventListener("click", async()=>{
+
+const id=button.dataset.id;
+
+try{
+
+const productRef=doc(dbLicencias,"products",id);
+
+const productSnap=await getDoc(productRef);
+
+if(!productSnap.exists()){
+console.error("Producto no encontrado");
+return;
+}
+
+const data=productSnap.data();
+
+const product={
+id:id,
+name:data.name,
+price:data.price,
+basePrice:data.price,
+image:data.image,
+downloadUrl:data.downloadUrl,
+isDigital:data.isDigital,
+isLicensed:data.isLicensed,
+maxDownloads:data.maxDownloads,
+quantity:1
+};
+
+let cart=JSON.parse(localStorage.getItem("cart"))||[];
+
+const existing=cart.findIndex(item=>item.id===product.id);
+
+if(existing>-1){
+
+cart[existing].quantity++;
+
+}else{
+
+cart.push(product);
+
+}
+
+localStorage.setItem("cart",JSON.stringify(cart));
+
+showToast(product.name);
+
+}catch(error){
+
+console.error("Error añadiendo al carrito:",error);
+
+}
+
+});
+
+});
+
+}
+
+
+
+function showToast(productName){
+
+const toast=document.createElement("div");
+
+toast.className="cx-toast";
+
+toast.textContent=`✔ "${productName}" añadido al carrito`;
+
+document.body.appendChild(toast);
+
+setTimeout(()=>{
+toast.classList.add("show");
+},10);
+
+setTimeout(()=>{
+
+toast.classList.remove("show");
+
+setTimeout(()=>{
+toast.remove();
+},300);
+
+},2000);
+
+}

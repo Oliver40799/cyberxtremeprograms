@@ -1,0 +1,357 @@
+/* CONTENEDOR GENERAL */
+
+.refund-page-content{
+padding:100px 20px;
+display:flex;
+justify-content:center;
+}
+
+
+/* CAJA DEL FORMULARIO */
+
+.refund-container{
+max-width:700px;
+width:100%;
+background:#0e1117;
+padding:40px;
+border-radius:14px;
+border:1px solid rgba(255,255,255,.05);
+}
+
+
+/* TITULO */
+
+.section-title{
+font-size:34px;
+text-align:center;
+margin-bottom:20px;
+font-weight:700;
+}
+
+
+/* TEXTO */
+
+.commitment-text{
+text-align:center;
+margin-bottom:40px;
+color:#b6b6b6;
+line-height:1.6;
+}
+
+
+/* FORMULARIO */
+
+.refund-form{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+
+/* GRUPO */
+
+.form-group{
+display:flex;
+flex-direction:column;
+gap:6px;
+}
+
+
+/* INLINE */
+
+.form-group-inline{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+
+/* LABEL */
+
+label{
+font-size:14px;
+font-weight:600;
+}
+
+
+/* INPUTS */
+
+input, textarea{
+background:#161b22;
+border:1px solid rgba(255,255,255,.05);
+padding:12px;
+border-radius:8px;
+color:#fff;
+font-size:14px;
+outline:none;
+}
+
+
+/* INPUT FOCUS */
+
+input:focus, textarea:focus{
+border:1px solid #22d3ee;
+}
+
+
+/* BOTON */
+
+.submit-button{
+background:linear-gradient(135deg,#22d3ee,#06b6d4);
+color:#000;
+font-weight:700;
+border:none;
+padding:14px;
+border-radius:10px;
+cursor:pointer;
+transition:.25s;
+}
+
+
+/* HOVER */
+
+.submit-button:hover{
+transform:scale(1.03);
+box-shadow:0 0 15px rgba(34,211,238,.6);
+}
+
+
+/* MENSAJES */
+
+.form-message{
+display:none;
+padding:12px;
+border-radius:8px;
+font-size:14px;
+text-align:center;
+}
+
+
+/* EXITO */
+
+.form-message.success{
+background:#0f5132;
+color:#d1e7dd;
+}
+
+
+/* ERROR */
+
+.form-message.error{
+background:#842029;
+color:#f8d7da;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:650px){
+
+.form-group-inline{
+grid-template-columns:1fr;
+}
+
+.refund-container{
+padding:30px 25px;
+}
+
+}
+
+.refund-popup{
+position:fixed;
+bottom:25px;
+left:50%;
+transform:translateX(-50%) translateY(40px);
+background:#0e1117;
+border:1px solid rgba(34,211,238,.3);
+border-radius:10px;
+padding:14px 20px;
+color:#fff;
+opacity:0;
+transition:.3s;
+z-index:9999;
+box-shadow:0 10px 25px rgba(0,0,0,.6);
+}
+
+.refund-popup.show{
+opacity:1;
+transform:translateX(-50%) translateY(0);
+}
+
+.refund-popup-content{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:14px;
+}
+
+.refund-popup i{
+font-size:18px;
+}
+
+.refund-popup.success i{
+color:#22c55e;
+}
+
+.refund-popup.error i{
+color:#ef4444;
+}
+
+/* BUSCADOR DE PRODUCTOS COMPRADOS */
+
+.purchase-results{
+position:relative;
+margin-top:8px;
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+
+/* TARJETA RESULTADO */
+
+.purchase-result{
+display:flex;
+align-items:center;
+gap:12px;
+padding:10px 12px;
+background:#0e1117;
+border:1px solid rgba(255,255,255,.05);
+border-radius:10px;
+cursor:pointer;
+transition:.25s;
+}
+
+/* IMAGEN PRODUCTO */
+
+.purchase-result img{
+width:40px;
+height:40px;
+object-fit:cover;
+border-radius:6px;
+}
+
+/* TEXTO */
+
+.purchase-result div{
+display:flex;
+flex-direction:column;
+font-size:13px;
+}
+
+.purchase-result strong{
+color:#fff;
+font-size:14px;
+}
+
+.purchase-result span{
+color:#9ca3af;
+font-size:12px;
+}
+
+/* HOVER */
+
+.purchase-result:hover{
+transform:translateY(-2px);
+border:1px solid rgba(34,211,238,.3);
+box-shadow:0 8px 20px rgba(0,0,0,.6);
+}
+
+/* CONTENEDOR DEL BUSCADOR */
+
+#productSearch{
+width:100%;
+padding:10px 12px;
+border-radius:8px;
+border:1px solid rgba(255,255,255,.08);
+background:#0e1117;
+color:#fff;
+outline:none;
+transition:.2s;
+}
+
+#productSearch:focus{
+border:1px solid rgba(34,211,238,.5);
+box-shadow:0 0 8px rgba(34,211,238,.2);
+}
+
+/* SCROLL SI HAY MUCHOS RESULTADOS */
+
+.purchase-results{
+max-height:220px;
+overflow-y:auto;
+}
+
+/* SCROLLBAR */
+
+.purchase-results::-webkit-scrollbar{
+width:6px;
+}
+
+.purchase-results::-webkit-scrollbar-thumb{
+background:#1f2937;
+border-radius:4px;
+}
+
+.refund-unavailable{
+background:#0e1117;
+border:1px solid rgba(255,255,255,.05);
+padding:35px;
+border-radius:14px;
+text-align:center;
+margin-top:10px;
+animation:fadeRefund .3s ease;
+}
+
+.refund-icon{
+font-size:40px;
+color:#facc15;
+margin-bottom:10px;
+}
+
+.refund-unavailable h3{
+font-size:20px;
+margin-bottom:6px;
+}
+
+.refund-text{
+color:#9ca3af;
+font-size:14px;
+margin-bottom:10px;
+}
+
+.refund-rules{
+list-style:none;
+padding:0;
+margin:0;
+color:#cbd5f5;
+font-size:14px;
+}
+
+.refund-rules li{
+margin:5px 0;
+}
+
+@keyframes fadeRefund{
+from{opacity:0;transform:translateY(8px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+.refund-policy-btn{
+display:inline-flex;
+align-items:center;
+gap:8px;
+margin-top:15px;
+padding:10px 18px;
+border-radius:8px;
+font-size:14px;
+text-decoration:none;
+background:linear-gradient(135deg,#22d3ee,#06b6d4);
+color:#021014;
+font-weight:600;
+transition:.25s;
+}
+
+.refund-policy-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 6px 20px rgba(34,211,238,.35);
+}

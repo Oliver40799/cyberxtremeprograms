@@ -1,0 +1,169 @@
+/* ======================= */
+/* FONDO */
+/* ======================= */
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:radial-gradient(circle at top,#0b1224,#000);
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+min-height:100vh;
+}
+
+
+/* ======================= */
+/* WRAPPER */
+/* ======================= */
+
+.contact-wrapper{
+padding:20px;
+width:100%;
+display:flex;
+justify-content:center;
+}
+
+
+/* ======================= */
+/* TARJETA */
+/* ======================= */
+
+.contact-card{
+background:rgba(15,23,42,.85);
+padding:45px;
+border-radius:20px;
+max-width:420px;
+width:100%;
+border:1px solid rgba(255,255,255,.08);
+box-shadow:0 20px 60px rgba(0,0,0,.6);
+backdrop-filter:blur(10px);
+text-align:center;
+transition:.3s;
+}
+
+.contact-card:hover{
+box-shadow:0 0 40px rgba(0,255,255,.2);
+}
+
+
+/* ======================= */
+/* TITULO */
+/* ======================= */
+
+.contact-card h1{
+font-size:34px;
+color:#00ffff;
+margin-bottom:10px;
+text-shadow:0 0 15px rgba(0,255,255,.4);
+}
+
+
+/* SUBTITULO */
+
+.subtitle{
+font-size:14px;
+color:#cbd5e1;
+margin-bottom:30px;
+}
+
+
+/* ======================= */
+/* FORM */
+/* ======================= */
+
+.contact-form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+
+/* INPUTS */
+
+.contact-form input,
+.contact-form textarea{
+
+padding:12px 14px;
+border-radius:10px;
+border:1px solid rgba(255,255,255,.1);
+background:#020617;
+color:white;
+font-size:14px;
+outline:none;
+transition:.25s;
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+border-color:#00ffff;
+box-shadow:0 0 12px rgba(0,255,255,.3);
+
+}
+
+
+/* ======================= */
+/* BOTON */
+/* ======================= */
+
+.contact-form button{
+
+padding:14px;
+border:none;
+border-radius:12px;
+background:#00ffff;
+color:#000;
+font-weight:700;
+font-size:15px;
+cursor:pointer;
+transition:.25s;
+box-shadow:0 0 20px rgba(0,255,255,.4);
+
+}
+
+.contact-form button:hover{
+
+transform:translateY(-2px);
+box-shadow:0 0 35px rgba(0,255,255,.7);
+
+}
+
+
+/* ======================= */
+/* BOTON VOLVER */
+/* ======================= */
+
+.btn-home{
+
+display:inline-block;
+margin-top:20px;
+font-size:14px;
+color:#00ffff;
+text-decoration:none;
+transition:.25s;
+
+}
+
+.btn-home:hover{
+text-shadow:0 0 10px rgba(0,255,255,.6);
+}
+
+
+/* ======================= */
+/* RESPONSIVE */
+/* ======================= */
+
+@media(max-width:500px){
+
+.contact-card{
+padding:30px;
+}
+
+.contact-card h1{
+font-size:26px;
+}
+
+}

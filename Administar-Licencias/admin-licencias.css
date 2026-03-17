@@ -1,0 +1,251 @@
+/* ============================= */
+/* CONTENEDOR */
+/* ============================= */
+
+.admin-container{
+max-width:1150px;
+margin:50px auto;
+padding:0 20px;
+}
+
+/* ============================= */
+/* TITULO */
+/* ============================= */
+
+.admin-container h1{
+font-size:34px;
+font-weight:700;
+color:#00ffff;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+margin-bottom:15px;
+text-shadow:0 0 10px rgba(0,255,255,.25);
+}
+
+.admin-container p{
+color:#94a3b8;
+line-height:1.7;
+max-width:750px;
+margin:0 auto;
+text-align:center;
+}
+
+/* ============================= */
+/* TARJETAS PANEL */
+/* ============================= */
+
+.panel-box{
+margin-top:35px;
+background:rgba(15,23,42,.75);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:18px;
+padding:32px;
+box-shadow:0 10px 40px rgba(0,0,0,.5);
+transition:.3s;
+}
+
+.panel-box:hover{
+transform:translateY(-4px);
+border-color:rgba(0,255,255,.35);
+box-shadow:
+0 10px 40px rgba(0,0,0,.6),
+0 0 20px rgba(0,255,255,.15);
+}
+
+/* ============================= */
+/* TITULO TARJETAS */
+/* ============================= */
+
+.panel-box h2{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:20px;
+font-weight:600;
+margin-bottom:22px;
+color:#ffffff;
+}
+
+.panel-box h2 i{
+color:#00ffff;
+}
+
+/* ============================= */
+/* LISTA DE LICENCIAS */
+/* ============================= */
+
+.licencias-list{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+/* ============================= */
+/* ITEMS */
+/* ============================= */
+
+.info-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:10px;
+
+background:#020617;
+border:1px solid rgba(255,255,255,.08);
+border-radius:12px;
+
+padding:14px 16px;
+
+transition:.25s;
+}
+
+.info-item:hover{
+border-color:#00ffff;
+transform:translateX(3px);
+}
+
+/* ============================= */
+/* INFO LICENCIA */
+/* ============================= */
+
+.licencia-info{
+display:flex;
+flex-direction:column;
+gap:4px;
+}
+
+.licencia-info span{
+color:#e2e8f0;
+font-weight:600;
+font-size:15px;
+}
+
+.licencia-info small{
+color:#94a3b8;
+font-size:13px;
+}
+
+/* ============================= */
+/* ESTADO */
+/* ============================= */
+
+.info-item strong{
+font-size:14px;
+font-weight:600;
+white-space:nowrap;
+}
+
+/* ============================= */
+/* LOADER */
+/* ============================= */
+
+.loader{
+width:32px;
+height:32px;
+border:3px solid rgba(255,255,255,.2);
+border-top:3px solid #00ffff;
+border-radius:50%;
+animation:spin 1s linear infinite;
+margin:30px auto;
+}
+
+@keyframes spin{
+to{
+transform:rotate(360deg);
+}
+}
+
+/* ============================= */
+/* TEXTO FINAL */
+/* ============================= */
+
+.fecha-desarollo{
+text-align:center;
+margin-top:45px;
+font-size:14px;
+color:#64748b;
+}
+
+/* ============================= */
+/* ANIMACION */
+/* ============================= */
+
+.fade-in{
+opacity:0;
+animation:fadeInItem .4s ease forwards;
+}
+
+@keyframes fadeInItem{
+from{
+opacity:0;
+transform:translateY(6px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media(max-width:768px){
+
+.admin-container{
+margin:30px auto;
+}
+
+.panel-box{
+padding:25px;
+}
+
+.admin-container h1{
+font-size:26px;
+}
+
+.info-item{
+flex-direction:column;
+align-items:flex-start;
+}
+
+}
+
+/* ============================= */
+/* TEXTO FINAL */
+/* ============================= */
+
+.fecha-desarollo{
+
+margin-top:70px; /* más separación de promociones */
+padding-top:25px;
+border-top:1px solid rgba(255,255,255,.08); /* línea elegante separadora */
+text-align:center;
+font-size:14px;
+color:#64748b;
+
+}
+
+/* =========================
+   BARRA DE PROGRESO LICENCIA
+========================= */
+
+.licencia-progress{
+width:100%;
+height:6px;
+background:#1e293b;
+border-radius:4px;
+margin-top:6px;
+overflow:hidden;
+}
+
+.licencia-bar{
+height:100%;
+background:#00ffff;
+transition:width .6s ease;
+box-shadow:0 0 8px rgba(0,255,255,.6);
+}

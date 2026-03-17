@@ -1,0 +1,315 @@
+/* ============================= */
+/* CONTENEDOR PRINCIPAL */
+/* ============================= */
+
+.container{
+max-width:1200px;
+margin:50px auto;
+padding:0 20px;
+}
+
+/* ============================= */
+/* TITULO */
+/* ============================= */
+
+.centered-title{
+text-align:center;
+font-size:34px;
+font-weight:700;
+color:#00ffff;
+margin-bottom:45px;
+text-shadow:0 0 15px rgba(0,255,255,.3);
+}
+
+/* ============================= */
+/* LAYOUT */
+/* ============================= */
+
+.checkout-layout{
+display:flex;
+gap:25px;
+align-items:flex-start;
+}
+
+/* ============================= */
+/* TARJETAS BASE */
+/* ============================= */
+
+.ads-section,
+.payment-center,
+.order-summary{
+
+background:rgba(15,23,42,.75);
+backdrop-filter:blur(10px);
+
+border:1px solid rgba(255,255,255,.08);
+border-radius:18px;
+
+padding:30px;
+
+box-shadow:
+0 10px 35px rgba(0,0,0,.45),
+inset 0 0 0 rgba(0,0,0,0);
+
+transition:.25s;
+}
+
+.ads-section:hover,
+.payment-center:hover,
+.order-summary:hover{
+border-color:rgba(0,255,255,.35);
+}
+
+/* tamaños */
+
+.ads-section{
+flex:1.1;
+}
+
+.payment-center{
+flex:1.7;
+}
+
+.order-summary{
+flex:1.2;
+}
+
+/* ============================= */
+/* TITULOS */
+/* ============================= */
+
+.checkout-layout h3{
+color:#00ffff;
+font-size:18px;
+margin-bottom:20px;
+padding-bottom:10px;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+/* ============================= */
+/* ANUNCIOS */
+/* ============================= */
+
+.ads-content{
+text-align:center;
+color:#94a3b8;
+font-size:14px;
+}
+
+.ads-content img{
+margin-top:15px;
+border-radius:12px;
+max-width:200px;
+box-shadow:0 10px 20px rgba(0,0,0,.5);
+}
+
+/* ============================= */
+/* OPCIONES DE PAGO */
+/* ============================= */
+
+.payment-options-container{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin-top:10px;
+}
+
+/* tarjeta de pago */
+
+.payment-option{
+
+display:flex;
+align-items:center;
+gap:12px;
+
+padding:14px 16px;
+
+background:#020617;
+
+border:1px solid rgba(255,255,255,.08);
+border-radius:12px;
+
+cursor:pointer;
+transition:.25s;
+}
+
+.payment-option:hover{
+border-color:#00ffff;
+box-shadow:0 5px 20px rgba(0,255,255,.15);
+}
+
+.payment-option i{
+font-size:20px;
+color:#00ffff;
+}
+
+.payment-option input{
+transform:scale(1.2);
+}
+
+/* saldo */
+
+#wallet-balance-display{
+margin-left:auto;
+font-weight:600;
+color:#ffa600;
+}
+
+/* ============================= */
+/* BOTON PAGAR */
+/* ============================= */
+
+#finalize-cyberx-purchase{
+
+width:100%;
+margin-top:20px;
+
+background:#00ffff;
+color:black;
+
+border:none;
+border-radius:10px;
+
+padding:16px;
+
+font-size:15px;
+font-weight:700;
+
+cursor:pointer;
+transition:.25s;
+}
+
+#finalize-cyberx-purchase:hover{
+
+background:#0ff;
+
+transform:translateY(-2px);
+
+box-shadow:0 10px 30px rgba(0,255,255,.4);
+
+}
+
+/* ============================= */
+/* RESUMEN */
+/* ============================= */
+
+.order-items-list{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.order-item{
+
+display:flex;
+justify-content:space-between;
+
+font-size:14px;
+color:#cbd5e1;
+
+border-bottom:1px dashed rgba(255,255,255,.1);
+padding:7px 0;
+}
+
+/* TOTAL */
+
+.order-total{
+
+margin-top:20px;
+
+font-size:20px;
+font-weight:700;
+
+color:#00ffff;
+}
+
+/* TEXTO LEGAL */
+
+.rights-info{
+margin-top:18px;
+font-size:13px;
+color:#94a3b8;
+line-height:1.6;
+}
+
+/* ============================= */
+/* MODAL */
+/* ============================= */
+
+#notification-modal{
+
+display:none;
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.85);
+
+z-index:2000;
+
+justify-content:center;
+align-items:center;
+}
+
+.modal-content{
+
+background:#0f172a;
+
+border:1px solid rgba(0,255,255,.4);
+
+border-radius:16px;
+
+padding:35px;
+
+text-align:center;
+
+box-shadow:0 0 35px rgba(0,255,255,.3);
+
+max-width:420px;
+}
+
+.modal-content h2{
+color:#00ffff;
+margin-bottom:12px;
+}
+
+.modal-content p{
+color:#cbd5e1;
+margin-bottom:20px;
+}
+
+.modal-content button{
+
+background:#00ffff;
+border:none;
+
+padding:10px 20px;
+border-radius:8px;
+
+font-weight:600;
+cursor:pointer;
+}
+
+.modal-content button:hover{
+background:#0ff;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media(max-width:1000px){
+
+.checkout-layout{
+flex-direction:column;
+}
+
+.payment-center{
+order:-1;
+}
+
+}

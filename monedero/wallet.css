@@ -1,0 +1,228 @@
+/* CONTENEDOR */
+
+.container{
+max-width:1200px;
+margin:70px auto;
+padding:40px;
+}
+
+/* TITULO */
+
+.centered-title{
+text-align:center;
+color:#00ffff;
+font-size:34px;
+margin-bottom:45px;
+text-shadow:0 0 14px rgba(0,255,255,.25);
+}
+
+/* LAYOUT */
+
+.wallet-layout{
+display:grid;
+grid-template-columns:320px 1fr;
+gap:40px;
+}
+
+/* TARJETAS */
+
+.balance-summary,
+.transaction-history{
+background:rgba(15,23,42,.80);
+border:1px solid rgba(255,255,255,.08);
+border-radius:20px;
+padding:30px;
+backdrop-filter:blur(14px);
+box-shadow:0 15px 40px rgba(0,0,0,.6);
+color:#e2e8f0;
+}
+
+/* HISTORIAL MEJORADO */
+
+.transaction-history{
+min-height:420px;
+display:flex;
+flex-direction:column;
+}
+
+/* TITULOS */
+
+.balance-summary h3,
+.transaction-history h3{
+color:#00ffff;
+font-size:20px;
+margin-bottom:20px;
+}
+
+/* TARJETA WALLET */
+
+.wallet-card{
+background:linear-gradient(135deg,#020617,#0f172a);
+border-radius:18px;
+padding:26px;
+border:1px solid rgba(0,255,255,.15);
+box-shadow:0 0 18px rgba(0,255,255,.08);
+margin-bottom:25px;
+}
+
+.card-title{
+font-size:13px;
+color:#94a3b8;
+margin-bottom:6px;
+letter-spacing:.5px;
+}
+
+.card-balance{
+font-size:34px;
+font-weight:700;
+color:#00ffff;
+display:block;
+margin-bottom:18px;
+}
+
+.card-info-footer{
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:13px;
+color:#94a3b8;
+}
+
+.logo-chip{
+font-size:22px;
+color:#00ffff;
+}
+
+/* BOTONES */
+
+.wallet-action{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.wallet-action button{
+padding:12px;
+border-radius:8px;
+border:2px solid #00ffff;
+background:#020617;
+color:#00ffff;
+font-weight:600;
+cursor:pointer;
+transition:.25s;
+}
+
+.wallet-action button:hover{
+background:#00ffff;
+color:#000;
+box-shadow:0 0 15px rgba(0,255,255,.5);
+}
+
+/* HISTORIAL CON SCROLL */
+
+#transactions-list{
+margin-top:15px;
+display:flex;
+flex-direction:column;
+gap:12px;
+max-height:380px;
+overflow-y:auto;
+padding-right:6px;
+}
+
+/* SCROLL PERSONALIZADO */
+
+#transactions-list::-webkit-scrollbar{
+width:6px;
+}
+
+#transactions-list::-webkit-scrollbar-track{
+background:transparent;
+}
+
+#transactions-list::-webkit-scrollbar-thumb{
+background:#00ffff;
+border-radius:10px;
+}
+
+/* ITEM TRANSACCION */
+
+.transaction-item{
+display:grid;
+grid-template-columns:1fr auto auto;
+align-items:center;
+gap:10px;
+padding:14px 16px;
+border-radius:10px;
+background:#020617;
+border:1px solid rgba(255,255,255,.08);
+font-size:14px;
+transition:.2s;
+}
+
+.transaction-item:hover{
+border-color:#00ffff;
+}
+
+/* TEXTO */
+
+.transaction-item .type{
+color:#ffffff;
+font-weight:500;
+}
+
+.transaction-item .date{
+color:#94a3b8;
+font-size:13px;
+}
+
+/* MONTO */
+
+.amount{
+font-weight:700;
+}
+
+/* INGRESO */
+
+.amount.deposit{
+color:#22c55e;
+}
+
+/* RETIRO */
+
+.amount.withdraw{
+color:#ff4d4d;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.wallet-layout{
+grid-template-columns:1fr;
+}
+
+}
+
+/* TOAST CYBERXTREME */
+
+.cx-toast{
+position:fixed;
+bottom:30px;
+right:30px;
+background:#020617;
+color:#00ffff;
+padding:14px 22px;
+border-radius:8px;
+border:1px solid rgba(0,255,255,.3);
+box-shadow:0 0 20px rgba(0,255,255,.25);
+opacity:0;
+transform:translateY(20px);
+transition:.3s;
+z-index:9999;
+}
+
+.cx-toast.show{
+opacity:1;
+transform:translateY(0);
+}
